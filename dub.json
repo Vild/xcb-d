@@ -1,0 +1,9 @@
+{
+	"name": "xcb-d",
+	"outputTarget": "library",
+	"description": "XCB D binding",
+	"copyright": "Copyright © 2015, wildn00b",
+	"authors": ["wildn00b"],
+	"license": "MIT",
+	"libs": ["xcb"]
+}
