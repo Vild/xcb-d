@@ -1,5 +1,5 @@
 # xcb-d
-For xcb version v1.11
+For xcb version v1.11.1
 
 ## Description
 
