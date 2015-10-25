@@ -45,43 +45,61 @@ struct xcb_xv_encoding_iterator_t {
     int                index; /**<  */
 }
 
-enum /* xcb_xv_type_t */ {
+enum xcb_xv_type_t {
     XCB_XV_TYPE_INPUT_MASK = 1,
     XCB_XV_TYPE_OUTPUT_MASK = 2,
     XCB_XV_TYPE_VIDEO_MASK = 4,
     XCB_XV_TYPE_STILL_MASK = 8,
     XCB_XV_TYPE_IMAGE_MASK = 16
 }
+alias XCB_XV_TYPE_INPUT_MASK = xcb_xv_type_t.XCB_XV_TYPE_INPUT_MASK;
+alias XCB_XV_TYPE_OUTPUT_MASK = xcb_xv_type_t.XCB_XV_TYPE_OUTPUT_MASK;
+alias XCB_XV_TYPE_VIDEO_MASK = xcb_xv_type_t.XCB_XV_TYPE_VIDEO_MASK;
+alias XCB_XV_TYPE_STILL_MASK = xcb_xv_type_t.XCB_XV_TYPE_STILL_MASK;
+alias XCB_XV_TYPE_IMAGE_MASK = xcb_xv_type_t.XCB_XV_TYPE_IMAGE_MASK;
 
-enum /* xcb_xv_image_format_info_type_t */ {
+enum xcb_xv_image_format_info_type_t {
     XCB_XV_IMAGE_FORMAT_INFO_TYPE_RGB = 0,
     XCB_XV_IMAGE_FORMAT_INFO_TYPE_YUV = 1
 }
+alias XCB_XV_IMAGE_FORMAT_INFO_TYPE_RGB = xcb_xv_image_format_info_type_t.XCB_XV_IMAGE_FORMAT_INFO_TYPE_RGB;
+alias XCB_XV_IMAGE_FORMAT_INFO_TYPE_YUV = xcb_xv_image_format_info_type_t.XCB_XV_IMAGE_FORMAT_INFO_TYPE_YUV;
 
-enum /* xcb_xv_image_format_info_format_t */ {
+enum xcb_xv_image_format_info_format_t {
     XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PACKED = 0,
     XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PLANAR = 1
 }
+alias XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PACKED = xcb_xv_image_format_info_format_t.XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PACKED;
+alias XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PLANAR = xcb_xv_image_format_info_format_t.XCB_XV_IMAGE_FORMAT_INFO_FORMAT_PLANAR;
 
-enum /* xcb_xv_attribute_flag_t */ {
+enum xcb_xv_attribute_flag_t {
     XCB_XV_ATTRIBUTE_FLAG_GETTABLE = 1,
     XCB_XV_ATTRIBUTE_FLAG_SETTABLE = 2
 }
+alias XCB_XV_ATTRIBUTE_FLAG_GETTABLE = xcb_xv_attribute_flag_t.XCB_XV_ATTRIBUTE_FLAG_GETTABLE;
+alias XCB_XV_ATTRIBUTE_FLAG_SETTABLE = xcb_xv_attribute_flag_t.XCB_XV_ATTRIBUTE_FLAG_SETTABLE;
 
-enum /* xcb_xv_video_notify_reason_t */ {
+enum xcb_xv_video_notify_reason_t {
     XCB_XV_VIDEO_NOTIFY_REASON_STARTED = 0,
     XCB_XV_VIDEO_NOTIFY_REASON_STOPPED = 1,
     XCB_XV_VIDEO_NOTIFY_REASON_BUSY = 2,
     XCB_XV_VIDEO_NOTIFY_REASON_PREEMPTED = 3,
     XCB_XV_VIDEO_NOTIFY_REASON_HARD_ERROR = 4
 }
+alias XCB_XV_VIDEO_NOTIFY_REASON_STARTED = xcb_xv_video_notify_reason_t.XCB_XV_VIDEO_NOTIFY_REASON_STARTED;
+alias XCB_XV_VIDEO_NOTIFY_REASON_STOPPED = xcb_xv_video_notify_reason_t.XCB_XV_VIDEO_NOTIFY_REASON_STOPPED;
+alias XCB_XV_VIDEO_NOTIFY_REASON_BUSY = xcb_xv_video_notify_reason_t.XCB_XV_VIDEO_NOTIFY_REASON_BUSY;
+alias XCB_XV_VIDEO_NOTIFY_REASON_PREEMPTED = xcb_xv_video_notify_reason_t.XCB_XV_VIDEO_NOTIFY_REASON_PREEMPTED;
+alias XCB_XV_VIDEO_NOTIFY_REASON_HARD_ERROR = xcb_xv_video_notify_reason_t.XCB_XV_VIDEO_NOTIFY_REASON_HARD_ERROR;
 
-enum /* xcb_xv_scanline_order_t */ {
+enum xcb_xv_scanline_order_t {
     XCB_XV_SCANLINE_ORDER_TOP_TO_BOTTOM = 0,
     XCB_XV_SCANLINE_ORDER_BOTTOM_TO_TOP = 1
 }
+alias XCB_XV_SCANLINE_ORDER_TOP_TO_BOTTOM = xcb_xv_scanline_order_t.XCB_XV_SCANLINE_ORDER_TOP_TO_BOTTOM;
+alias XCB_XV_SCANLINE_ORDER_BOTTOM_TO_TOP = xcb_xv_scanline_order_t.XCB_XV_SCANLINE_ORDER_BOTTOM_TO_TOP;
 
-enum /* xcb_xv_grab_port_status_t */ {
+enum xcb_xv_grab_port_status_t {
     XCB_XV_GRAB_PORT_STATUS_SUCCESS = 0,
     XCB_XV_GRAB_PORT_STATUS_BAD_EXTENSION = 1,
     XCB_XV_GRAB_PORT_STATUS_ALREADY_GRABBED = 2,
@@ -89,6 +107,12 @@ enum /* xcb_xv_grab_port_status_t */ {
     XCB_XV_GRAB_PORT_STATUS_BAD_REPLY = 4,
     XCB_XV_GRAB_PORT_STATUS_BAD_ALLOC = 5
 }
+alias XCB_XV_GRAB_PORT_STATUS_SUCCESS = xcb_xv_grab_port_status_t.XCB_XV_GRAB_PORT_STATUS_SUCCESS;
+alias XCB_XV_GRAB_PORT_STATUS_BAD_EXTENSION = xcb_xv_grab_port_status_t.XCB_XV_GRAB_PORT_STATUS_BAD_EXTENSION;
+alias XCB_XV_GRAB_PORT_STATUS_ALREADY_GRABBED = xcb_xv_grab_port_status_t.XCB_XV_GRAB_PORT_STATUS_ALREADY_GRABBED;
+alias XCB_XV_GRAB_PORT_STATUS_INVALID_TIME = xcb_xv_grab_port_status_t.XCB_XV_GRAB_PORT_STATUS_INVALID_TIME;
+alias XCB_XV_GRAB_PORT_STATUS_BAD_REPLY = xcb_xv_grab_port_status_t.XCB_XV_GRAB_PORT_STATUS_BAD_REPLY;
+alias XCB_XV_GRAB_PORT_STATUS_BAD_ALLOC = xcb_xv_grab_port_status_t.XCB_XV_GRAB_PORT_STATUS_BAD_ALLOC;
 
 /**
  * @brief xcb_xv_rational_t

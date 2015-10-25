@@ -22,23 +22,32 @@ enum int XCB_SCREENSAVER_MINOR_VERSION = 1;
 
 extern(C) extern xcb_extension_t xcb_screensaver_id;
 
-enum /* xcb_screensaver_kind_t */ {
+enum xcb_screensaver_kind_t {
     XCB_SCREENSAVER_KIND_BLANKED = 0,
     XCB_SCREENSAVER_KIND_INTERNAL = 1,
     XCB_SCREENSAVER_KIND_EXTERNAL = 2
 }
+alias XCB_SCREENSAVER_KIND_BLANKED = xcb_screensaver_kind_t.XCB_SCREENSAVER_KIND_BLANKED;
+alias XCB_SCREENSAVER_KIND_INTERNAL = xcb_screensaver_kind_t.XCB_SCREENSAVER_KIND_INTERNAL;
+alias XCB_SCREENSAVER_KIND_EXTERNAL = xcb_screensaver_kind_t.XCB_SCREENSAVER_KIND_EXTERNAL;
 
-enum /* xcb_screensaver_event_t */ {
+enum xcb_screensaver_event_t {
     XCB_SCREENSAVER_EVENT_NOTIFY_MASK = 1,
     XCB_SCREENSAVER_EVENT_CYCLE_MASK = 2
 }
+alias XCB_SCREENSAVER_EVENT_NOTIFY_MASK = xcb_screensaver_event_t.XCB_SCREENSAVER_EVENT_NOTIFY_MASK;
+alias XCB_SCREENSAVER_EVENT_CYCLE_MASK = xcb_screensaver_event_t.XCB_SCREENSAVER_EVENT_CYCLE_MASK;
 
-enum /* xcb_screensaver_state_t */ {
+enum xcb_screensaver_state_t {
     XCB_SCREENSAVER_STATE_OFF = 0,
     XCB_SCREENSAVER_STATE_ON = 1,
     XCB_SCREENSAVER_STATE_CYCLE = 2,
     XCB_SCREENSAVER_STATE_DISABLED = 3
 }
+alias XCB_SCREENSAVER_STATE_OFF = xcb_screensaver_state_t.XCB_SCREENSAVER_STATE_OFF;
+alias XCB_SCREENSAVER_STATE_ON = xcb_screensaver_state_t.XCB_SCREENSAVER_STATE_ON;
+alias XCB_SCREENSAVER_STATE_CYCLE = xcb_screensaver_state_t.XCB_SCREENSAVER_STATE_CYCLE;
+alias XCB_SCREENSAVER_STATE_DISABLED = xcb_screensaver_state_t.XCB_SCREENSAVER_STATE_DISABLED;
 
 /**
  * @brief xcb_screensaver_query_version_cookie_t

@@ -118,11 +118,14 @@ struct xcb_record_element_header_iterator_t {
     int                          index; /**<  */
 }
 
-enum /* xcb_record_h_type_t */ {
+enum xcb_record_h_type_t {
     XCB_RECORD_H_TYPE_FROM_SERVER_TIME = 1,
     XCB_RECORD_H_TYPE_FROM_CLIENT_TIME = 2,
     XCB_RECORD_H_TYPE_FROM_CLIENT_SEQUENCE = 4
 }
+alias XCB_RECORD_H_TYPE_FROM_SERVER_TIME = xcb_record_h_type_t.XCB_RECORD_H_TYPE_FROM_SERVER_TIME;
+alias XCB_RECORD_H_TYPE_FROM_CLIENT_TIME = xcb_record_h_type_t.XCB_RECORD_H_TYPE_FROM_CLIENT_TIME;
+alias XCB_RECORD_H_TYPE_FROM_CLIENT_SEQUENCE = xcb_record_h_type_t.XCB_RECORD_H_TYPE_FROM_CLIENT_SEQUENCE;
 
 alias xcb_record_client_spec_t = uint;
 
@@ -135,11 +138,14 @@ struct xcb_record_client_spec_iterator_t {
     int                       index; /**<  */
 }
 
-enum /* xcb_record_cs_t */ {
+enum xcb_record_cs_t {
     XCB_RECORD_CS_CURRENT_CLIENTS = 1,
     XCB_RECORD_CS_FUTURE_CLIENTS = 2,
     XCB_RECORD_CS_ALL_CLIENTS = 3
 }
+alias XCB_RECORD_CS_CURRENT_CLIENTS = xcb_record_cs_t.XCB_RECORD_CS_CURRENT_CLIENTS;
+alias XCB_RECORD_CS_FUTURE_CLIENTS = xcb_record_cs_t.XCB_RECORD_CS_FUTURE_CLIENTS;
+alias XCB_RECORD_CS_ALL_CLIENTS = xcb_record_cs_t.XCB_RECORD_CS_ALL_CLIENTS;
 
 /**
  * @brief xcb_record_client_info_t

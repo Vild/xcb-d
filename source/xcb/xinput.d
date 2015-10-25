@@ -118,15 +118,20 @@ struct xcb_input_get_extension_version_reply_t {
     ubyte[19]  pad1; /**<  */
 }
 
-enum /* xcb_input_device_use_t */ {
+enum xcb_input_device_use_t {
     XCB_INPUT_DEVICE_USE_IS_X_POINTER = 0,
     XCB_INPUT_DEVICE_USE_IS_X_KEYBOARD = 1,
     XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_DEVICE = 2,
     XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_KEYBOARD = 3,
     XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_POINTER = 4
 }
+alias XCB_INPUT_DEVICE_USE_IS_X_POINTER = xcb_input_device_use_t.XCB_INPUT_DEVICE_USE_IS_X_POINTER;
+alias XCB_INPUT_DEVICE_USE_IS_X_KEYBOARD = xcb_input_device_use_t.XCB_INPUT_DEVICE_USE_IS_X_KEYBOARD;
+alias XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_DEVICE = xcb_input_device_use_t.XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_DEVICE;
+alias XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_KEYBOARD = xcb_input_device_use_t.XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_KEYBOARD;
+alias XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_POINTER = xcb_input_device_use_t.XCB_INPUT_DEVICE_USE_IS_X_EXTENSION_POINTER;
 
-enum /* xcb_input_input_class_t */ {
+enum xcb_input_input_class_t {
     XCB_INPUT_INPUT_CLASS_KEY = 0,
     XCB_INPUT_INPUT_CLASS_BUTTON = 1,
     XCB_INPUT_INPUT_CLASS_VALUATOR = 2,
@@ -135,11 +140,20 @@ enum /* xcb_input_input_class_t */ {
     XCB_INPUT_INPUT_CLASS_FOCUS = 5,
     XCB_INPUT_INPUT_CLASS_OTHER = 6
 }
+alias XCB_INPUT_INPUT_CLASS_KEY = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_KEY;
+alias XCB_INPUT_INPUT_CLASS_BUTTON = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_BUTTON;
+alias XCB_INPUT_INPUT_CLASS_VALUATOR = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_VALUATOR;
+alias XCB_INPUT_INPUT_CLASS_FEEDBACK = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_FEEDBACK;
+alias XCB_INPUT_INPUT_CLASS_PROXIMITY = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_PROXIMITY;
+alias XCB_INPUT_INPUT_CLASS_FOCUS = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_FOCUS;
+alias XCB_INPUT_INPUT_CLASS_OTHER = xcb_input_input_class_t.XCB_INPUT_INPUT_CLASS_OTHER;
 
-enum /* xcb_input_valuator_mode_t */ {
+enum xcb_input_valuator_mode_t {
     XCB_INPUT_VALUATOR_MODE_RELATIVE = 0,
     XCB_INPUT_VALUATOR_MODE_ABSOLUTE = 1
 }
+alias XCB_INPUT_VALUATOR_MODE_RELATIVE = xcb_input_valuator_mode_t.XCB_INPUT_VALUATOR_MODE_RELATIVE;
+alias XCB_INPUT_VALUATOR_MODE_ABSOLUTE = xcb_input_valuator_mode_t.XCB_INPUT_VALUATOR_MODE_ABSOLUTE;
 
 /**
  * @brief xcb_input_device_info_t
@@ -448,10 +462,12 @@ struct xcb_input_get_selected_extension_events_reply_t {
     ubyte[20]  pad1; /**<  */
 }
 
-enum /* xcb_input_propagate_mode_t */ {
+enum xcb_input_propagate_mode_t {
     XCB_INPUT_PROPAGATE_MODE_ADD_TO_LIST = 0,
     XCB_INPUT_PROPAGATE_MODE_DELETE_FROM_LIST = 1
 }
+alias XCB_INPUT_PROPAGATE_MODE_ADD_TO_LIST = xcb_input_propagate_mode_t.XCB_INPUT_PROPAGATE_MODE_ADD_TO_LIST;
+alias XCB_INPUT_PROPAGATE_MODE_DELETE_FROM_LIST = xcb_input_propagate_mode_t.XCB_INPUT_PROPAGATE_MODE_DELETE_FROM_LIST;
 
 /** Opcode for xcb_input_change_device_dont_propagate_list. */
 enum XCB_INPUT_CHANGE_DEVICE_DONT_PROPAGATE_LIST = 8;
@@ -752,7 +768,7 @@ struct xcb_input_ungrab_device_button_request_t {
     ubyte        grabbed_device; /**<  */
 }
 
-enum /* xcb_input_device_input_mode_t */ {
+enum xcb_input_device_input_mode_t {
     XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_THIS_DEVICE = 0,
     XCB_INPUT_DEVICE_INPUT_MODE_SYNC_THIS_DEVICE = 1,
     XCB_INPUT_DEVICE_INPUT_MODE_REPLAY_THIS_DEVICE = 2,
@@ -760,6 +776,12 @@ enum /* xcb_input_device_input_mode_t */ {
     XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_ALL = 4,
     XCB_INPUT_DEVICE_INPUT_MODE_SYNC_ALL = 5
 }
+alias XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_THIS_DEVICE = xcb_input_device_input_mode_t.XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_THIS_DEVICE;
+alias XCB_INPUT_DEVICE_INPUT_MODE_SYNC_THIS_DEVICE = xcb_input_device_input_mode_t.XCB_INPUT_DEVICE_INPUT_MODE_SYNC_THIS_DEVICE;
+alias XCB_INPUT_DEVICE_INPUT_MODE_REPLAY_THIS_DEVICE = xcb_input_device_input_mode_t.XCB_INPUT_DEVICE_INPUT_MODE_REPLAY_THIS_DEVICE;
+alias XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_OTHER_DEVICES = xcb_input_device_input_mode_t.XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_OTHER_DEVICES;
+alias XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_ALL = xcb_input_device_input_mode_t.XCB_INPUT_DEVICE_INPUT_MODE_ASYNC_ALL;
+alias XCB_INPUT_DEVICE_INPUT_MODE_SYNC_ALL = xcb_input_device_input_mode_t.XCB_INPUT_DEVICE_INPUT_MODE_SYNC_ALL;
 
 /** Opcode for xcb_input_allow_device_events. */
 enum XCB_INPUT_ALLOW_DEVICE_EVENTS = 19;
@@ -827,7 +849,7 @@ struct xcb_input_set_device_focus_request_t {
     ubyte           device_id; /**<  */
 }
 
-enum /* xcb_input_feedback_class_t */ {
+enum xcb_input_feedback_class_t {
     XCB_INPUT_FEEDBACK_CLASS_KEYBOARD = 0,
     XCB_INPUT_FEEDBACK_CLASS_POINTER = 1,
     XCB_INPUT_FEEDBACK_CLASS_STRING = 2,
@@ -835,6 +857,12 @@ enum /* xcb_input_feedback_class_t */ {
     XCB_INPUT_FEEDBACK_CLASS_LED = 4,
     XCB_INPUT_FEEDBACK_CLASS_BELL = 5
 }
+alias XCB_INPUT_FEEDBACK_CLASS_KEYBOARD = xcb_input_feedback_class_t.XCB_INPUT_FEEDBACK_CLASS_KEYBOARD;
+alias XCB_INPUT_FEEDBACK_CLASS_POINTER = xcb_input_feedback_class_t.XCB_INPUT_FEEDBACK_CLASS_POINTER;
+alias XCB_INPUT_FEEDBACK_CLASS_STRING = xcb_input_feedback_class_t.XCB_INPUT_FEEDBACK_CLASS_STRING;
+alias XCB_INPUT_FEEDBACK_CLASS_INTEGER = xcb_input_feedback_class_t.XCB_INPUT_FEEDBACK_CLASS_INTEGER;
+alias XCB_INPUT_FEEDBACK_CLASS_LED = xcb_input_feedback_class_t.XCB_INPUT_FEEDBACK_CLASS_LED;
+alias XCB_INPUT_FEEDBACK_CLASS_BELL = xcb_input_feedback_class_t.XCB_INPUT_FEEDBACK_CLASS_BELL;
 
 /**
  * @brief xcb_input_kbd_feedback_state_t
@@ -1545,13 +1573,18 @@ struct xcb_input_set_device_valuators_reply_t {
     ubyte[23]  pad1; /**<  */
 }
 
-enum /* xcb_input_device_control_t */ {
+enum xcb_input_device_control_t {
     XCB_INPUT_DEVICE_CONTROL_RESOLUTION = 1,
     XCB_INPUT_DEVICE_CONTROL_ABS_CALIB = 2,
     XCB_INPUT_DEVICE_CONTROL_CORE = 3,
     XCB_INPUT_DEVICE_CONTROL_ENABLE = 4,
     XCB_INPUT_DEVICE_CONTROL_ABS_AREA = 5
 }
+alias XCB_INPUT_DEVICE_CONTROL_RESOLUTION = xcb_input_device_control_t.XCB_INPUT_DEVICE_CONTROL_RESOLUTION;
+alias XCB_INPUT_DEVICE_CONTROL_ABS_CALIB = xcb_input_device_control_t.XCB_INPUT_DEVICE_CONTROL_ABS_CALIB;
+alias XCB_INPUT_DEVICE_CONTROL_CORE = xcb_input_device_control_t.XCB_INPUT_DEVICE_CONTROL_CORE;
+alias XCB_INPUT_DEVICE_CONTROL_ENABLE = xcb_input_device_control_t.XCB_INPUT_DEVICE_CONTROL_ENABLE;
+alias XCB_INPUT_DEVICE_CONTROL_ABS_AREA = xcb_input_device_control_t.XCB_INPUT_DEVICE_CONTROL_ABS_AREA;
 
 /**
  * @brief xcb_input_device_resolution_state_t
@@ -1899,11 +1932,14 @@ struct xcb_input_list_device_properties_reply_t {
     ubyte[22]  pad1; /**<  */
 }
 
-enum /* xcb_input_property_format_t */ {
+enum xcb_input_property_format_t {
     XCB_INPUT_PROPERTY_FORMAT_8_BITS = 8,
     XCB_INPUT_PROPERTY_FORMAT_16_BITS = 16,
     XCB_INPUT_PROPERTY_FORMAT_32_BITS = 32
 }
+alias XCB_INPUT_PROPERTY_FORMAT_8_BITS = xcb_input_property_format_t.XCB_INPUT_PROPERTY_FORMAT_8_BITS;
+alias XCB_INPUT_PROPERTY_FORMAT_16_BITS = xcb_input_property_format_t.XCB_INPUT_PROPERTY_FORMAT_16_BITS;
+alias XCB_INPUT_PROPERTY_FORMAT_32_BITS = xcb_input_property_format_t.XCB_INPUT_PROPERTY_FORMAT_32_BITS;
 
 /**
  * @brief xcb_input_change_device_property_items_t
@@ -1999,10 +2035,12 @@ struct xcb_input_get_device_property_reply_t {
     ubyte[10]      pad1; /**<  */
 }
 
-enum /* xcb_input_device_t */ {
+enum xcb_input_device_t {
     XCB_INPUT_DEVICE_ALL = 0,
     XCB_INPUT_DEVICE_ALL_MASTER = 1
 }
+alias XCB_INPUT_DEVICE_ALL = xcb_input_device_t.XCB_INPUT_DEVICE_ALL;
+alias XCB_INPUT_DEVICE_ALL_MASTER = xcb_input_device_t.XCB_INPUT_DEVICE_ALL_MASTER;
 
 /**
  * @brief xcb_input_group_info_t
@@ -2123,17 +2161,23 @@ struct xcb_input_xi_change_cursor_request_t {
     ubyte[2]                 pad0; /**<  */
 }
 
-enum /* xcb_input_hierarchy_change_type_t */ {
+enum xcb_input_hierarchy_change_type_t {
     XCB_INPUT_HIERARCHY_CHANGE_TYPE_ADD_MASTER = 1,
     XCB_INPUT_HIERARCHY_CHANGE_TYPE_REMOVE_MASTER = 2,
     XCB_INPUT_HIERARCHY_CHANGE_TYPE_ATTACH_SLAVE = 3,
     XCB_INPUT_HIERARCHY_CHANGE_TYPE_DETACH_SLAVE = 4
 }
+alias XCB_INPUT_HIERARCHY_CHANGE_TYPE_ADD_MASTER = xcb_input_hierarchy_change_type_t.XCB_INPUT_HIERARCHY_CHANGE_TYPE_ADD_MASTER;
+alias XCB_INPUT_HIERARCHY_CHANGE_TYPE_REMOVE_MASTER = xcb_input_hierarchy_change_type_t.XCB_INPUT_HIERARCHY_CHANGE_TYPE_REMOVE_MASTER;
+alias XCB_INPUT_HIERARCHY_CHANGE_TYPE_ATTACH_SLAVE = xcb_input_hierarchy_change_type_t.XCB_INPUT_HIERARCHY_CHANGE_TYPE_ATTACH_SLAVE;
+alias XCB_INPUT_HIERARCHY_CHANGE_TYPE_DETACH_SLAVE = xcb_input_hierarchy_change_type_t.XCB_INPUT_HIERARCHY_CHANGE_TYPE_DETACH_SLAVE;
 
-enum /* xcb_input_change_mode_t */ {
+enum xcb_input_change_mode_t {
     XCB_INPUT_CHANGE_MODE_ATTACH = 1,
     XCB_INPUT_CHANGE_MODE_FLOAT = 2
 }
+alias XCB_INPUT_CHANGE_MODE_ATTACH = xcb_input_change_mode_t.XCB_INPUT_CHANGE_MODE_ATTACH;
+alias XCB_INPUT_CHANGE_MODE_FLOAT = xcb_input_change_mode_t.XCB_INPUT_CHANGE_MODE_FLOAT;
 
 /**
  * @brief xcb_input_add_master_t
@@ -2295,7 +2339,7 @@ struct xcb_input_xi_get_client_pointer_reply_t {
     ubyte[20]                 pad2; /**<  */
 }
 
-enum /* xcb_input_xi_event_mask_t */ {
+enum xcb_input_xi_event_mask_t {
     XCB_INPUT_XI_EVENT_MASK_DEVICE_CHANGED = 2,
     XCB_INPUT_XI_EVENT_MASK_KEY_PRESS = 4,
     XCB_INPUT_XI_EVENT_MASK_KEY_RELEASE = 8,
@@ -2323,6 +2367,32 @@ enum /* xcb_input_xi_event_mask_t */ {
     XCB_INPUT_XI_EVENT_MASK_BARRIER_HIT = 33554432,
     XCB_INPUT_XI_EVENT_MASK_BARRIER_LEAVE = 67108864
 }
+alias XCB_INPUT_XI_EVENT_MASK_DEVICE_CHANGED = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_DEVICE_CHANGED;
+alias XCB_INPUT_XI_EVENT_MASK_KEY_PRESS = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_KEY_PRESS;
+alias XCB_INPUT_XI_EVENT_MASK_KEY_RELEASE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_KEY_RELEASE;
+alias XCB_INPUT_XI_EVENT_MASK_BUTTON_PRESS = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_BUTTON_PRESS;
+alias XCB_INPUT_XI_EVENT_MASK_BUTTON_RELEASE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_BUTTON_RELEASE;
+alias XCB_INPUT_XI_EVENT_MASK_MOTION = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_MOTION;
+alias XCB_INPUT_XI_EVENT_MASK_ENTER = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_ENTER;
+alias XCB_INPUT_XI_EVENT_MASK_LEAVE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_LEAVE;
+alias XCB_INPUT_XI_EVENT_MASK_FOCUS_IN = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_FOCUS_IN;
+alias XCB_INPUT_XI_EVENT_MASK_FOCUS_OUT = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_FOCUS_OUT;
+alias XCB_INPUT_XI_EVENT_MASK_HIERARCHY = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_HIERARCHY;
+alias XCB_INPUT_XI_EVENT_MASK_PROPERTY = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_PROPERTY;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_KEY_PRESS = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_KEY_PRESS;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_KEY_RELEASE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_KEY_RELEASE;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_BUTTON_PRESS = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_BUTTON_PRESS;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_BUTTON_RELEASE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_BUTTON_RELEASE;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_MOTION = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_MOTION;
+alias XCB_INPUT_XI_EVENT_MASK_TOUCH_BEGIN = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_TOUCH_BEGIN;
+alias XCB_INPUT_XI_EVENT_MASK_TOUCH_UPDATE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_TOUCH_UPDATE;
+alias XCB_INPUT_XI_EVENT_MASK_TOUCH_END = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_TOUCH_END;
+alias XCB_INPUT_XI_EVENT_MASK_TOUCH_OWNERSHIP = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_TOUCH_OWNERSHIP;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_TOUCH_BEGIN = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_TOUCH_BEGIN;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_TOUCH_UPDATE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_TOUCH_UPDATE;
+alias XCB_INPUT_XI_EVENT_MASK_RAW_TOUCH_END = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_RAW_TOUCH_END;
+alias XCB_INPUT_XI_EVENT_MASK_BARRIER_HIT = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_BARRIER_HIT;
+alias XCB_INPUT_XI_EVENT_MASK_BARRIER_LEAVE = xcb_input_xi_event_mask_t.XCB_INPUT_XI_EVENT_MASK_BARRIER_LEAVE;
 
 /**
  * @brief xcb_input_event_mask_t
@@ -2390,36 +2460,52 @@ struct xcb_input_xi_query_version_reply_t {
     ubyte[20]  pad1; /**<  */
 }
 
-enum /* xcb_input_device_class_type_t */ {
+enum xcb_input_device_class_type_t {
     XCB_INPUT_DEVICE_CLASS_TYPE_KEY = 0,
     XCB_INPUT_DEVICE_CLASS_TYPE_BUTTON = 1,
     XCB_INPUT_DEVICE_CLASS_TYPE_VALUATOR = 2,
     XCB_INPUT_DEVICE_CLASS_TYPE_SCROLL = 3,
     XCB_INPUT_DEVICE_CLASS_TYPE_TOUCH = 8
 }
+alias XCB_INPUT_DEVICE_CLASS_TYPE_KEY = xcb_input_device_class_type_t.XCB_INPUT_DEVICE_CLASS_TYPE_KEY;
+alias XCB_INPUT_DEVICE_CLASS_TYPE_BUTTON = xcb_input_device_class_type_t.XCB_INPUT_DEVICE_CLASS_TYPE_BUTTON;
+alias XCB_INPUT_DEVICE_CLASS_TYPE_VALUATOR = xcb_input_device_class_type_t.XCB_INPUT_DEVICE_CLASS_TYPE_VALUATOR;
+alias XCB_INPUT_DEVICE_CLASS_TYPE_SCROLL = xcb_input_device_class_type_t.XCB_INPUT_DEVICE_CLASS_TYPE_SCROLL;
+alias XCB_INPUT_DEVICE_CLASS_TYPE_TOUCH = xcb_input_device_class_type_t.XCB_INPUT_DEVICE_CLASS_TYPE_TOUCH;
 
-enum /* xcb_input_device_type_t */ {
+enum xcb_input_device_type_t {
     XCB_INPUT_DEVICE_TYPE_MASTER_POINTER = 1,
     XCB_INPUT_DEVICE_TYPE_MASTER_KEYBOARD = 2,
     XCB_INPUT_DEVICE_TYPE_SLAVE_POINTER = 3,
     XCB_INPUT_DEVICE_TYPE_SLAVE_KEYBOARD = 4,
     XCB_INPUT_DEVICE_TYPE_FLOATING_SLAVE = 5
 }
+alias XCB_INPUT_DEVICE_TYPE_MASTER_POINTER = xcb_input_device_type_t.XCB_INPUT_DEVICE_TYPE_MASTER_POINTER;
+alias XCB_INPUT_DEVICE_TYPE_MASTER_KEYBOARD = xcb_input_device_type_t.XCB_INPUT_DEVICE_TYPE_MASTER_KEYBOARD;
+alias XCB_INPUT_DEVICE_TYPE_SLAVE_POINTER = xcb_input_device_type_t.XCB_INPUT_DEVICE_TYPE_SLAVE_POINTER;
+alias XCB_INPUT_DEVICE_TYPE_SLAVE_KEYBOARD = xcb_input_device_type_t.XCB_INPUT_DEVICE_TYPE_SLAVE_KEYBOARD;
+alias XCB_INPUT_DEVICE_TYPE_FLOATING_SLAVE = xcb_input_device_type_t.XCB_INPUT_DEVICE_TYPE_FLOATING_SLAVE;
 
-enum /* xcb_input_scroll_flags_t */ {
+enum xcb_input_scroll_flags_t {
     XCB_INPUT_SCROLL_FLAGS_NO_EMULATION = 1,
     XCB_INPUT_SCROLL_FLAGS_PREFERRED = 2
 }
+alias XCB_INPUT_SCROLL_FLAGS_NO_EMULATION = xcb_input_scroll_flags_t.XCB_INPUT_SCROLL_FLAGS_NO_EMULATION;
+alias XCB_INPUT_SCROLL_FLAGS_PREFERRED = xcb_input_scroll_flags_t.XCB_INPUT_SCROLL_FLAGS_PREFERRED;
 
-enum /* xcb_input_scroll_type_t */ {
+enum xcb_input_scroll_type_t {
     XCB_INPUT_SCROLL_TYPE_VERTICAL = 1,
     XCB_INPUT_SCROLL_TYPE_HORIZONTAL = 2
 }
+alias XCB_INPUT_SCROLL_TYPE_VERTICAL = xcb_input_scroll_type_t.XCB_INPUT_SCROLL_TYPE_VERTICAL;
+alias XCB_INPUT_SCROLL_TYPE_HORIZONTAL = xcb_input_scroll_type_t.XCB_INPUT_SCROLL_TYPE_HORIZONTAL;
 
-enum /* xcb_input_touch_mode_t */ {
+enum xcb_input_touch_mode_t {
     XCB_INPUT_TOUCH_MODE_DIRECT = 1,
     XCB_INPUT_TOUCH_MODE_DEPENDENT = 2
 }
+alias XCB_INPUT_TOUCH_MODE_DIRECT = xcb_input_touch_mode_t.XCB_INPUT_TOUCH_MODE_DIRECT;
+alias XCB_INPUT_TOUCH_MODE_DEPENDENT = xcb_input_touch_mode_t.XCB_INPUT_TOUCH_MODE_DEPENDENT;
 
 /**
  * @brief xcb_input_button_class_t
@@ -2651,10 +2737,12 @@ struct xcb_input_xi_get_focus_reply_t {
     ubyte[20]        pad1; /**<  */
 }
 
-enum /* xcb_input_grab_owner_t */ {
+enum xcb_input_grab_owner_t {
     XCB_INPUT_GRAB_OWNER_NO_OWNER = 0,
     XCB_INPUT_GRAB_OWNER_OWNER = 1
 }
+alias XCB_INPUT_GRAB_OWNER_NO_OWNER = xcb_input_grab_owner_t.XCB_INPUT_GRAB_OWNER_NO_OWNER;
+alias XCB_INPUT_GRAB_OWNER_OWNER = xcb_input_grab_owner_t.XCB_INPUT_GRAB_OWNER_OWNER;
 
 /**
  * @brief xcb_input_xi_grab_device_cookie_t
@@ -2711,7 +2799,7 @@ struct xcb_input_xi_ungrab_device_request_t {
     ubyte[2]                 pad0; /**<  */
 }
 
-enum /* xcb_input_event_mode_t */ {
+enum xcb_input_event_mode_t {
     XCB_INPUT_EVENT_MODE_ASYNC_DEVICE = 0,
     XCB_INPUT_EVENT_MODE_SYNC_DEVICE = 1,
     XCB_INPUT_EVENT_MODE_REPLAY_DEVICE = 2,
@@ -2721,6 +2809,14 @@ enum /* xcb_input_event_mode_t */ {
     XCB_INPUT_EVENT_MODE_ACCEPT_TOUCH = 6,
     XCB_INPUT_EVENT_MODE_REJECT_TOUCH = 7
 }
+alias XCB_INPUT_EVENT_MODE_ASYNC_DEVICE = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_ASYNC_DEVICE;
+alias XCB_INPUT_EVENT_MODE_SYNC_DEVICE = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_SYNC_DEVICE;
+alias XCB_INPUT_EVENT_MODE_REPLAY_DEVICE = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_REPLAY_DEVICE;
+alias XCB_INPUT_EVENT_MODE_ASYNC_PAIRED_DEVICE = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_ASYNC_PAIRED_DEVICE;
+alias XCB_INPUT_EVENT_MODE_ASYNC_PAIR = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_ASYNC_PAIR;
+alias XCB_INPUT_EVENT_MODE_SYNC_PAIR = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_SYNC_PAIR;
+alias XCB_INPUT_EVENT_MODE_ACCEPT_TOUCH = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_ACCEPT_TOUCH;
+alias XCB_INPUT_EVENT_MODE_REJECT_TOUCH = xcb_input_event_mode_t.XCB_INPUT_EVENT_MODE_REJECT_TOUCH;
 
 /** Opcode for xcb_input_xi_allow_events. */
 enum XCB_INPUT_XI_ALLOW_EVENTS = 53;
@@ -2740,23 +2836,32 @@ struct xcb_input_xi_allow_events_request_t {
     xcb_window_t          grab_window; /**<  */
 }
 
-enum /* xcb_input_grab_mode_22_t */ {
+enum xcb_input_grab_mode_22_t {
     XCB_INPUT_GRAB_MODE_22_SYNC = 0,
     XCB_INPUT_GRAB_MODE_22_ASYNC = 1,
     XCB_INPUT_GRAB_MODE_22_TOUCH = 2
 }
+alias XCB_INPUT_GRAB_MODE_22_SYNC = xcb_input_grab_mode_22_t.XCB_INPUT_GRAB_MODE_22_SYNC;
+alias XCB_INPUT_GRAB_MODE_22_ASYNC = xcb_input_grab_mode_22_t.XCB_INPUT_GRAB_MODE_22_ASYNC;
+alias XCB_INPUT_GRAB_MODE_22_TOUCH = xcb_input_grab_mode_22_t.XCB_INPUT_GRAB_MODE_22_TOUCH;
 
-enum /* xcb_input_grab_type_t */ {
+enum xcb_input_grab_type_t {
     XCB_INPUT_GRAB_TYPE_BUTTON = 0,
     XCB_INPUT_GRAB_TYPE_KEYCODE = 1,
     XCB_INPUT_GRAB_TYPE_ENTER = 2,
     XCB_INPUT_GRAB_TYPE_FOCUS_IN = 3,
     XCB_INPUT_GRAB_TYPE_TOUCH_BEGIN = 4
 }
+alias XCB_INPUT_GRAB_TYPE_BUTTON = xcb_input_grab_type_t.XCB_INPUT_GRAB_TYPE_BUTTON;
+alias XCB_INPUT_GRAB_TYPE_KEYCODE = xcb_input_grab_type_t.XCB_INPUT_GRAB_TYPE_KEYCODE;
+alias XCB_INPUT_GRAB_TYPE_ENTER = xcb_input_grab_type_t.XCB_INPUT_GRAB_TYPE_ENTER;
+alias XCB_INPUT_GRAB_TYPE_FOCUS_IN = xcb_input_grab_type_t.XCB_INPUT_GRAB_TYPE_FOCUS_IN;
+alias XCB_INPUT_GRAB_TYPE_TOUCH_BEGIN = xcb_input_grab_type_t.XCB_INPUT_GRAB_TYPE_TOUCH_BEGIN;
 
-enum /* xcb_input_modifier_mask_t */ {
+enum xcb_input_modifier_mask_t : uint {
     XCB_INPUT_MODIFIER_MASK_ANY = 2147483648
 }
+alias XCB_INPUT_MODIFIER_MASK_ANY = xcb_input_modifier_mask_t.XCB_INPUT_MODIFIER_MASK_ANY;
 
 /**
  * @brief xcb_input_grab_modifier_info_t
@@ -3196,7 +3301,7 @@ struct xcb_input_device_button_state_notify_event_t {
     ubyte[28]  buttons; /**<  */
 }
 
-enum /* xcb_input_device_change_t */ {
+enum xcb_input_device_change_t {
     XCB_INPUT_DEVICE_CHANGE_ADDED = 0,
     XCB_INPUT_DEVICE_CHANGE_REMOVED = 1,
     XCB_INPUT_DEVICE_CHANGE_ENABLED = 2,
@@ -3204,6 +3309,12 @@ enum /* xcb_input_device_change_t */ {
     XCB_INPUT_DEVICE_CHANGE_UNRECOVERABLE = 4,
     XCB_INPUT_DEVICE_CHANGE_CONTROL_CHANGED = 5
 }
+alias XCB_INPUT_DEVICE_CHANGE_ADDED = xcb_input_device_change_t.XCB_INPUT_DEVICE_CHANGE_ADDED;
+alias XCB_INPUT_DEVICE_CHANGE_REMOVED = xcb_input_device_change_t.XCB_INPUT_DEVICE_CHANGE_REMOVED;
+alias XCB_INPUT_DEVICE_CHANGE_ENABLED = xcb_input_device_change_t.XCB_INPUT_DEVICE_CHANGE_ENABLED;
+alias XCB_INPUT_DEVICE_CHANGE_DISABLED = xcb_input_device_change_t.XCB_INPUT_DEVICE_CHANGE_DISABLED;
+alias XCB_INPUT_DEVICE_CHANGE_UNRECOVERABLE = xcb_input_device_change_t.XCB_INPUT_DEVICE_CHANGE_UNRECOVERABLE;
+alias XCB_INPUT_DEVICE_CHANGE_CONTROL_CHANGED = xcb_input_device_change_t.XCB_INPUT_DEVICE_CHANGE_CONTROL_CHANGED;
 
 /** Opcode for xcb_input_device_presence_notify. */
 enum XCB_INPUT_DEVICE_PRESENCE_NOTIFY = 15;
@@ -3238,10 +3349,12 @@ struct xcb_input_device_property_notify_event_t {
     ubyte           device_id; /**<  */
 }
 
-enum /* xcb_input_change_reason_t */ {
+enum xcb_input_change_reason_t {
     XCB_INPUT_CHANGE_REASON_SLAVE_SWITCH = 1,
     XCB_INPUT_CHANGE_REASON_DEVICE_CHANGE = 2
 }
+alias XCB_INPUT_CHANGE_REASON_SLAVE_SWITCH = xcb_input_change_reason_t.XCB_INPUT_CHANGE_REASON_SLAVE_SWITCH;
+alias XCB_INPUT_CHANGE_REASON_DEVICE_CHANGE = xcb_input_change_reason_t.XCB_INPUT_CHANGE_REASON_DEVICE_CHANGE;
 
 /** Opcode for xcb_input_device_changed. */
 enum XCB_INPUT_DEVICE_CHANGED = 1;
@@ -3264,9 +3377,10 @@ struct xcb_input_device_changed_event_t {
     uint                  full_sequence; /**<  */
 }
 
-enum /* xcb_input_key_event_flags_t */ {
+enum xcb_input_key_event_flags_t {
     XCB_INPUT_KEY_EVENT_FLAGS_KEY_REPEAT = 65536
 }
+alias XCB_INPUT_KEY_EVENT_FLAGS_KEY_REPEAT = xcb_input_key_event_flags_t.XCB_INPUT_KEY_EVENT_FLAGS_KEY_REPEAT;
 
 /** Opcode for xcb_input_key_press. */
 enum XCB_INPUT_KEY_PRESS = 2;
@@ -3305,9 +3419,10 @@ enum XCB_INPUT_KEY_RELEASE = 3;
 
 alias xcb_input_key_release_event_t = xcb_input_key_press_event_t;
 
-enum /* xcb_input_pointer_event_flags_t */ {
+enum xcb_input_pointer_event_flags_t {
     XCB_INPUT_POINTER_EVENT_FLAGS_POINTER_EMULATED = 65536
 }
+alias XCB_INPUT_POINTER_EVENT_FLAGS_POINTER_EMULATED = xcb_input_pointer_event_flags_t.XCB_INPUT_POINTER_EVENT_FLAGS_POINTER_EMULATED;
 
 /** Opcode for xcb_input_button_press. */
 enum XCB_INPUT_BUTTON_PRESS = 4;
@@ -3351,7 +3466,7 @@ enum XCB_INPUT_MOTION = 6;
 
 alias xcb_input_motion_event_t = xcb_input_button_press_event_t;
 
-enum /* xcb_input_notify_mode_t */ {
+enum xcb_input_notify_mode_t {
     XCB_INPUT_NOTIFY_MODE_NORMAL = 0,
     XCB_INPUT_NOTIFY_MODE_GRAB = 1,
     XCB_INPUT_NOTIFY_MODE_UNGRAB = 2,
@@ -3359,8 +3474,14 @@ enum /* xcb_input_notify_mode_t */ {
     XCB_INPUT_NOTIFY_MODE_PASSIVE_GRAB = 4,
     XCB_INPUT_NOTIFY_MODE_PASSIVE_UNGRAB = 5
 }
+alias XCB_INPUT_NOTIFY_MODE_NORMAL = xcb_input_notify_mode_t.XCB_INPUT_NOTIFY_MODE_NORMAL;
+alias XCB_INPUT_NOTIFY_MODE_GRAB = xcb_input_notify_mode_t.XCB_INPUT_NOTIFY_MODE_GRAB;
+alias XCB_INPUT_NOTIFY_MODE_UNGRAB = xcb_input_notify_mode_t.XCB_INPUT_NOTIFY_MODE_UNGRAB;
+alias XCB_INPUT_NOTIFY_MODE_WHILE_GRABBED = xcb_input_notify_mode_t.XCB_INPUT_NOTIFY_MODE_WHILE_GRABBED;
+alias XCB_INPUT_NOTIFY_MODE_PASSIVE_GRAB = xcb_input_notify_mode_t.XCB_INPUT_NOTIFY_MODE_PASSIVE_GRAB;
+alias XCB_INPUT_NOTIFY_MODE_PASSIVE_UNGRAB = xcb_input_notify_mode_t.XCB_INPUT_NOTIFY_MODE_PASSIVE_UNGRAB;
 
-enum /* xcb_input_notify_detail_t */ {
+enum xcb_input_notify_detail_t {
     XCB_INPUT_NOTIFY_DETAIL_ANCESTOR = 0,
     XCB_INPUT_NOTIFY_DETAIL_VIRTUAL = 1,
     XCB_INPUT_NOTIFY_DETAIL_INFERIOR = 2,
@@ -3370,6 +3491,14 @@ enum /* xcb_input_notify_detail_t */ {
     XCB_INPUT_NOTIFY_DETAIL_POINTER_ROOT = 6,
     XCB_INPUT_NOTIFY_DETAIL_NONE = 7
 }
+alias XCB_INPUT_NOTIFY_DETAIL_ANCESTOR = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_ANCESTOR;
+alias XCB_INPUT_NOTIFY_DETAIL_VIRTUAL = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_VIRTUAL;
+alias XCB_INPUT_NOTIFY_DETAIL_INFERIOR = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_INFERIOR;
+alias XCB_INPUT_NOTIFY_DETAIL_NONLINEAR = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_NONLINEAR;
+alias XCB_INPUT_NOTIFY_DETAIL_NONLINEAR_VIRTUAL = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_NONLINEAR_VIRTUAL;
+alias XCB_INPUT_NOTIFY_DETAIL_POINTER = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_POINTER;
+alias XCB_INPUT_NOTIFY_DETAIL_POINTER_ROOT = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_POINTER_ROOT;
+alias XCB_INPUT_NOTIFY_DETAIL_NONE = xcb_input_notify_detail_t.XCB_INPUT_NOTIFY_DETAIL_NONE;
 
 /** Opcode for xcb_input_enter. */
 enum XCB_INPUT_ENTER = 7;
@@ -3418,7 +3547,7 @@ enum XCB_INPUT_FOCUS_OUT = 10;
 
 alias xcb_input_focus_out_event_t = xcb_input_enter_event_t;
 
-enum /* xcb_input_hierarchy_mask_t */ {
+enum xcb_input_hierarchy_mask_t {
     XCB_INPUT_HIERARCHY_MASK_MASTER_ADDED = 1,
     XCB_INPUT_HIERARCHY_MASK_MASTER_REMOVED = 2,
     XCB_INPUT_HIERARCHY_MASK_SLAVE_ADDED = 4,
@@ -3428,6 +3557,14 @@ enum /* xcb_input_hierarchy_mask_t */ {
     XCB_INPUT_HIERARCHY_MASK_DEVICE_ENABLED = 64,
     XCB_INPUT_HIERARCHY_MASK_DEVICE_DISABLED = 128
 }
+alias XCB_INPUT_HIERARCHY_MASK_MASTER_ADDED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_MASTER_ADDED;
+alias XCB_INPUT_HIERARCHY_MASK_MASTER_REMOVED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_MASTER_REMOVED;
+alias XCB_INPUT_HIERARCHY_MASK_SLAVE_ADDED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_SLAVE_ADDED;
+alias XCB_INPUT_HIERARCHY_MASK_SLAVE_REMOVED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_SLAVE_REMOVED;
+alias XCB_INPUT_HIERARCHY_MASK_SLAVE_ATTACHED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_SLAVE_ATTACHED;
+alias XCB_INPUT_HIERARCHY_MASK_SLAVE_DETACHED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_SLAVE_DETACHED;
+alias XCB_INPUT_HIERARCHY_MASK_DEVICE_ENABLED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_DEVICE_ENABLED;
+alias XCB_INPUT_HIERARCHY_MASK_DEVICE_DISABLED = xcb_input_hierarchy_mask_t.XCB_INPUT_HIERARCHY_MASK_DEVICE_DISABLED;
 
 /**
  * @brief xcb_input_hierarchy_info_t
@@ -3470,11 +3607,14 @@ struct xcb_input_hierarchy_event_t {
     uint                  full_sequence; /**<  */
 }
 
-enum /* xcb_input_property_flag_t */ {
+enum xcb_input_property_flag_t {
     XCB_INPUT_PROPERTY_FLAG_DELETED = 0,
     XCB_INPUT_PROPERTY_FLAG_CREATED = 1,
     XCB_INPUT_PROPERTY_FLAG_MODIFIED = 2
 }
+alias XCB_INPUT_PROPERTY_FLAG_DELETED = xcb_input_property_flag_t.XCB_INPUT_PROPERTY_FLAG_DELETED;
+alias XCB_INPUT_PROPERTY_FLAG_CREATED = xcb_input_property_flag_t.XCB_INPUT_PROPERTY_FLAG_CREATED;
+alias XCB_INPUT_PROPERTY_FLAG_MODIFIED = xcb_input_property_flag_t.XCB_INPUT_PROPERTY_FLAG_MODIFIED;
 
 /** Opcode for xcb_input_property. */
 enum XCB_INPUT_PROPERTY = 12;
@@ -3555,10 +3695,12 @@ enum XCB_INPUT_RAW_MOTION = 17;
 
 alias xcb_input_raw_motion_event_t = xcb_input_raw_button_press_event_t;
 
-enum /* xcb_input_touch_event_flags_t */ {
+enum xcb_input_touch_event_flags_t {
     XCB_INPUT_TOUCH_EVENT_FLAGS_TOUCH_PENDING_END = 65536,
     XCB_INPUT_TOUCH_EVENT_FLAGS_TOUCH_EMULATING_POINTER = 131072
 }
+alias XCB_INPUT_TOUCH_EVENT_FLAGS_TOUCH_PENDING_END = xcb_input_touch_event_flags_t.XCB_INPUT_TOUCH_EVENT_FLAGS_TOUCH_PENDING_END;
+alias XCB_INPUT_TOUCH_EVENT_FLAGS_TOUCH_EMULATING_POINTER = xcb_input_touch_event_flags_t.XCB_INPUT_TOUCH_EVENT_FLAGS_TOUCH_EMULATING_POINTER;
 
 /** Opcode for xcb_input_touch_begin. */
 enum XCB_INPUT_TOUCH_BEGIN = 18;
@@ -3602,9 +3744,10 @@ enum XCB_INPUT_TOUCH_END = 20;
 
 alias xcb_input_touch_end_event_t = xcb_input_touch_begin_event_t;
 
-enum /* xcb_input_touch_ownership_flags_t */ {
+enum xcb_input_touch_ownership_flags_t {
     XCB_INPUT_TOUCH_OWNERSHIP_FLAGS_NONE = 0
 }
+alias XCB_INPUT_TOUCH_OWNERSHIP_FLAGS_NONE = xcb_input_touch_ownership_flags_t.XCB_INPUT_TOUCH_OWNERSHIP_FLAGS_NONE;
 
 /** Opcode for xcb_input_touch_ownership. */
 enum XCB_INPUT_TOUCH_OWNERSHIP = 21;

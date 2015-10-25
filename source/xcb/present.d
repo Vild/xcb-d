@@ -25,45 +25,67 @@ enum int XCB_PRESENT_MINOR_VERSION = 0;
 
 extern(C) extern xcb_extension_t xcb_present_id;
 
-enum /* xcb_present_event_enum_t */ {
+enum xcb_present_event_enum_t {
     XCB_PRESENT_EVENT_CONFIGURE_NOTIFY = 0,
     XCB_PRESENT_EVENT_COMPLETE_NOTIFY = 1,
     XCB_PRESENT_EVENT_IDLE_NOTIFY = 2,
     XCB_PRESENT_EVENT_REDIRECT_NOTIFY = 3
 }
+alias XCB_PRESENT_EVENT_CONFIGURE_NOTIFY = xcb_present_event_enum_t.XCB_PRESENT_EVENT_CONFIGURE_NOTIFY;
+alias XCB_PRESENT_EVENT_COMPLETE_NOTIFY = xcb_present_event_enum_t.XCB_PRESENT_EVENT_COMPLETE_NOTIFY;
+alias XCB_PRESENT_EVENT_IDLE_NOTIFY = xcb_present_event_enum_t.XCB_PRESENT_EVENT_IDLE_NOTIFY;
+alias XCB_PRESENT_EVENT_REDIRECT_NOTIFY = xcb_present_event_enum_t.XCB_PRESENT_EVENT_REDIRECT_NOTIFY;
 
-enum /* xcb_present_event_mask_t */ {
+enum xcb_present_event_mask_t {
     XCB_PRESENT_EVENT_MASK_NO_EVENT = 0,
     XCB_PRESENT_EVENT_MASK_CONFIGURE_NOTIFY = 1,
     XCB_PRESENT_EVENT_MASK_COMPLETE_NOTIFY = 2,
     XCB_PRESENT_EVENT_MASK_IDLE_NOTIFY = 4,
     XCB_PRESENT_EVENT_MASK_REDIRECT_NOTIFY = 8
 }
+alias XCB_PRESENT_EVENT_MASK_NO_EVENT = xcb_present_event_mask_t.XCB_PRESENT_EVENT_MASK_NO_EVENT;
+alias XCB_PRESENT_EVENT_MASK_CONFIGURE_NOTIFY = xcb_present_event_mask_t.XCB_PRESENT_EVENT_MASK_CONFIGURE_NOTIFY;
+alias XCB_PRESENT_EVENT_MASK_COMPLETE_NOTIFY = xcb_present_event_mask_t.XCB_PRESENT_EVENT_MASK_COMPLETE_NOTIFY;
+alias XCB_PRESENT_EVENT_MASK_IDLE_NOTIFY = xcb_present_event_mask_t.XCB_PRESENT_EVENT_MASK_IDLE_NOTIFY;
+alias XCB_PRESENT_EVENT_MASK_REDIRECT_NOTIFY = xcb_present_event_mask_t.XCB_PRESENT_EVENT_MASK_REDIRECT_NOTIFY;
 
-enum /* xcb_present_option_t */ {
+enum xcb_present_option_t {
     XCB_PRESENT_OPTION_NONE = 0,
     XCB_PRESENT_OPTION_ASYNC = 1,
     XCB_PRESENT_OPTION_COPY = 2,
     XCB_PRESENT_OPTION_UST = 4
 }
+alias XCB_PRESENT_OPTION_NONE = xcb_present_option_t.XCB_PRESENT_OPTION_NONE;
+alias XCB_PRESENT_OPTION_ASYNC = xcb_present_option_t.XCB_PRESENT_OPTION_ASYNC;
+alias XCB_PRESENT_OPTION_COPY = xcb_present_option_t.XCB_PRESENT_OPTION_COPY;
+alias XCB_PRESENT_OPTION_UST = xcb_present_option_t.XCB_PRESENT_OPTION_UST;
 
-enum /* xcb_present_capability_t */ {
+enum xcb_present_capability_t {
     XCB_PRESENT_CAPABILITY_NONE = 0,
     XCB_PRESENT_CAPABILITY_ASYNC = 1,
     XCB_PRESENT_CAPABILITY_FENCE = 2,
     XCB_PRESENT_CAPABILITY_UST = 4
 }
+alias XCB_PRESENT_CAPABILITY_NONE = xcb_present_capability_t.XCB_PRESENT_CAPABILITY_NONE;
+alias XCB_PRESENT_CAPABILITY_ASYNC = xcb_present_capability_t.XCB_PRESENT_CAPABILITY_ASYNC;
+alias XCB_PRESENT_CAPABILITY_FENCE = xcb_present_capability_t.XCB_PRESENT_CAPABILITY_FENCE;
+alias XCB_PRESENT_CAPABILITY_UST = xcb_present_capability_t.XCB_PRESENT_CAPABILITY_UST;
 
-enum /* xcb_present_complete_kind_t */ {
+enum xcb_present_complete_kind_t {
     XCB_PRESENT_COMPLETE_KIND_PIXMAP = 0,
     XCB_PRESENT_COMPLETE_KIND_NOTIFY_MSC = 1
 }
+alias XCB_PRESENT_COMPLETE_KIND_PIXMAP = xcb_present_complete_kind_t.XCB_PRESENT_COMPLETE_KIND_PIXMAP;
+alias XCB_PRESENT_COMPLETE_KIND_NOTIFY_MSC = xcb_present_complete_kind_t.XCB_PRESENT_COMPLETE_KIND_NOTIFY_MSC;
 
-enum /* xcb_present_complete_mode_t */ {
+enum xcb_present_complete_mode_t {
     XCB_PRESENT_COMPLETE_MODE_COPY = 0,
     XCB_PRESENT_COMPLETE_MODE_FLIP = 1,
     XCB_PRESENT_COMPLETE_MODE_SKIP = 2
 }
+alias XCB_PRESENT_COMPLETE_MODE_COPY = xcb_present_complete_mode_t.XCB_PRESENT_COMPLETE_MODE_COPY;
+alias XCB_PRESENT_COMPLETE_MODE_FLIP = xcb_present_complete_mode_t.XCB_PRESENT_COMPLETE_MODE_FLIP;
+alias XCB_PRESENT_COMPLETE_MODE_SKIP = xcb_present_complete_mode_t.XCB_PRESENT_COMPLETE_MODE_SKIP;
 
 /**
  * @brief xcb_present_notify_t

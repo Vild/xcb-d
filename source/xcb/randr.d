@@ -115,7 +115,7 @@ struct xcb_randr_bad_provider_error_t {
     ushort sequence; /**<  */
 }
 
-enum /* xcb_randr_rotation_t */ {
+enum xcb_randr_rotation_t {
     XCB_RANDR_ROTATION_ROTATE_0 = 1,
     XCB_RANDR_ROTATION_ROTATE_90 = 2,
     XCB_RANDR_ROTATION_ROTATE_180 = 4,
@@ -123,6 +123,12 @@ enum /* xcb_randr_rotation_t */ {
     XCB_RANDR_ROTATION_REFLECT_X = 16,
     XCB_RANDR_ROTATION_REFLECT_Y = 32
 }
+alias XCB_RANDR_ROTATION_ROTATE_0 = xcb_randr_rotation_t.XCB_RANDR_ROTATION_ROTATE_0;
+alias XCB_RANDR_ROTATION_ROTATE_90 = xcb_randr_rotation_t.XCB_RANDR_ROTATION_ROTATE_90;
+alias XCB_RANDR_ROTATION_ROTATE_180 = xcb_randr_rotation_t.XCB_RANDR_ROTATION_ROTATE_180;
+alias XCB_RANDR_ROTATION_ROTATE_270 = xcb_randr_rotation_t.XCB_RANDR_ROTATION_ROTATE_270;
+alias XCB_RANDR_ROTATION_REFLECT_X = xcb_randr_rotation_t.XCB_RANDR_ROTATION_REFLECT_X;
+alias XCB_RANDR_ROTATION_REFLECT_Y = xcb_randr_rotation_t.XCB_RANDR_ROTATION_REFLECT_Y;
 
 /**
  * @brief xcb_randr_screen_size_t
@@ -193,12 +199,16 @@ struct xcb_randr_query_version_reply_t {
     ubyte[16]  pad1; /**<  */
 }
 
-enum /* xcb_randr_set_config_t */ {
+enum xcb_randr_set_config_t {
     XCB_RANDR_SET_CONFIG_SUCCESS = 0,
     XCB_RANDR_SET_CONFIG_INVALID_CONFIG_TIME = 1,
     XCB_RANDR_SET_CONFIG_INVALID_TIME = 2,
     XCB_RANDR_SET_CONFIG_FAILED = 3
 }
+alias XCB_RANDR_SET_CONFIG_SUCCESS = xcb_randr_set_config_t.XCB_RANDR_SET_CONFIG_SUCCESS;
+alias XCB_RANDR_SET_CONFIG_INVALID_CONFIG_TIME = xcb_randr_set_config_t.XCB_RANDR_SET_CONFIG_INVALID_CONFIG_TIME;
+alias XCB_RANDR_SET_CONFIG_INVALID_TIME = xcb_randr_set_config_t.XCB_RANDR_SET_CONFIG_INVALID_TIME;
+alias XCB_RANDR_SET_CONFIG_FAILED = xcb_randr_set_config_t.XCB_RANDR_SET_CONFIG_FAILED;
 
 /**
  * @brief xcb_randr_set_screen_config_cookie_t
@@ -241,7 +251,7 @@ struct xcb_randr_set_screen_config_reply_t {
     ubyte[10]           pad0; /**<  */
 }
 
-enum /* xcb_randr_notify_mask_t */ {
+enum xcb_randr_notify_mask_t {
     XCB_RANDR_NOTIFY_MASK_SCREEN_CHANGE = 1,
     XCB_RANDR_NOTIFY_MASK_CRTC_CHANGE = 2,
     XCB_RANDR_NOTIFY_MASK_OUTPUT_CHANGE = 4,
@@ -250,6 +260,13 @@ enum /* xcb_randr_notify_mask_t */ {
     XCB_RANDR_NOTIFY_MASK_PROVIDER_PROPERTY = 32,
     XCB_RANDR_NOTIFY_MASK_RESOURCE_CHANGE = 64
 }
+alias XCB_RANDR_NOTIFY_MASK_SCREEN_CHANGE = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_SCREEN_CHANGE;
+alias XCB_RANDR_NOTIFY_MASK_CRTC_CHANGE = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_CRTC_CHANGE;
+alias XCB_RANDR_NOTIFY_MASK_OUTPUT_CHANGE = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_OUTPUT_CHANGE;
+alias XCB_RANDR_NOTIFY_MASK_OUTPUT_PROPERTY = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_OUTPUT_PROPERTY;
+alias XCB_RANDR_NOTIFY_MASK_PROVIDER_CHANGE = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_PROVIDER_CHANGE;
+alias XCB_RANDR_NOTIFY_MASK_PROVIDER_PROPERTY = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_PROVIDER_PROPERTY;
+alias XCB_RANDR_NOTIFY_MASK_RESOURCE_CHANGE = xcb_randr_notify_mask_t.XCB_RANDR_NOTIFY_MASK_RESOURCE_CHANGE;
 
 /** Opcode for xcb_randr_select_input. */
 enum XCB_RANDR_SELECT_INPUT = 4;
@@ -357,7 +374,7 @@ struct xcb_randr_set_screen_size_request_t {
     uint         mm_height; /**<  */
 }
 
-enum /* xcb_randr_mode_flag_t */ {
+enum xcb_randr_mode_flag_t {
     XCB_RANDR_MODE_FLAG_HSYNC_POSITIVE = 1,
     XCB_RANDR_MODE_FLAG_HSYNC_NEGATIVE = 2,
     XCB_RANDR_MODE_FLAG_VSYNC_POSITIVE = 4,
@@ -373,6 +390,20 @@ enum /* xcb_randr_mode_flag_t */ {
     XCB_RANDR_MODE_FLAG_DOUBLE_CLOCK = 4096,
     XCB_RANDR_MODE_FLAG_HALVE_CLOCK = 8192
 }
+alias XCB_RANDR_MODE_FLAG_HSYNC_POSITIVE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_HSYNC_POSITIVE;
+alias XCB_RANDR_MODE_FLAG_HSYNC_NEGATIVE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_HSYNC_NEGATIVE;
+alias XCB_RANDR_MODE_FLAG_VSYNC_POSITIVE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_VSYNC_POSITIVE;
+alias XCB_RANDR_MODE_FLAG_VSYNC_NEGATIVE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_VSYNC_NEGATIVE;
+alias XCB_RANDR_MODE_FLAG_INTERLACE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_INTERLACE;
+alias XCB_RANDR_MODE_FLAG_DOUBLE_SCAN = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_DOUBLE_SCAN;
+alias XCB_RANDR_MODE_FLAG_CSYNC = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_CSYNC;
+alias XCB_RANDR_MODE_FLAG_CSYNC_POSITIVE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_CSYNC_POSITIVE;
+alias XCB_RANDR_MODE_FLAG_CSYNC_NEGATIVE = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_CSYNC_NEGATIVE;
+alias XCB_RANDR_MODE_FLAG_HSKEW_PRESENT = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_HSKEW_PRESENT;
+alias XCB_RANDR_MODE_FLAG_BCAST = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_BCAST;
+alias XCB_RANDR_MODE_FLAG_PIXEL_MULTIPLEX = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_PIXEL_MULTIPLEX;
+alias XCB_RANDR_MODE_FLAG_DOUBLE_CLOCK = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_DOUBLE_CLOCK;
+alias XCB_RANDR_MODE_FLAG_HALVE_CLOCK = xcb_randr_mode_flag_t.XCB_RANDR_MODE_FLAG_HALVE_CLOCK;
 
 /**
  * @brief xcb_randr_mode_info_t
@@ -439,11 +470,14 @@ struct xcb_randr_get_screen_resources_reply_t {
     ubyte[8]           pad1; /**<  */
 }
 
-enum /* xcb_randr_connection_t */ {
+enum xcb_randr_connection_t {
     XCB_RANDR_CONNECTION_CONNECTED = 0,
     XCB_RANDR_CONNECTION_DISCONNECTED = 1,
     XCB_RANDR_CONNECTION_UNKNOWN = 2
 }
+alias XCB_RANDR_CONNECTION_CONNECTED = xcb_randr_connection_t.XCB_RANDR_CONNECTION_CONNECTED;
+alias XCB_RANDR_CONNECTION_DISCONNECTED = xcb_randr_connection_t.XCB_RANDR_CONNECTION_DISCONNECTED;
+alias XCB_RANDR_CONNECTION_UNKNOWN = xcb_randr_connection_t.XCB_RANDR_CONNECTION_UNKNOWN;
 
 /**
  * @brief xcb_randr_get_output_info_cookie_t
@@ -915,12 +949,16 @@ struct xcb_randr_get_screen_resources_current_reply_t {
     ubyte[8]           pad1; /**<  */
 }
 
-enum /* xcb_randr_transform_t */ {
+enum xcb_randr_transform_t {
     XCB_RANDR_TRANSFORM_UNIT = 1,
     XCB_RANDR_TRANSFORM_SCALE_UP = 2,
     XCB_RANDR_TRANSFORM_SCALE_DOWN = 4,
     XCB_RANDR_TRANSFORM_PROJECTIVE = 8
 }
+alias XCB_RANDR_TRANSFORM_UNIT = xcb_randr_transform_t.XCB_RANDR_TRANSFORM_UNIT;
+alias XCB_RANDR_TRANSFORM_SCALE_UP = xcb_randr_transform_t.XCB_RANDR_TRANSFORM_SCALE_UP;
+alias XCB_RANDR_TRANSFORM_SCALE_DOWN = xcb_randr_transform_t.XCB_RANDR_TRANSFORM_SCALE_DOWN;
+alias XCB_RANDR_TRANSFORM_PROJECTIVE = xcb_randr_transform_t.XCB_RANDR_TRANSFORM_PROJECTIVE;
 
 /** Opcode for xcb_randr_set_crtc_transform. */
 enum XCB_RANDR_SET_CRTC_TRANSFORM = 26;
@@ -1142,12 +1180,16 @@ struct xcb_randr_get_providers_reply_t {
     ubyte[18]           pad1; /**<  */
 }
 
-enum /* xcb_randr_provider_capability_t */ {
+enum xcb_randr_provider_capability_t {
     XCB_RANDR_PROVIDER_CAPABILITY_SOURCE_OUTPUT = 1,
     XCB_RANDR_PROVIDER_CAPABILITY_SINK_OUTPUT = 2,
     XCB_RANDR_PROVIDER_CAPABILITY_SOURCE_OFFLOAD = 4,
     XCB_RANDR_PROVIDER_CAPABILITY_SINK_OFFLOAD = 8
 }
+alias XCB_RANDR_PROVIDER_CAPABILITY_SOURCE_OUTPUT = xcb_randr_provider_capability_t.XCB_RANDR_PROVIDER_CAPABILITY_SOURCE_OUTPUT;
+alias XCB_RANDR_PROVIDER_CAPABILITY_SINK_OUTPUT = xcb_randr_provider_capability_t.XCB_RANDR_PROVIDER_CAPABILITY_SINK_OUTPUT;
+alias XCB_RANDR_PROVIDER_CAPABILITY_SOURCE_OFFLOAD = xcb_randr_provider_capability_t.XCB_RANDR_PROVIDER_CAPABILITY_SOURCE_OFFLOAD;
+alias XCB_RANDR_PROVIDER_CAPABILITY_SINK_OFFLOAD = xcb_randr_provider_capability_t.XCB_RANDR_PROVIDER_CAPABILITY_SINK_OFFLOAD;
 
 /**
  * @brief xcb_randr_get_provider_info_cookie_t
@@ -1397,7 +1439,7 @@ struct xcb_randr_screen_change_notify_event_t {
     ushort          mheight; /**<  */
 }
 
-enum /* xcb_randr_notify_t */ {
+enum xcb_randr_notify_t {
     XCB_RANDR_NOTIFY_CRTC_CHANGE = 0,
     XCB_RANDR_NOTIFY_OUTPUT_CHANGE = 1,
     XCB_RANDR_NOTIFY_OUTPUT_PROPERTY = 2,
@@ -1405,6 +1447,12 @@ enum /* xcb_randr_notify_t */ {
     XCB_RANDR_NOTIFY_PROVIDER_PROPERTY = 4,
     XCB_RANDR_NOTIFY_RESOURCE_CHANGE = 5
 }
+alias XCB_RANDR_NOTIFY_CRTC_CHANGE = xcb_randr_notify_t.XCB_RANDR_NOTIFY_CRTC_CHANGE;
+alias XCB_RANDR_NOTIFY_OUTPUT_CHANGE = xcb_randr_notify_t.XCB_RANDR_NOTIFY_OUTPUT_CHANGE;
+alias XCB_RANDR_NOTIFY_OUTPUT_PROPERTY = xcb_randr_notify_t.XCB_RANDR_NOTIFY_OUTPUT_PROPERTY;
+alias XCB_RANDR_NOTIFY_PROVIDER_CHANGE = xcb_randr_notify_t.XCB_RANDR_NOTIFY_PROVIDER_CHANGE;
+alias XCB_RANDR_NOTIFY_PROVIDER_PROPERTY = xcb_randr_notify_t.XCB_RANDR_NOTIFY_PROVIDER_PROPERTY;
+alias XCB_RANDR_NOTIFY_RESOURCE_CHANGE = xcb_randr_notify_t.XCB_RANDR_NOTIFY_RESOURCE_CHANGE;
 
 /**
  * @brief xcb_randr_crtc_change_t

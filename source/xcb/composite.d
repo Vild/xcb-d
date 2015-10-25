@@ -23,10 +23,12 @@ enum int XCB_COMPOSITE_MINOR_VERSION = 4;
 
 extern(C) extern xcb_extension_t xcb_composite_id;
 
-enum /* xcb_composite_redirect_t */ {
+enum xcb_composite_redirect_t {
     XCB_COMPOSITE_REDIRECT_AUTOMATIC = 0,
     XCB_COMPOSITE_REDIRECT_MANUAL = 1
 }
+alias XCB_COMPOSITE_REDIRECT_AUTOMATIC = xcb_composite_redirect_t.XCB_COMPOSITE_REDIRECT_AUTOMATIC;
+alias XCB_COMPOSITE_REDIRECT_MANUAL = xcb_composite_redirect_t.XCB_COMPOSITE_REDIRECT_MANUAL;
 
 /**
  * @brief xcb_composite_query_version_cookie_t

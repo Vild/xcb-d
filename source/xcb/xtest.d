@@ -55,10 +55,12 @@ struct xcb_test_get_version_reply_t {
     ushort minor_version; /**<  */
 }
 
-enum /* xcb_test_cursor_t */ {
+enum xcb_test_cursor_t {
     XCB_TEST_CURSOR_NONE = 0,
     XCB_TEST_CURSOR_CURRENT = 1
 }
+alias XCB_TEST_CURSOR_NONE = xcb_test_cursor_t.XCB_TEST_CURSOR_NONE;
+alias XCB_TEST_CURSOR_CURRENT = xcb_test_cursor_t.XCB_TEST_CURSOR_CURRENT;
 
 /**
  * @brief xcb_test_compare_cursor_cookie_t

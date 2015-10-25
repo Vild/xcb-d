@@ -157,12 +157,16 @@ struct xcb_dpms_disable_request_t {
     ushort length; /**<  */
 }
 
-enum /* xcb_dpms_dpms_mode_t */ {
+enum xcb_dpms_dpms_mode_t {
     XCB_DPMS_DPMS_MODE_ON = 0,
     XCB_DPMS_DPMS_MODE_STANDBY = 1,
     XCB_DPMS_DPMS_MODE_SUSPEND = 2,
     XCB_DPMS_DPMS_MODE_OFF = 3
 }
+alias XCB_DPMS_DPMS_MODE_ON = xcb_dpms_dpms_mode_t.XCB_DPMS_DPMS_MODE_ON;
+alias XCB_DPMS_DPMS_MODE_STANDBY = xcb_dpms_dpms_mode_t.XCB_DPMS_DPMS_MODE_STANDBY;
+alias XCB_DPMS_DPMS_MODE_SUSPEND = xcb_dpms_dpms_mode_t.XCB_DPMS_DPMS_MODE_SUSPEND;
+alias XCB_DPMS_DPMS_MODE_OFF = xcb_dpms_dpms_mode_t.XCB_DPMS_DPMS_MODE_OFF;
 
 /** Opcode for xcb_dpms_force_level. */
 enum XCB_DPMS_FORCE_LEVEL = 6;

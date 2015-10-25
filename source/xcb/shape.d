@@ -44,19 +44,27 @@ struct xcb_shape_kind_iterator_t {
     int               index; /**<  */
 }
 
-enum /* xcb_shape_so_t */ {
+enum xcb_shape_so_t {
     XCB_SHAPE_SO_SET = 0,
     XCB_SHAPE_SO_UNION = 1,
     XCB_SHAPE_SO_INTERSECT = 2,
     XCB_SHAPE_SO_SUBTRACT = 3,
     XCB_SHAPE_SO_INVERT = 4
 }
+alias XCB_SHAPE_SO_SET = xcb_shape_so_t.XCB_SHAPE_SO_SET;
+alias XCB_SHAPE_SO_UNION = xcb_shape_so_t.XCB_SHAPE_SO_UNION;
+alias XCB_SHAPE_SO_INTERSECT = xcb_shape_so_t.XCB_SHAPE_SO_INTERSECT;
+alias XCB_SHAPE_SO_SUBTRACT = xcb_shape_so_t.XCB_SHAPE_SO_SUBTRACT;
+alias XCB_SHAPE_SO_INVERT = xcb_shape_so_t.XCB_SHAPE_SO_INVERT;
 
-enum /* xcb_shape_sk_t */ {
+enum xcb_shape_sk_t {
     XCB_SHAPE_SK_BOUNDING = 0,
     XCB_SHAPE_SK_CLIP = 1,
     XCB_SHAPE_SK_INPUT = 2
 }
+alias XCB_SHAPE_SK_BOUNDING = xcb_shape_sk_t.XCB_SHAPE_SK_BOUNDING;
+alias XCB_SHAPE_SK_CLIP = xcb_shape_sk_t.XCB_SHAPE_SK_CLIP;
+alias XCB_SHAPE_SK_INPUT = xcb_shape_sk_t.XCB_SHAPE_SK_INPUT;
 
 /** Opcode for xcb_shape_notify. */
 enum XCB_SHAPE_NOTIFY = 0;

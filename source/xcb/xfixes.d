@@ -58,20 +58,26 @@ struct xcb_xfixes_query_version_reply_t {
     ubyte[16]  pad1; /**<  */
 }
 
-enum /* xcb_xfixes_save_set_mode_t */ {
+enum xcb_xfixes_save_set_mode_t {
     XCB_XFIXES_SAVE_SET_MODE_INSERT = 0,
     XCB_XFIXES_SAVE_SET_MODE_DELETE = 1
 }
+alias XCB_XFIXES_SAVE_SET_MODE_INSERT = xcb_xfixes_save_set_mode_t.XCB_XFIXES_SAVE_SET_MODE_INSERT;
+alias XCB_XFIXES_SAVE_SET_MODE_DELETE = xcb_xfixes_save_set_mode_t.XCB_XFIXES_SAVE_SET_MODE_DELETE;
 
-enum /* xcb_xfixes_save_set_target_t */ {
+enum xcb_xfixes_save_set_target_t {
     XCB_XFIXES_SAVE_SET_TARGET_NEAREST = 0,
     XCB_XFIXES_SAVE_SET_TARGET_ROOT = 1
 }
+alias XCB_XFIXES_SAVE_SET_TARGET_NEAREST = xcb_xfixes_save_set_target_t.XCB_XFIXES_SAVE_SET_TARGET_NEAREST;
+alias XCB_XFIXES_SAVE_SET_TARGET_ROOT = xcb_xfixes_save_set_target_t.XCB_XFIXES_SAVE_SET_TARGET_ROOT;
 
-enum /* xcb_xfixes_save_set_mapping_t */ {
+enum xcb_xfixes_save_set_mapping_t {
     XCB_XFIXES_SAVE_SET_MAPPING_MAP = 0,
     XCB_XFIXES_SAVE_SET_MAPPING_UNMAP = 1
 }
+alias XCB_XFIXES_SAVE_SET_MAPPING_MAP = xcb_xfixes_save_set_mapping_t.XCB_XFIXES_SAVE_SET_MAPPING_MAP;
+alias XCB_XFIXES_SAVE_SET_MAPPING_UNMAP = xcb_xfixes_save_set_mapping_t.XCB_XFIXES_SAVE_SET_MAPPING_UNMAP;
 
 /** Opcode for xcb_xfixes_change_save_set. */
 enum XCB_XFIXES_CHANGE_SAVE_SET = 1;
@@ -90,17 +96,23 @@ struct xcb_xfixes_change_save_set_request_t {
     xcb_window_t window; /**<  */
 }
 
-enum /* xcb_xfixes_selection_event_t */ {
+enum xcb_xfixes_selection_event_t {
     XCB_XFIXES_SELECTION_EVENT_SET_SELECTION_OWNER = 0,
     XCB_XFIXES_SELECTION_EVENT_SELECTION_WINDOW_DESTROY = 1,
     XCB_XFIXES_SELECTION_EVENT_SELECTION_CLIENT_CLOSE = 2
 }
+alias XCB_XFIXES_SELECTION_EVENT_SET_SELECTION_OWNER = xcb_xfixes_selection_event_t.XCB_XFIXES_SELECTION_EVENT_SET_SELECTION_OWNER;
+alias XCB_XFIXES_SELECTION_EVENT_SELECTION_WINDOW_DESTROY = xcb_xfixes_selection_event_t.XCB_XFIXES_SELECTION_EVENT_SELECTION_WINDOW_DESTROY;
+alias XCB_XFIXES_SELECTION_EVENT_SELECTION_CLIENT_CLOSE = xcb_xfixes_selection_event_t.XCB_XFIXES_SELECTION_EVENT_SELECTION_CLIENT_CLOSE;
 
-enum /* xcb_xfixes_selection_event_mask_t */ {
+enum xcb_xfixes_selection_event_mask_t {
     XCB_XFIXES_SELECTION_EVENT_MASK_SET_SELECTION_OWNER = 1,
     XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_WINDOW_DESTROY = 2,
     XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_CLIENT_CLOSE = 4
 }
+alias XCB_XFIXES_SELECTION_EVENT_MASK_SET_SELECTION_OWNER = xcb_xfixes_selection_event_mask_t.XCB_XFIXES_SELECTION_EVENT_MASK_SET_SELECTION_OWNER;
+alias XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_WINDOW_DESTROY = xcb_xfixes_selection_event_mask_t.XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_WINDOW_DESTROY;
+alias XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_CLIENT_CLOSE = xcb_xfixes_selection_event_mask_t.XCB_XFIXES_SELECTION_EVENT_MASK_SELECTION_CLIENT_CLOSE;
 
 /** Opcode for xcb_xfixes_selection_notify. */
 enum XCB_XFIXES_SELECTION_NOTIFY = 0;
@@ -135,13 +147,15 @@ struct xcb_xfixes_select_selection_input_request_t {
     uint         event_mask; /**<  */
 }
 
-enum /* xcb_xfixes_cursor_notify_t */ {
+enum xcb_xfixes_cursor_notify_t {
     XCB_XFIXES_CURSOR_NOTIFY_DISPLAY_CURSOR = 0
 }
+alias XCB_XFIXES_CURSOR_NOTIFY_DISPLAY_CURSOR = xcb_xfixes_cursor_notify_t.XCB_XFIXES_CURSOR_NOTIFY_DISPLAY_CURSOR;
 
-enum /* xcb_xfixes_cursor_notify_mask_t */ {
+enum xcb_xfixes_cursor_notify_mask_t {
     XCB_XFIXES_CURSOR_NOTIFY_MASK_DISPLAY_CURSOR = 1
 }
+alias XCB_XFIXES_CURSOR_NOTIFY_MASK_DISPLAY_CURSOR = xcb_xfixes_cursor_notify_mask_t.XCB_XFIXES_CURSOR_NOTIFY_MASK_DISPLAY_CURSOR;
 
 /** Opcode for xcb_xfixes_cursor_notify. */
 enum XCB_XFIXES_CURSOR_NOTIFY = 1;
@@ -234,9 +248,10 @@ struct xcb_xfixes_bad_region_error_t {
     ushort sequence; /**<  */
 }
 
-enum /* xcb_xfixes_region_enum_t */ {
+enum xcb_xfixes_region_enum_t {
     XCB_XFIXES_REGION_NONE = 0
 }
+alias XCB_XFIXES_REGION_NONE = xcb_xfixes_region_enum_t.XCB_XFIXES_REGION_NONE;
 
 /** Opcode for xcb_xfixes_create_region. */
 enum XCB_XFIXES_CREATE_REGION = 5;
@@ -691,12 +706,16 @@ struct xcb_xfixes_barrier_iterator_t {
     int                   index; /**<  */
 }
 
-enum /* xcb_xfixes_barrier_directions_t */ {
+enum xcb_xfixes_barrier_directions_t {
     XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_X = 1,
     XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_Y = 2,
     XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_X = 4,
     XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_Y = 8
 }
+alias XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_X = xcb_xfixes_barrier_directions_t.XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_X;
+alias XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_Y = xcb_xfixes_barrier_directions_t.XCB_XFIXES_BARRIER_DIRECTIONS_POSITIVE_Y;
+alias XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_X = xcb_xfixes_barrier_directions_t.XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_X;
+alias XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_Y = xcb_xfixes_barrier_directions_t.XCB_XFIXES_BARRIER_DIRECTIONS_NEGATIVE_Y;
 
 /** Opcode for xcb_xfixes_create_pointer_barrier. */
 enum XCB_XFIXES_CREATE_POINTER_BARRIER = 31;

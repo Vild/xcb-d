@@ -261,15 +261,19 @@ struct xcb_glx_buffer_swap_complete_event_t {
     uint               sbc; /**<  */
 }
 
-enum /* xcb_glx_pbcet_t */ {
+enum xcb_glx_pbcet_t {
     XCB_GLX_PBCET_DAMAGED = 32791,
     XCB_GLX_PBCET_SAVED = 32792
 }
+alias XCB_GLX_PBCET_DAMAGED = xcb_glx_pbcet_t.XCB_GLX_PBCET_DAMAGED;
+alias XCB_GLX_PBCET_SAVED = xcb_glx_pbcet_t.XCB_GLX_PBCET_SAVED;
 
-enum /* xcb_glx_pbcdt_t */ {
+enum xcb_glx_pbcdt_t {
     XCB_GLX_PBCDT_WINDOW = 32793,
     XCB_GLX_PBCDT_PBUFFER = 32794
 }
+alias XCB_GLX_PBCDT_WINDOW = xcb_glx_pbcdt_t.XCB_GLX_PBCDT_WINDOW;
+alias XCB_GLX_PBCDT_PBUFFER = xcb_glx_pbcdt_t.XCB_GLX_PBCDT_PBUFFER;
 
 /** Opcode for xcb_glx_render. */
 enum XCB_GLX_RENDER = 1;
@@ -473,7 +477,7 @@ struct xcb_glx_copy_context_request_t {
     xcb_glx_context_tag_t src_context_tag; /**<  */
 }
 
-enum /* xcb_glx_gc_t */ {
+enum xcb_glx_gc_t {
     XCB_GLX_GC_GL_CURRENT_BIT = 1,
     XCB_GLX_GC_GL_POINT_BIT = 2,
     XCB_GLX_GC_GL_LINE_BIT = 4,
@@ -496,6 +500,27 @@ enum /* xcb_glx_gc_t */ {
     XCB_GLX_GC_GL_SCISSOR_BIT = 524288,
     XCB_GLX_GC_GL_ALL_ATTRIB_BITS = 16777215
 }
+alias XCB_GLX_GC_GL_CURRENT_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_CURRENT_BIT;
+alias XCB_GLX_GC_GL_POINT_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_POINT_BIT;
+alias XCB_GLX_GC_GL_LINE_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_LINE_BIT;
+alias XCB_GLX_GC_GL_POLYGON_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_POLYGON_BIT;
+alias XCB_GLX_GC_GL_POLYGON_STIPPLE_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_POLYGON_STIPPLE_BIT;
+alias XCB_GLX_GC_GL_PIXEL_MODE_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_PIXEL_MODE_BIT;
+alias XCB_GLX_GC_GL_LIGHTING_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_LIGHTING_BIT;
+alias XCB_GLX_GC_GL_FOG_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_FOG_BIT;
+alias XCB_GLX_GC_GL_DEPTH_BUFFER_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_DEPTH_BUFFER_BIT;
+alias XCB_GLX_GC_GL_ACCUM_BUFFER_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_ACCUM_BUFFER_BIT;
+alias XCB_GLX_GC_GL_STENCIL_BUFFER_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_STENCIL_BUFFER_BIT;
+alias XCB_GLX_GC_GL_VIEWPORT_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_VIEWPORT_BIT;
+alias XCB_GLX_GC_GL_TRANSFORM_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_TRANSFORM_BIT;
+alias XCB_GLX_GC_GL_ENABLE_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_ENABLE_BIT;
+alias XCB_GLX_GC_GL_COLOR_BUFFER_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_COLOR_BUFFER_BIT;
+alias XCB_GLX_GC_GL_HINT_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_HINT_BIT;
+alias XCB_GLX_GC_GL_EVAL_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_EVAL_BIT;
+alias XCB_GLX_GC_GL_LIST_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_LIST_BIT;
+alias XCB_GLX_GC_GL_TEXTURE_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_TEXTURE_BIT;
+alias XCB_GLX_GC_GL_SCISSOR_BIT = xcb_glx_gc_t.XCB_GLX_GC_GL_SCISSOR_BIT;
+alias XCB_GLX_GC_GL_ALL_ATTRIB_BITS = xcb_glx_gc_t.XCB_GLX_GC_GL_ALL_ATTRIB_BITS;
 
 /** Opcode for xcb_glx_swap_buffers. */
 enum XCB_GLX_SWAP_BUFFERS = 11;
@@ -1165,11 +1190,14 @@ struct xcb_glx_render_mode_reply_t {
     ubyte[12]  pad1; /**<  */
 }
 
-enum /* xcb_glx_rm_t */ {
+enum xcb_glx_rm_t {
     XCB_GLX_RM_GL_RENDER = 7168,
     XCB_GLX_RM_GL_FEEDBACK = 7169,
     XCB_GLX_RM_GL_SELECT = 7170
 }
+alias XCB_GLX_RM_GL_RENDER = xcb_glx_rm_t.XCB_GLX_RM_GL_RENDER;
+alias XCB_GLX_RM_GL_FEEDBACK = xcb_glx_rm_t.XCB_GLX_RM_GL_FEEDBACK;
+alias XCB_GLX_RM_GL_SELECT = xcb_glx_rm_t.XCB_GLX_RM_GL_SELECT;
 
 /**
  * @brief xcb_glx_finish_cookie_t

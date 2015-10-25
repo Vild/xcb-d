@@ -117,10 +117,12 @@ struct xcb_xevie_end_reply_t {
     ubyte[24]  pad1; /**<  */
 }
 
-enum /* xcb_xevie_datatype_t */ {
+enum xcb_xevie_datatype_t {
     XCB_XEVIE_DATATYPE_UNMODIFIED = 0,
     XCB_XEVIE_DATATYPE_MODIFIED = 1
 }
+alias XCB_XEVIE_DATATYPE_UNMODIFIED = xcb_xevie_datatype_t.XCB_XEVIE_DATATYPE_UNMODIFIED;
+alias XCB_XEVIE_DATATYPE_MODIFIED = xcb_xevie_datatype_t.XCB_XEVIE_DATATYPE_MODIFIED;
 
 /**
  * @brief xcb_xevie_event_t

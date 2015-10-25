@@ -22,13 +22,16 @@ enum int XCB_XKB_MINOR_VERSION = 0;
 
 extern(C) extern xcb_extension_t xcb_xkb_id;
 
-enum /* xcb_xkb_const_t */ {
+enum xcb_xkb_const_t {
     XCB_XKB_CONST_MAX_LEGAL_KEY_CODE = 255,
     XCB_XKB_CONST_PER_KEY_BIT_ARRAY_SIZE = 32,
     XCB_XKB_CONST_KEY_NAME_LENGTH = 4
 }
+alias XCB_XKB_CONST_MAX_LEGAL_KEY_CODE = xcb_xkb_const_t.XCB_XKB_CONST_MAX_LEGAL_KEY_CODE;
+alias XCB_XKB_CONST_PER_KEY_BIT_ARRAY_SIZE = xcb_xkb_const_t.XCB_XKB_CONST_PER_KEY_BIT_ARRAY_SIZE;
+alias XCB_XKB_CONST_KEY_NAME_LENGTH = xcb_xkb_const_t.XCB_XKB_CONST_KEY_NAME_LENGTH;
 
-enum /* xcb_xkb_event_type_t */ {
+enum xcb_xkb_event_type_t {
     XCB_XKB_EVENT_TYPE_NEW_KEYBOARD_NOTIFY = 1,
     XCB_XKB_EVENT_TYPE_MAP_NOTIFY = 2,
     XCB_XKB_EVENT_TYPE_STATE_NOTIFY = 4,
@@ -42,14 +45,29 @@ enum /* xcb_xkb_event_type_t */ {
     XCB_XKB_EVENT_TYPE_ACCESS_X_NOTIFY = 1024,
     XCB_XKB_EVENT_TYPE_EXTENSION_DEVICE_NOTIFY = 2048
 }
+alias XCB_XKB_EVENT_TYPE_NEW_KEYBOARD_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_NEW_KEYBOARD_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_MAP_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_MAP_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_STATE_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_STATE_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_CONTROLS_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_CONTROLS_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_INDICATOR_STATE_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_INDICATOR_STATE_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_INDICATOR_MAP_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_INDICATOR_MAP_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_NAMES_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_NAMES_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_COMPAT_MAP_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_COMPAT_MAP_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_BELL_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_BELL_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_ACTION_MESSAGE = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_ACTION_MESSAGE;
+alias XCB_XKB_EVENT_TYPE_ACCESS_X_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_ACCESS_X_NOTIFY;
+alias XCB_XKB_EVENT_TYPE_EXTENSION_DEVICE_NOTIFY = xcb_xkb_event_type_t.XCB_XKB_EVENT_TYPE_EXTENSION_DEVICE_NOTIFY;
 
-enum /* xcb_xkb_nkn_detail_t */ {
+enum xcb_xkb_nkn_detail_t {
     XCB_XKB_NKN_DETAIL_KEYCODES = 1,
     XCB_XKB_NKN_DETAIL_GEOMETRY = 2,
     XCB_XKB_NKN_DETAIL_DEVICE_ID = 4
 }
+alias XCB_XKB_NKN_DETAIL_KEYCODES = xcb_xkb_nkn_detail_t.XCB_XKB_NKN_DETAIL_KEYCODES;
+alias XCB_XKB_NKN_DETAIL_GEOMETRY = xcb_xkb_nkn_detail_t.XCB_XKB_NKN_DETAIL_GEOMETRY;
+alias XCB_XKB_NKN_DETAIL_DEVICE_ID = xcb_xkb_nkn_detail_t.XCB_XKB_NKN_DETAIL_DEVICE_ID;
 
-enum /* xcb_xkb_axn_detail_t */ {
+enum xcb_xkb_axn_detail_t {
     XCB_XKB_AXN_DETAIL_SK_PRESS = 1,
     XCB_XKB_AXN_DETAIL_SK_ACCEPT = 2,
     XCB_XKB_AXN_DETAIL_SK_REJECT = 4,
@@ -58,8 +76,15 @@ enum /* xcb_xkb_axn_detail_t */ {
     XCB_XKB_AXN_DETAIL_BK_REJECT = 32,
     XCB_XKB_AXN_DETAIL_AXK_WARNING = 64
 }
+alias XCB_XKB_AXN_DETAIL_SK_PRESS = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_SK_PRESS;
+alias XCB_XKB_AXN_DETAIL_SK_ACCEPT = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_SK_ACCEPT;
+alias XCB_XKB_AXN_DETAIL_SK_REJECT = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_SK_REJECT;
+alias XCB_XKB_AXN_DETAIL_SK_RELEASE = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_SK_RELEASE;
+alias XCB_XKB_AXN_DETAIL_BK_ACCEPT = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_BK_ACCEPT;
+alias XCB_XKB_AXN_DETAIL_BK_REJECT = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_BK_REJECT;
+alias XCB_XKB_AXN_DETAIL_AXK_WARNING = xcb_xkb_axn_detail_t.XCB_XKB_AXN_DETAIL_AXK_WARNING;
 
-enum /* xcb_xkb_map_part_t */ {
+enum xcb_xkb_map_part_t {
     XCB_XKB_MAP_PART_KEY_TYPES = 1,
     XCB_XKB_MAP_PART_KEY_SYMS = 2,
     XCB_XKB_MAP_PART_MODIFIER_MAP = 4,
@@ -69,13 +94,23 @@ enum /* xcb_xkb_map_part_t */ {
     XCB_XKB_MAP_PART_VIRTUAL_MODS = 64,
     XCB_XKB_MAP_PART_VIRTUAL_MOD_MAP = 128
 }
+alias XCB_XKB_MAP_PART_KEY_TYPES = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_KEY_TYPES;
+alias XCB_XKB_MAP_PART_KEY_SYMS = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_KEY_SYMS;
+alias XCB_XKB_MAP_PART_MODIFIER_MAP = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_MODIFIER_MAP;
+alias XCB_XKB_MAP_PART_EXPLICIT_COMPONENTS = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_EXPLICIT_COMPONENTS;
+alias XCB_XKB_MAP_PART_KEY_ACTIONS = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_KEY_ACTIONS;
+alias XCB_XKB_MAP_PART_KEY_BEHAVIORS = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_KEY_BEHAVIORS;
+alias XCB_XKB_MAP_PART_VIRTUAL_MODS = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_VIRTUAL_MODS;
+alias XCB_XKB_MAP_PART_VIRTUAL_MOD_MAP = xcb_xkb_map_part_t.XCB_XKB_MAP_PART_VIRTUAL_MOD_MAP;
 
-enum /* xcb_xkb_set_map_flags_t */ {
+enum xcb_xkb_set_map_flags_t {
     XCB_XKB_SET_MAP_FLAGS_RESIZE_TYPES = 1,
     XCB_XKB_SET_MAP_FLAGS_RECOMPUTE_ACTIONS = 2
 }
+alias XCB_XKB_SET_MAP_FLAGS_RESIZE_TYPES = xcb_xkb_set_map_flags_t.XCB_XKB_SET_MAP_FLAGS_RESIZE_TYPES;
+alias XCB_XKB_SET_MAP_FLAGS_RECOMPUTE_ACTIONS = xcb_xkb_set_map_flags_t.XCB_XKB_SET_MAP_FLAGS_RECOMPUTE_ACTIONS;
 
-enum /* xcb_xkb_state_part_t */ {
+enum xcb_xkb_state_part_t {
     XCB_XKB_STATE_PART_MODIFIER_STATE = 1,
     XCB_XKB_STATE_PART_MODIFIER_BASE = 2,
     XCB_XKB_STATE_PART_MODIFIER_LATCH = 4,
@@ -91,8 +126,22 @@ enum /* xcb_xkb_state_part_t */ {
     XCB_XKB_STATE_PART_COMPAT_LOOKUP_MODS = 4096,
     XCB_XKB_STATE_PART_POINTER_BUTTONS = 8192
 }
+alias XCB_XKB_STATE_PART_MODIFIER_STATE = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_MODIFIER_STATE;
+alias XCB_XKB_STATE_PART_MODIFIER_BASE = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_MODIFIER_BASE;
+alias XCB_XKB_STATE_PART_MODIFIER_LATCH = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_MODIFIER_LATCH;
+alias XCB_XKB_STATE_PART_MODIFIER_LOCK = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_MODIFIER_LOCK;
+alias XCB_XKB_STATE_PART_GROUP_STATE = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_GROUP_STATE;
+alias XCB_XKB_STATE_PART_GROUP_BASE = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_GROUP_BASE;
+alias XCB_XKB_STATE_PART_GROUP_LATCH = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_GROUP_LATCH;
+alias XCB_XKB_STATE_PART_GROUP_LOCK = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_GROUP_LOCK;
+alias XCB_XKB_STATE_PART_COMPAT_STATE = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_COMPAT_STATE;
+alias XCB_XKB_STATE_PART_GRAB_MODS = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_GRAB_MODS;
+alias XCB_XKB_STATE_PART_COMPAT_GRAB_MODS = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_COMPAT_GRAB_MODS;
+alias XCB_XKB_STATE_PART_LOOKUP_MODS = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_LOOKUP_MODS;
+alias XCB_XKB_STATE_PART_COMPAT_LOOKUP_MODS = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_COMPAT_LOOKUP_MODS;
+alias XCB_XKB_STATE_PART_POINTER_BUTTONS = xcb_xkb_state_part_t.XCB_XKB_STATE_PART_POINTER_BUTTONS;
 
-enum /* xcb_xkb_bool_ctrl_t */ {
+enum xcb_xkb_bool_ctrl_t {
     XCB_XKB_BOOL_CTRL_REPEAT_KEYS = 1,
     XCB_XKB_BOOL_CTRL_SLOW_KEYS = 2,
     XCB_XKB_BOOL_CTRL_BOUNCE_KEYS = 4,
@@ -107,16 +156,34 @@ enum /* xcb_xkb_bool_ctrl_t */ {
     XCB_XKB_BOOL_CTRL_OVERLAY_2_MASK = 2048,
     XCB_XKB_BOOL_CTRL_IGNORE_GROUP_LOCK_MASK = 4096
 }
+alias XCB_XKB_BOOL_CTRL_REPEAT_KEYS = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_REPEAT_KEYS;
+alias XCB_XKB_BOOL_CTRL_SLOW_KEYS = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_SLOW_KEYS;
+alias XCB_XKB_BOOL_CTRL_BOUNCE_KEYS = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_BOUNCE_KEYS;
+alias XCB_XKB_BOOL_CTRL_STICKY_KEYS = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_STICKY_KEYS;
+alias XCB_XKB_BOOL_CTRL_MOUSE_KEYS = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_MOUSE_KEYS;
+alias XCB_XKB_BOOL_CTRL_MOUSE_KEYS_ACCEL = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_MOUSE_KEYS_ACCEL;
+alias XCB_XKB_BOOL_CTRL_ACCESS_X_KEYS = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_ACCESS_X_KEYS;
+alias XCB_XKB_BOOL_CTRL_ACCESS_X_TIMEOUT_MASK = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_ACCESS_X_TIMEOUT_MASK;
+alias XCB_XKB_BOOL_CTRL_ACCESS_X_FEEDBACK_MASK = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_ACCESS_X_FEEDBACK_MASK;
+alias XCB_XKB_BOOL_CTRL_AUDIBLE_BELL_MASK = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_AUDIBLE_BELL_MASK;
+alias XCB_XKB_BOOL_CTRL_OVERLAY_1_MASK = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_OVERLAY_1_MASK;
+alias XCB_XKB_BOOL_CTRL_OVERLAY_2_MASK = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_OVERLAY_2_MASK;
+alias XCB_XKB_BOOL_CTRL_IGNORE_GROUP_LOCK_MASK = xcb_xkb_bool_ctrl_t.XCB_XKB_BOOL_CTRL_IGNORE_GROUP_LOCK_MASK;
 
-enum /* xcb_xkb_control_t */ {
+enum xcb_xkb_control_t : uint {
     XCB_XKB_CONTROL_GROUPS_WRAP = 134217728,
     XCB_XKB_CONTROL_INTERNAL_MODS = 268435456,
     XCB_XKB_CONTROL_IGNORE_LOCK_MODS = 536870912,
     XCB_XKB_CONTROL_PER_KEY_REPEAT = 1073741824,
     XCB_XKB_CONTROL_CONTROLS_ENABLED = 2147483648
 }
+alias XCB_XKB_CONTROL_GROUPS_WRAP = xcb_xkb_control_t.XCB_XKB_CONTROL_GROUPS_WRAP;
+alias XCB_XKB_CONTROL_INTERNAL_MODS = xcb_xkb_control_t.XCB_XKB_CONTROL_INTERNAL_MODS;
+alias XCB_XKB_CONTROL_IGNORE_LOCK_MODS = xcb_xkb_control_t.XCB_XKB_CONTROL_IGNORE_LOCK_MODS;
+alias XCB_XKB_CONTROL_PER_KEY_REPEAT = xcb_xkb_control_t.XCB_XKB_CONTROL_PER_KEY_REPEAT;
+alias XCB_XKB_CONTROL_CONTROLS_ENABLED = xcb_xkb_control_t.XCB_XKB_CONTROL_CONTROLS_ENABLED;
 
-enum /* xcb_xkb_ax_option_t */ {
+enum xcb_xkb_ax_option_t {
     XCB_XKB_AX_OPTION_SK_PRESS_FB = 1,
     XCB_XKB_AX_OPTION_SK_ACCEPT_FB = 2,
     XCB_XKB_AX_OPTION_FEATURE_FB = 4,
@@ -130,6 +197,18 @@ enum /* xcb_xkb_ax_option_t */ {
     XCB_XKB_AX_OPTION_BK_REJECT_FB = 1024,
     XCB_XKB_AX_OPTION_DUMB_BELL = 2048
 }
+alias XCB_XKB_AX_OPTION_SK_PRESS_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_SK_PRESS_FB;
+alias XCB_XKB_AX_OPTION_SK_ACCEPT_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_SK_ACCEPT_FB;
+alias XCB_XKB_AX_OPTION_FEATURE_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_FEATURE_FB;
+alias XCB_XKB_AX_OPTION_SLOW_WARN_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_SLOW_WARN_FB;
+alias XCB_XKB_AX_OPTION_INDICATOR_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_INDICATOR_FB;
+alias XCB_XKB_AX_OPTION_STICKY_KEYS_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_STICKY_KEYS_FB;
+alias XCB_XKB_AX_OPTION_TWO_KEYS = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_TWO_KEYS;
+alias XCB_XKB_AX_OPTION_LATCH_TO_LOCK = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_LATCH_TO_LOCK;
+alias XCB_XKB_AX_OPTION_SK_RELEASE_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_SK_RELEASE_FB;
+alias XCB_XKB_AX_OPTION_SK_REJECT_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_SK_REJECT_FB;
+alias XCB_XKB_AX_OPTION_BK_REJECT_FB = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_BK_REJECT_FB;
+alias XCB_XKB_AX_OPTION_DUMB_BELL = xcb_xkb_ax_option_t.XCB_XKB_AX_OPTION_DUMB_BELL;
 
 alias xcb_xkb_device_spec_t = ushort;
 
@@ -142,17 +221,23 @@ struct xcb_xkb_device_spec_iterator_t {
     int                    index; /**<  */
 }
 
-enum /* xcb_xkb_led_class_result_t */ {
+enum xcb_xkb_led_class_result_t {
     XCB_XKB_LED_CLASS_RESULT_KBD_FEEDBACK_CLASS = 0,
     XCB_XKB_LED_CLASS_RESULT_LED_FEEDBACK_CLASS = 4
 }
+alias XCB_XKB_LED_CLASS_RESULT_KBD_FEEDBACK_CLASS = xcb_xkb_led_class_result_t.XCB_XKB_LED_CLASS_RESULT_KBD_FEEDBACK_CLASS;
+alias XCB_XKB_LED_CLASS_RESULT_LED_FEEDBACK_CLASS = xcb_xkb_led_class_result_t.XCB_XKB_LED_CLASS_RESULT_LED_FEEDBACK_CLASS;
 
-enum /* xcb_xkb_led_class_t */ {
+enum xcb_xkb_led_class_t {
     XCB_XKB_LED_CLASS_KBD_FEEDBACK_CLASS = 0,
     XCB_XKB_LED_CLASS_LED_FEEDBACK_CLASS = 4,
     XCB_XKB_LED_CLASS_DFLT_XI_CLASS = 768,
     XCB_XKB_LED_CLASS_ALL_XI_CLASSES = 1280
 }
+alias XCB_XKB_LED_CLASS_KBD_FEEDBACK_CLASS = xcb_xkb_led_class_t.XCB_XKB_LED_CLASS_KBD_FEEDBACK_CLASS;
+alias XCB_XKB_LED_CLASS_LED_FEEDBACK_CLASS = xcb_xkb_led_class_t.XCB_XKB_LED_CLASS_LED_FEEDBACK_CLASS;
+alias XCB_XKB_LED_CLASS_DFLT_XI_CLASS = xcb_xkb_led_class_t.XCB_XKB_LED_CLASS_DFLT_XI_CLASS;
+alias XCB_XKB_LED_CLASS_ALL_XI_CLASSES = xcb_xkb_led_class_t.XCB_XKB_LED_CLASS_ALL_XI_CLASSES;
 
 alias xcb_xkb_led_class_spec_t = ushort;
 
@@ -165,16 +250,21 @@ struct xcb_xkb_led_class_spec_iterator_t {
     int                       index; /**<  */
 }
 
-enum /* xcb_xkb_bell_class_result_t */ {
+enum xcb_xkb_bell_class_result_t {
     XCB_XKB_BELL_CLASS_RESULT_KBD_FEEDBACK_CLASS = 0,
     XCB_XKB_BELL_CLASS_RESULT_BELL_FEEDBACK_CLASS = 5
 }
+alias XCB_XKB_BELL_CLASS_RESULT_KBD_FEEDBACK_CLASS = xcb_xkb_bell_class_result_t.XCB_XKB_BELL_CLASS_RESULT_KBD_FEEDBACK_CLASS;
+alias XCB_XKB_BELL_CLASS_RESULT_BELL_FEEDBACK_CLASS = xcb_xkb_bell_class_result_t.XCB_XKB_BELL_CLASS_RESULT_BELL_FEEDBACK_CLASS;
 
-enum /* xcb_xkb_bell_class_t */ {
+enum xcb_xkb_bell_class_t {
     XCB_XKB_BELL_CLASS_KBD_FEEDBACK_CLASS = 0,
     XCB_XKB_BELL_CLASS_BELL_FEEDBACK_CLASS = 5,
     XCB_XKB_BELL_CLASS_DFLT_XI_CLASS = 768
 }
+alias XCB_XKB_BELL_CLASS_KBD_FEEDBACK_CLASS = xcb_xkb_bell_class_t.XCB_XKB_BELL_CLASS_KBD_FEEDBACK_CLASS;
+alias XCB_XKB_BELL_CLASS_BELL_FEEDBACK_CLASS = xcb_xkb_bell_class_t.XCB_XKB_BELL_CLASS_BELL_FEEDBACK_CLASS;
+alias XCB_XKB_BELL_CLASS_DFLT_XI_CLASS = xcb_xkb_bell_class_t.XCB_XKB_BELL_CLASS_DFLT_XI_CLASS;
 
 alias xcb_xkb_bell_class_spec_t = ushort;
 
@@ -187,7 +277,7 @@ struct xcb_xkb_bell_class_spec_iterator_t {
     int                        index; /**<  */
 }
 
-enum /* xcb_xkb_id_t */ {
+enum xcb_xkb_id_t {
     XCB_XKB_ID_USE_CORE_KBD = 256,
     XCB_XKB_ID_USE_CORE_PTR = 512,
     XCB_XKB_ID_DFLT_XI_CLASS = 768,
@@ -196,6 +286,13 @@ enum /* xcb_xkb_id_t */ {
     XCB_XKB_ID_ALL_XI_ID = 1536,
     XCB_XKB_ID_XI_NONE = 65280
 }
+alias XCB_XKB_ID_USE_CORE_KBD = xcb_xkb_id_t.XCB_XKB_ID_USE_CORE_KBD;
+alias XCB_XKB_ID_USE_CORE_PTR = xcb_xkb_id_t.XCB_XKB_ID_USE_CORE_PTR;
+alias XCB_XKB_ID_DFLT_XI_CLASS = xcb_xkb_id_t.XCB_XKB_ID_DFLT_XI_CLASS;
+alias XCB_XKB_ID_DFLT_XI_ID = xcb_xkb_id_t.XCB_XKB_ID_DFLT_XI_ID;
+alias XCB_XKB_ID_ALL_XI_CLASS = xcb_xkb_id_t.XCB_XKB_ID_ALL_XI_CLASS;
+alias XCB_XKB_ID_ALL_XI_ID = xcb_xkb_id_t.XCB_XKB_ID_ALL_XI_ID;
+alias XCB_XKB_ID_XI_NONE = xcb_xkb_id_t.XCB_XKB_ID_XI_NONE;
 
 alias xcb_xkb_id_spec_t = ushort;
 
@@ -208,36 +305,50 @@ struct xcb_xkb_id_spec_iterator_t {
     int                index; /**<  */
 }
 
-enum /* xcb_xkb_group_t */ {
+enum xcb_xkb_group_t {
     XCB_XKB_GROUP_1 = 0,
     XCB_XKB_GROUP_2 = 1,
     XCB_XKB_GROUP_3 = 2,
     XCB_XKB_GROUP_4 = 3
 }
+alias XCB_XKB_GROUP_1 = xcb_xkb_group_t.XCB_XKB_GROUP_1;
+alias XCB_XKB_GROUP_2 = xcb_xkb_group_t.XCB_XKB_GROUP_2;
+alias XCB_XKB_GROUP_3 = xcb_xkb_group_t.XCB_XKB_GROUP_3;
+alias XCB_XKB_GROUP_4 = xcb_xkb_group_t.XCB_XKB_GROUP_4;
 
-enum /* xcb_xkb_groups_t */ {
+enum xcb_xkb_groups_t {
     XCB_XKB_GROUPS_ANY = 254,
     XCB_XKB_GROUPS_ALL = 255
 }
+alias XCB_XKB_GROUPS_ANY = xcb_xkb_groups_t.XCB_XKB_GROUPS_ANY;
+alias XCB_XKB_GROUPS_ALL = xcb_xkb_groups_t.XCB_XKB_GROUPS_ALL;
 
-enum /* xcb_xkb_set_of_group_t */ {
+enum xcb_xkb_set_of_group_t {
     XCB_XKB_SET_OF_GROUP_GROUP_1 = 1,
     XCB_XKB_SET_OF_GROUP_GROUP_2 = 2,
     XCB_XKB_SET_OF_GROUP_GROUP_3 = 4,
     XCB_XKB_SET_OF_GROUP_GROUP_4 = 8
 }
+alias XCB_XKB_SET_OF_GROUP_GROUP_1 = xcb_xkb_set_of_group_t.XCB_XKB_SET_OF_GROUP_GROUP_1;
+alias XCB_XKB_SET_OF_GROUP_GROUP_2 = xcb_xkb_set_of_group_t.XCB_XKB_SET_OF_GROUP_GROUP_2;
+alias XCB_XKB_SET_OF_GROUP_GROUP_3 = xcb_xkb_set_of_group_t.XCB_XKB_SET_OF_GROUP_GROUP_3;
+alias XCB_XKB_SET_OF_GROUP_GROUP_4 = xcb_xkb_set_of_group_t.XCB_XKB_SET_OF_GROUP_GROUP_4;
 
-enum /* xcb_xkb_set_of_groups_t */ {
+enum xcb_xkb_set_of_groups_t {
     XCB_XKB_SET_OF_GROUPS_ANY = 128
 }
+alias XCB_XKB_SET_OF_GROUPS_ANY = xcb_xkb_set_of_groups_t.XCB_XKB_SET_OF_GROUPS_ANY;
 
-enum /* xcb_xkb_groups_wrap_t */ {
+enum xcb_xkb_groups_wrap_t {
     XCB_XKB_GROUPS_WRAP_WRAP_INTO_RANGE = 0,
     XCB_XKB_GROUPS_WRAP_CLAMP_INTO_RANGE = 64,
     XCB_XKB_GROUPS_WRAP_REDIRECT_INTO_RANGE = 128
 }
+alias XCB_XKB_GROUPS_WRAP_WRAP_INTO_RANGE = xcb_xkb_groups_wrap_t.XCB_XKB_GROUPS_WRAP_WRAP_INTO_RANGE;
+alias XCB_XKB_GROUPS_WRAP_CLAMP_INTO_RANGE = xcb_xkb_groups_wrap_t.XCB_XKB_GROUPS_WRAP_CLAMP_INTO_RANGE;
+alias XCB_XKB_GROUPS_WRAP_REDIRECT_INTO_RANGE = xcb_xkb_groups_wrap_t.XCB_XKB_GROUPS_WRAP_REDIRECT_INTO_RANGE;
 
-enum /* xcb_xkb_v_mods_high_t */ {
+enum xcb_xkb_v_mods_high_t {
     XCB_XKB_V_MODS_HIGH_15 = 128,
     XCB_XKB_V_MODS_HIGH_14 = 64,
     XCB_XKB_V_MODS_HIGH_13 = 32,
@@ -247,8 +358,16 @@ enum /* xcb_xkb_v_mods_high_t */ {
     XCB_XKB_V_MODS_HIGH_9 = 2,
     XCB_XKB_V_MODS_HIGH_8 = 1
 }
+alias XCB_XKB_V_MODS_HIGH_15 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_15;
+alias XCB_XKB_V_MODS_HIGH_14 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_14;
+alias XCB_XKB_V_MODS_HIGH_13 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_13;
+alias XCB_XKB_V_MODS_HIGH_12 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_12;
+alias XCB_XKB_V_MODS_HIGH_11 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_11;
+alias XCB_XKB_V_MODS_HIGH_10 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_10;
+alias XCB_XKB_V_MODS_HIGH_9 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_9;
+alias XCB_XKB_V_MODS_HIGH_8 = xcb_xkb_v_mods_high_t.XCB_XKB_V_MODS_HIGH_8;
 
-enum /* xcb_xkb_v_mods_low_t */ {
+enum xcb_xkb_v_mods_low_t {
     XCB_XKB_V_MODS_LOW_7 = 128,
     XCB_XKB_V_MODS_LOW_6 = 64,
     XCB_XKB_V_MODS_LOW_5 = 32,
@@ -258,8 +377,16 @@ enum /* xcb_xkb_v_mods_low_t */ {
     XCB_XKB_V_MODS_LOW_1 = 2,
     XCB_XKB_V_MODS_LOW_0 = 1
 }
+alias XCB_XKB_V_MODS_LOW_7 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_7;
+alias XCB_XKB_V_MODS_LOW_6 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_6;
+alias XCB_XKB_V_MODS_LOW_5 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_5;
+alias XCB_XKB_V_MODS_LOW_4 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_4;
+alias XCB_XKB_V_MODS_LOW_3 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_3;
+alias XCB_XKB_V_MODS_LOW_2 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_2;
+alias XCB_XKB_V_MODS_LOW_1 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_1;
+alias XCB_XKB_V_MODS_LOW_0 = xcb_xkb_v_mods_low_t.XCB_XKB_V_MODS_LOW_0;
 
-enum /* xcb_xkb_v_mod_t */ {
+enum xcb_xkb_v_mod_t {
     XCB_XKB_V_MOD_15 = 32768,
     XCB_XKB_V_MOD_14 = 16384,
     XCB_XKB_V_MOD_13 = 8192,
@@ -277,8 +404,24 @@ enum /* xcb_xkb_v_mod_t */ {
     XCB_XKB_V_MOD_1 = 2,
     XCB_XKB_V_MOD_0 = 1
 }
+alias XCB_XKB_V_MOD_15 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_15;
+alias XCB_XKB_V_MOD_14 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_14;
+alias XCB_XKB_V_MOD_13 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_13;
+alias XCB_XKB_V_MOD_12 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_12;
+alias XCB_XKB_V_MOD_11 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_11;
+alias XCB_XKB_V_MOD_10 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_10;
+alias XCB_XKB_V_MOD_9 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_9;
+alias XCB_XKB_V_MOD_8 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_8;
+alias XCB_XKB_V_MOD_7 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_7;
+alias XCB_XKB_V_MOD_6 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_6;
+alias XCB_XKB_V_MOD_5 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_5;
+alias XCB_XKB_V_MOD_4 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_4;
+alias XCB_XKB_V_MOD_3 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_3;
+alias XCB_XKB_V_MOD_2 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_2;
+alias XCB_XKB_V_MOD_1 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_1;
+alias XCB_XKB_V_MOD_0 = xcb_xkb_v_mod_t.XCB_XKB_V_MOD_0;
 
-enum /* xcb_xkb_explicit_t */ {
+enum xcb_xkb_explicit_t {
     XCB_XKB_EXPLICIT_V_MOD_MAP = 128,
     XCB_XKB_EXPLICIT_BEHAVIOR = 64,
     XCB_XKB_EXPLICIT_AUTO_REPEAT = 32,
@@ -288,41 +431,69 @@ enum /* xcb_xkb_explicit_t */ {
     XCB_XKB_EXPLICIT_KEY_TYPE_2 = 2,
     XCB_XKB_EXPLICIT_KEY_TYPE_1 = 1
 }
+alias XCB_XKB_EXPLICIT_V_MOD_MAP = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_V_MOD_MAP;
+alias XCB_XKB_EXPLICIT_BEHAVIOR = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_BEHAVIOR;
+alias XCB_XKB_EXPLICIT_AUTO_REPEAT = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_AUTO_REPEAT;
+alias XCB_XKB_EXPLICIT_INTERPRET = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_INTERPRET;
+alias XCB_XKB_EXPLICIT_KEY_TYPE_4 = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_KEY_TYPE_4;
+alias XCB_XKB_EXPLICIT_KEY_TYPE_3 = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_KEY_TYPE_3;
+alias XCB_XKB_EXPLICIT_KEY_TYPE_2 = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_KEY_TYPE_2;
+alias XCB_XKB_EXPLICIT_KEY_TYPE_1 = xcb_xkb_explicit_t.XCB_XKB_EXPLICIT_KEY_TYPE_1;
 
-enum /* xcb_xkb_sym_interpret_match_t */ {
+enum xcb_xkb_sym_interpret_match_t {
     XCB_XKB_SYM_INTERPRET_MATCH_NONE_OF = 0,
     XCB_XKB_SYM_INTERPRET_MATCH_ANY_OF_OR_NONE = 1,
     XCB_XKB_SYM_INTERPRET_MATCH_ANY_OF = 2,
     XCB_XKB_SYM_INTERPRET_MATCH_ALL_OF = 3,
     XCB_XKB_SYM_INTERPRET_MATCH_EXACTLY = 4
 }
+alias XCB_XKB_SYM_INTERPRET_MATCH_NONE_OF = xcb_xkb_sym_interpret_match_t.XCB_XKB_SYM_INTERPRET_MATCH_NONE_OF;
+alias XCB_XKB_SYM_INTERPRET_MATCH_ANY_OF_OR_NONE = xcb_xkb_sym_interpret_match_t.XCB_XKB_SYM_INTERPRET_MATCH_ANY_OF_OR_NONE;
+alias XCB_XKB_SYM_INTERPRET_MATCH_ANY_OF = xcb_xkb_sym_interpret_match_t.XCB_XKB_SYM_INTERPRET_MATCH_ANY_OF;
+alias XCB_XKB_SYM_INTERPRET_MATCH_ALL_OF = xcb_xkb_sym_interpret_match_t.XCB_XKB_SYM_INTERPRET_MATCH_ALL_OF;
+alias XCB_XKB_SYM_INTERPRET_MATCH_EXACTLY = xcb_xkb_sym_interpret_match_t.XCB_XKB_SYM_INTERPRET_MATCH_EXACTLY;
 
-enum /* xcb_xkb_sym_interp_match_t */ {
+enum xcb_xkb_sym_interp_match_t {
     XCB_XKB_SYM_INTERP_MATCH_LEVEL_ONE_ONLY = 128,
     XCB_XKB_SYM_INTERP_MATCH_OP_MASK = 127
 }
+alias XCB_XKB_SYM_INTERP_MATCH_LEVEL_ONE_ONLY = xcb_xkb_sym_interp_match_t.XCB_XKB_SYM_INTERP_MATCH_LEVEL_ONE_ONLY;
+alias XCB_XKB_SYM_INTERP_MATCH_OP_MASK = xcb_xkb_sym_interp_match_t.XCB_XKB_SYM_INTERP_MATCH_OP_MASK;
 
-enum /* xcb_xkb_im_flag_t */ {
+enum xcb_xkb_im_flag_t {
     XCB_XKB_IM_FLAG_NO_EXPLICIT = 128,
     XCB_XKB_IM_FLAG_NO_AUTOMATIC = 64,
     XCB_XKB_IM_FLAG_LED_DRIVES_KB = 32
 }
+alias XCB_XKB_IM_FLAG_NO_EXPLICIT = xcb_xkb_im_flag_t.XCB_XKB_IM_FLAG_NO_EXPLICIT;
+alias XCB_XKB_IM_FLAG_NO_AUTOMATIC = xcb_xkb_im_flag_t.XCB_XKB_IM_FLAG_NO_AUTOMATIC;
+alias XCB_XKB_IM_FLAG_LED_DRIVES_KB = xcb_xkb_im_flag_t.XCB_XKB_IM_FLAG_LED_DRIVES_KB;
 
-enum /* xcb_xkb_im_mods_which_t */ {
+enum xcb_xkb_im_mods_which_t {
     XCB_XKB_IM_MODS_WHICH_USE_COMPAT = 16,
     XCB_XKB_IM_MODS_WHICH_USE_EFFECTIVE = 8,
     XCB_XKB_IM_MODS_WHICH_USE_LOCKED = 4,
     XCB_XKB_IM_MODS_WHICH_USE_LATCHED = 2,
     XCB_XKB_IM_MODS_WHICH_USE_BASE = 1
 }
+alias XCB_XKB_IM_MODS_WHICH_USE_COMPAT = xcb_xkb_im_mods_which_t.XCB_XKB_IM_MODS_WHICH_USE_COMPAT;
+alias XCB_XKB_IM_MODS_WHICH_USE_EFFECTIVE = xcb_xkb_im_mods_which_t.XCB_XKB_IM_MODS_WHICH_USE_EFFECTIVE;
+alias XCB_XKB_IM_MODS_WHICH_USE_LOCKED = xcb_xkb_im_mods_which_t.XCB_XKB_IM_MODS_WHICH_USE_LOCKED;
+alias XCB_XKB_IM_MODS_WHICH_USE_LATCHED = xcb_xkb_im_mods_which_t.XCB_XKB_IM_MODS_WHICH_USE_LATCHED;
+alias XCB_XKB_IM_MODS_WHICH_USE_BASE = xcb_xkb_im_mods_which_t.XCB_XKB_IM_MODS_WHICH_USE_BASE;
 
-enum /* xcb_xkb_im_groups_which_t */ {
+enum xcb_xkb_im_groups_which_t {
     XCB_XKB_IM_GROUPS_WHICH_USE_COMPAT = 16,
     XCB_XKB_IM_GROUPS_WHICH_USE_EFFECTIVE = 8,
     XCB_XKB_IM_GROUPS_WHICH_USE_LOCKED = 4,
     XCB_XKB_IM_GROUPS_WHICH_USE_LATCHED = 2,
     XCB_XKB_IM_GROUPS_WHICH_USE_BASE = 1
 }
+alias XCB_XKB_IM_GROUPS_WHICH_USE_COMPAT = xcb_xkb_im_groups_which_t.XCB_XKB_IM_GROUPS_WHICH_USE_COMPAT;
+alias XCB_XKB_IM_GROUPS_WHICH_USE_EFFECTIVE = xcb_xkb_im_groups_which_t.XCB_XKB_IM_GROUPS_WHICH_USE_EFFECTIVE;
+alias XCB_XKB_IM_GROUPS_WHICH_USE_LOCKED = xcb_xkb_im_groups_which_t.XCB_XKB_IM_GROUPS_WHICH_USE_LOCKED;
+alias XCB_XKB_IM_GROUPS_WHICH_USE_LATCHED = xcb_xkb_im_groups_which_t.XCB_XKB_IM_GROUPS_WHICH_USE_LATCHED;
+alias XCB_XKB_IM_GROUPS_WHICH_USE_BASE = xcb_xkb_im_groups_which_t.XCB_XKB_IM_GROUPS_WHICH_USE_BASE;
 
 /**
  * @brief xcb_xkb_indicator_map_t
@@ -347,12 +518,14 @@ struct xcb_xkb_indicator_map_iterator_t {
     int                      index; /**<  */
 }
 
-enum /* xcb_xkb_cm_detail_t */ {
+enum xcb_xkb_cm_detail_t {
     XCB_XKB_CM_DETAIL_SYM_INTERP = 1,
     XCB_XKB_CM_DETAIL_GROUP_COMPAT = 2
 }
+alias XCB_XKB_CM_DETAIL_SYM_INTERP = xcb_xkb_cm_detail_t.XCB_XKB_CM_DETAIL_SYM_INTERP;
+alias XCB_XKB_CM_DETAIL_GROUP_COMPAT = xcb_xkb_cm_detail_t.XCB_XKB_CM_DETAIL_GROUP_COMPAT;
 
-enum /* xcb_xkb_name_detail_t */ {
+enum xcb_xkb_name_detail_t {
     XCB_XKB_NAME_DETAIL_KEYCODES = 1,
     XCB_XKB_NAME_DETAIL_GEOMETRY = 2,
     XCB_XKB_NAME_DETAIL_SYMBOLS = 4,
@@ -368,8 +541,22 @@ enum /* xcb_xkb_name_detail_t */ {
     XCB_XKB_NAME_DETAIL_GROUP_NAMES = 4096,
     XCB_XKB_NAME_DETAIL_RG_NAMES = 8192
 }
+alias XCB_XKB_NAME_DETAIL_KEYCODES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_KEYCODES;
+alias XCB_XKB_NAME_DETAIL_GEOMETRY = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_GEOMETRY;
+alias XCB_XKB_NAME_DETAIL_SYMBOLS = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_SYMBOLS;
+alias XCB_XKB_NAME_DETAIL_PHYS_SYMBOLS = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_PHYS_SYMBOLS;
+alias XCB_XKB_NAME_DETAIL_TYPES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_TYPES;
+alias XCB_XKB_NAME_DETAIL_COMPAT = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_COMPAT;
+alias XCB_XKB_NAME_DETAIL_KEY_TYPE_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_KEY_TYPE_NAMES;
+alias XCB_XKB_NAME_DETAIL_KT_LEVEL_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_KT_LEVEL_NAMES;
+alias XCB_XKB_NAME_DETAIL_INDICATOR_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_INDICATOR_NAMES;
+alias XCB_XKB_NAME_DETAIL_KEY_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_KEY_NAMES;
+alias XCB_XKB_NAME_DETAIL_KEY_ALIASES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_KEY_ALIASES;
+alias XCB_XKB_NAME_DETAIL_VIRTUAL_MOD_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_VIRTUAL_MOD_NAMES;
+alias XCB_XKB_NAME_DETAIL_GROUP_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_GROUP_NAMES;
+alias XCB_XKB_NAME_DETAIL_RG_NAMES = xcb_xkb_name_detail_t.XCB_XKB_NAME_DETAIL_RG_NAMES;
 
-enum /* xcb_xkb_gbn_detail_t */ {
+enum xcb_xkb_gbn_detail_t {
     XCB_XKB_GBN_DETAIL_TYPES = 1,
     XCB_XKB_GBN_DETAIL_COMPAT_MAP = 2,
     XCB_XKB_GBN_DETAIL_CLIENT_SYMBOLS = 4,
@@ -379,22 +566,40 @@ enum /* xcb_xkb_gbn_detail_t */ {
     XCB_XKB_GBN_DETAIL_GEOMETRY = 64,
     XCB_XKB_GBN_DETAIL_OTHER_NAMES = 128
 }
+alias XCB_XKB_GBN_DETAIL_TYPES = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_TYPES;
+alias XCB_XKB_GBN_DETAIL_COMPAT_MAP = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_COMPAT_MAP;
+alias XCB_XKB_GBN_DETAIL_CLIENT_SYMBOLS = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_CLIENT_SYMBOLS;
+alias XCB_XKB_GBN_DETAIL_SERVER_SYMBOLS = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_SERVER_SYMBOLS;
+alias XCB_XKB_GBN_DETAIL_INDICATOR_MAPS = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_INDICATOR_MAPS;
+alias XCB_XKB_GBN_DETAIL_KEY_NAMES = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_KEY_NAMES;
+alias XCB_XKB_GBN_DETAIL_GEOMETRY = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_GEOMETRY;
+alias XCB_XKB_GBN_DETAIL_OTHER_NAMES = xcb_xkb_gbn_detail_t.XCB_XKB_GBN_DETAIL_OTHER_NAMES;
 
-enum /* xcb_xkb_xi_feature_t */ {
+enum xcb_xkb_xi_feature_t {
     XCB_XKB_XI_FEATURE_KEYBOARDS = 1,
     XCB_XKB_XI_FEATURE_BUTTON_ACTIONS = 2,
     XCB_XKB_XI_FEATURE_INDICATOR_NAMES = 4,
     XCB_XKB_XI_FEATURE_INDICATOR_MAPS = 8,
     XCB_XKB_XI_FEATURE_INDICATOR_STATE = 16
 }
+alias XCB_XKB_XI_FEATURE_KEYBOARDS = xcb_xkb_xi_feature_t.XCB_XKB_XI_FEATURE_KEYBOARDS;
+alias XCB_XKB_XI_FEATURE_BUTTON_ACTIONS = xcb_xkb_xi_feature_t.XCB_XKB_XI_FEATURE_BUTTON_ACTIONS;
+alias XCB_XKB_XI_FEATURE_INDICATOR_NAMES = xcb_xkb_xi_feature_t.XCB_XKB_XI_FEATURE_INDICATOR_NAMES;
+alias XCB_XKB_XI_FEATURE_INDICATOR_MAPS = xcb_xkb_xi_feature_t.XCB_XKB_XI_FEATURE_INDICATOR_MAPS;
+alias XCB_XKB_XI_FEATURE_INDICATOR_STATE = xcb_xkb_xi_feature_t.XCB_XKB_XI_FEATURE_INDICATOR_STATE;
 
-enum /* xcb_xkb_per_client_flag_t */ {
+enum xcb_xkb_per_client_flag_t {
     XCB_XKB_PER_CLIENT_FLAG_DETECTABLE_AUTO_REPEAT = 1,
     XCB_XKB_PER_CLIENT_FLAG_GRABS_USE_XKB_STATE = 2,
     XCB_XKB_PER_CLIENT_FLAG_AUTO_RESET_CONTROLS = 4,
     XCB_XKB_PER_CLIENT_FLAG_LOOKUP_STATE_WHEN_GRABBED = 8,
     XCB_XKB_PER_CLIENT_FLAG_SEND_EVENT_USES_XKB_STATE = 16
 }
+alias XCB_XKB_PER_CLIENT_FLAG_DETECTABLE_AUTO_REPEAT = xcb_xkb_per_client_flag_t.XCB_XKB_PER_CLIENT_FLAG_DETECTABLE_AUTO_REPEAT;
+alias XCB_XKB_PER_CLIENT_FLAG_GRABS_USE_XKB_STATE = xcb_xkb_per_client_flag_t.XCB_XKB_PER_CLIENT_FLAG_GRABS_USE_XKB_STATE;
+alias XCB_XKB_PER_CLIENT_FLAG_AUTO_RESET_CONTROLS = xcb_xkb_per_client_flag_t.XCB_XKB_PER_CLIENT_FLAG_AUTO_RESET_CONTROLS;
+alias XCB_XKB_PER_CLIENT_FLAG_LOOKUP_STATE_WHEN_GRABBED = xcb_xkb_per_client_flag_t.XCB_XKB_PER_CLIENT_FLAG_LOOKUP_STATE_WHEN_GRABBED;
+alias XCB_XKB_PER_CLIENT_FLAG_SEND_EVENT_USES_XKB_STATE = xcb_xkb_per_client_flag_t.XCB_XKB_PER_CLIENT_FLAG_SEND_EVENT_USES_XKB_STATE;
 
 /**
  * @brief xcb_xkb_mod_def_t
@@ -687,7 +892,7 @@ struct xcb_xkb_behavior_iterator_t {
     int                 index; /**<  */
 }
 
-enum /* xcb_xkb_behavior_type_t */ {
+enum xcb_xkb_behavior_type_t {
     XCB_XKB_BEHAVIOR_TYPE_DEFAULT = 0,
     XCB_XKB_BEHAVIOR_TYPE_LOCK = 1,
     XCB_XKB_BEHAVIOR_TYPE_RADIO_GROUP = 2,
@@ -698,6 +903,15 @@ enum /* xcb_xkb_behavior_type_t */ {
     XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_OVERLAY_1 = 131,
     XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_OVERLAY_2 = 132
 }
+alias XCB_XKB_BEHAVIOR_TYPE_DEFAULT = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_DEFAULT;
+alias XCB_XKB_BEHAVIOR_TYPE_LOCK = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_LOCK;
+alias XCB_XKB_BEHAVIOR_TYPE_RADIO_GROUP = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_RADIO_GROUP;
+alias XCB_XKB_BEHAVIOR_TYPE_OVERLAY_1 = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_OVERLAY_1;
+alias XCB_XKB_BEHAVIOR_TYPE_OVERLAY_2 = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_OVERLAY_2;
+alias XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_LOCK = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_LOCK;
+alias XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_RADIO_GROUP = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_RADIO_GROUP;
+alias XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_OVERLAY_1 = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_OVERLAY_1;
+alias XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_OVERLAY_2 = xcb_xkb_behavior_type_t.XCB_XKB_BEHAVIOR_TYPE_PERMAMENT_OVERLAY_2;
 
 /**
  * @brief xcb_xkb_set_behavior_t
@@ -950,13 +1164,18 @@ struct xcb_xkb_row_iterator_t {
     int            index; /**<  */
 }
 
-enum /* xcb_xkb_doodad_type_t */ {
+enum xcb_xkb_doodad_type_t {
     XCB_XKB_DOODAD_TYPE_OUTLINE = 1,
     XCB_XKB_DOODAD_TYPE_SOLID = 2,
     XCB_XKB_DOODAD_TYPE_TEXT = 3,
     XCB_XKB_DOODAD_TYPE_INDICATOR = 4,
     XCB_XKB_DOODAD_TYPE_LOGO = 5
 }
+alias XCB_XKB_DOODAD_TYPE_OUTLINE = xcb_xkb_doodad_type_t.XCB_XKB_DOODAD_TYPE_OUTLINE;
+alias XCB_XKB_DOODAD_TYPE_SOLID = xcb_xkb_doodad_type_t.XCB_XKB_DOODAD_TYPE_SOLID;
+alias XCB_XKB_DOODAD_TYPE_TEXT = xcb_xkb_doodad_type_t.XCB_XKB_DOODAD_TYPE_TEXT;
+alias XCB_XKB_DOODAD_TYPE_INDICATOR = xcb_xkb_doodad_type_t.XCB_XKB_DOODAD_TYPE_INDICATOR;
+alias XCB_XKB_DOODAD_TYPE_LOGO = xcb_xkb_doodad_type_t.XCB_XKB_DOODAD_TYPE_LOGO;
 
 /**
  * @brief xcb_xkb_listing_t
@@ -996,11 +1215,14 @@ struct xcb_xkb_device_led_info_iterator_t {
     int                        index; /**<  */
 }
 
-enum /* xcb_xkb_error_t */ {
+enum xcb_xkb_error_t {
     XCB_XKB_ERROR_BAD_DEVICE = 255,
     XCB_XKB_ERROR_BAD_CLASS = 254,
     XCB_XKB_ERROR_BAD_ID = 253
 }
+alias XCB_XKB_ERROR_BAD_DEVICE = xcb_xkb_error_t.XCB_XKB_ERROR_BAD_DEVICE;
+alias XCB_XKB_ERROR_BAD_CLASS = xcb_xkb_error_t.XCB_XKB_ERROR_BAD_CLASS;
+alias XCB_XKB_ERROR_BAD_ID = xcb_xkb_error_t.XCB_XKB_ERROR_BAD_ID;
 
 /** Opcode for xcb_xkb_keyboard. */
 enum XCB_XKB_KEYBOARD = 0;
@@ -1018,14 +1240,18 @@ struct xcb_xkb_keyboard_error_t {
     ubyte[21]  pad0; /**<  */
 }
 
-enum /* xcb_xkb_sa_t */ {
+enum xcb_xkb_sa_t {
     XCB_XKB_SA_CLEAR_LOCKS = 1,
     XCB_XKB_SA_LATCH_TO_LOCK = 2,
     XCB_XKB_SA_USE_MOD_MAP_MODS = 4,
     XCB_XKB_SA_GROUP_ABSOLUTE = 4
 }
+alias XCB_XKB_SA_CLEAR_LOCKS = xcb_xkb_sa_t.XCB_XKB_SA_CLEAR_LOCKS;
+alias XCB_XKB_SA_LATCH_TO_LOCK = xcb_xkb_sa_t.XCB_XKB_SA_LATCH_TO_LOCK;
+alias XCB_XKB_SA_USE_MOD_MAP_MODS = xcb_xkb_sa_t.XCB_XKB_SA_USE_MOD_MAP_MODS;
+alias XCB_XKB_SA_GROUP_ABSOLUTE = xcb_xkb_sa_t.XCB_XKB_SA_GROUP_ABSOLUTE;
 
-enum /* xcb_xkb_sa_type_t */ {
+enum xcb_xkb_sa_type_t {
     XCB_XKB_SA_TYPE_NO_ACTION = 0,
     XCB_XKB_SA_TYPE_SET_MODS = 1,
     XCB_XKB_SA_TYPE_LATCH_MODS = 2,
@@ -1048,6 +1274,27 @@ enum /* xcb_xkb_sa_type_t */ {
     XCB_XKB_SA_TYPE_LOCK_DEVICE_BTN = 19,
     XCB_XKB_SA_TYPE_DEVICE_VALUATOR = 20
 }
+alias XCB_XKB_SA_TYPE_NO_ACTION = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_NO_ACTION;
+alias XCB_XKB_SA_TYPE_SET_MODS = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_SET_MODS;
+alias XCB_XKB_SA_TYPE_LATCH_MODS = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LATCH_MODS;
+alias XCB_XKB_SA_TYPE_LOCK_MODS = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LOCK_MODS;
+alias XCB_XKB_SA_TYPE_SET_GROUP = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_SET_GROUP;
+alias XCB_XKB_SA_TYPE_LATCH_GROUP = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LATCH_GROUP;
+alias XCB_XKB_SA_TYPE_LOCK_GROUP = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LOCK_GROUP;
+alias XCB_XKB_SA_TYPE_MOVE_PTR = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_MOVE_PTR;
+alias XCB_XKB_SA_TYPE_PTR_BTN = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_PTR_BTN;
+alias XCB_XKB_SA_TYPE_LOCK_PTR_BTN = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LOCK_PTR_BTN;
+alias XCB_XKB_SA_TYPE_SET_PTR_DFLT = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_SET_PTR_DFLT;
+alias XCB_XKB_SA_TYPE_ISO_LOCK = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_ISO_LOCK;
+alias XCB_XKB_SA_TYPE_TERMINATE = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_TERMINATE;
+alias XCB_XKB_SA_TYPE_SWITCH_SCREEN = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_SWITCH_SCREEN;
+alias XCB_XKB_SA_TYPE_SET_CONTROLS = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_SET_CONTROLS;
+alias XCB_XKB_SA_TYPE_LOCK_CONTROLS = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LOCK_CONTROLS;
+alias XCB_XKB_SA_TYPE_ACTION_MESSAGE = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_ACTION_MESSAGE;
+alias XCB_XKB_SA_TYPE_REDIRECT_KEY = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_REDIRECT_KEY;
+alias XCB_XKB_SA_TYPE_DEVICE_BTN = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_DEVICE_BTN;
+alias XCB_XKB_SA_TYPE_LOCK_DEVICE_BTN = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_LOCK_DEVICE_BTN;
+alias XCB_XKB_SA_TYPE_DEVICE_VALUATOR = xcb_xkb_sa_type_t.XCB_XKB_SA_TYPE_DEVICE_VALUATOR;
 
 /**
  * @brief xcb_xkb_sa_no_action_t
@@ -1189,11 +1436,14 @@ struct xcb_xkb_sa_lock_group_iterator_t {
     int                      index; /**<  */
 }
 
-enum /* xcb_xkb_sa_move_ptr_flag_t */ {
+enum xcb_xkb_sa_move_ptr_flag_t {
     XCB_XKB_SA_MOVE_PTR_FLAG_NO_ACCELERATION = 1,
     XCB_XKB_SA_MOVE_PTR_FLAG_MOVE_ABSOLUTE_X = 2,
     XCB_XKB_SA_MOVE_PTR_FLAG_MOVE_ABSOLUTE_Y = 4
 }
+alias XCB_XKB_SA_MOVE_PTR_FLAG_NO_ACCELERATION = xcb_xkb_sa_move_ptr_flag_t.XCB_XKB_SA_MOVE_PTR_FLAG_NO_ACCELERATION;
+alias XCB_XKB_SA_MOVE_PTR_FLAG_MOVE_ABSOLUTE_X = xcb_xkb_sa_move_ptr_flag_t.XCB_XKB_SA_MOVE_PTR_FLAG_MOVE_ABSOLUTE_X;
+alias XCB_XKB_SA_MOVE_PTR_FLAG_MOVE_ABSOLUTE_Y = xcb_xkb_sa_move_ptr_flag_t.XCB_XKB_SA_MOVE_PTR_FLAG_MOVE_ABSOLUTE_Y;
 
 /**
  * @brief xcb_xkb_sa_move_ptr_t
@@ -1257,10 +1507,12 @@ struct xcb_xkb_sa_lock_ptr_btn_iterator_t {
     int                        index; /**<  */
 }
 
-enum /* xcb_xkb_sa_set_ptr_dflt_flag_t */ {
+enum xcb_xkb_sa_set_ptr_dflt_flag_t {
     XCB_XKB_SA_SET_PTR_DFLT_FLAG_DFLT_BTN_ABSOLUTE = 4,
     XCB_XKB_SA_SET_PTR_DFLT_FLAG_AFFECT_DFLT_BUTTON = 1
 }
+alias XCB_XKB_SA_SET_PTR_DFLT_FLAG_DFLT_BTN_ABSOLUTE = xcb_xkb_sa_set_ptr_dflt_flag_t.XCB_XKB_SA_SET_PTR_DFLT_FLAG_DFLT_BTN_ABSOLUTE;
+alias XCB_XKB_SA_SET_PTR_DFLT_FLAG_AFFECT_DFLT_BUTTON = xcb_xkb_sa_set_ptr_dflt_flag_t.XCB_XKB_SA_SET_PTR_DFLT_FLAG_AFFECT_DFLT_BUTTON;
 
 /**
  * @brief xcb_xkb_sa_set_ptr_dflt_t
@@ -1282,20 +1534,29 @@ struct xcb_xkb_sa_set_ptr_dflt_iterator_t {
     int                        index; /**<  */
 }
 
-enum /* xcb_xkb_sa_iso_lock_flag_t */ {
+enum xcb_xkb_sa_iso_lock_flag_t {
     XCB_XKB_SA_ISO_LOCK_FLAG_NO_LOCK = 1,
     XCB_XKB_SA_ISO_LOCK_FLAG_NO_UNLOCK = 2,
     XCB_XKB_SA_ISO_LOCK_FLAG_USE_MOD_MAP_MODS = 4,
     XCB_XKB_SA_ISO_LOCK_FLAG_GROUP_ABSOLUTE = 4,
     XCB_XKB_SA_ISO_LOCK_FLAG_ISO_DFLT_IS_GROUP = 8
 }
+alias XCB_XKB_SA_ISO_LOCK_FLAG_NO_LOCK = xcb_xkb_sa_iso_lock_flag_t.XCB_XKB_SA_ISO_LOCK_FLAG_NO_LOCK;
+alias XCB_XKB_SA_ISO_LOCK_FLAG_NO_UNLOCK = xcb_xkb_sa_iso_lock_flag_t.XCB_XKB_SA_ISO_LOCK_FLAG_NO_UNLOCK;
+alias XCB_XKB_SA_ISO_LOCK_FLAG_USE_MOD_MAP_MODS = xcb_xkb_sa_iso_lock_flag_t.XCB_XKB_SA_ISO_LOCK_FLAG_USE_MOD_MAP_MODS;
+alias XCB_XKB_SA_ISO_LOCK_FLAG_GROUP_ABSOLUTE = xcb_xkb_sa_iso_lock_flag_t.XCB_XKB_SA_ISO_LOCK_FLAG_GROUP_ABSOLUTE;
+alias XCB_XKB_SA_ISO_LOCK_FLAG_ISO_DFLT_IS_GROUP = xcb_xkb_sa_iso_lock_flag_t.XCB_XKB_SA_ISO_LOCK_FLAG_ISO_DFLT_IS_GROUP;
 
-enum /* xcb_xkb_sa_iso_lock_no_affect_t */ {
+enum xcb_xkb_sa_iso_lock_no_affect_t {
     XCB_XKB_SA_ISO_LOCK_NO_AFFECT_CTRLS = 8,
     XCB_XKB_SA_ISO_LOCK_NO_AFFECT_PTR = 16,
     XCB_XKB_SA_ISO_LOCK_NO_AFFECT_GROUP = 32,
     XCB_XKB_SA_ISO_LOCK_NO_AFFECT_MODS = 64
 }
+alias XCB_XKB_SA_ISO_LOCK_NO_AFFECT_CTRLS = xcb_xkb_sa_iso_lock_no_affect_t.XCB_XKB_SA_ISO_LOCK_NO_AFFECT_CTRLS;
+alias XCB_XKB_SA_ISO_LOCK_NO_AFFECT_PTR = xcb_xkb_sa_iso_lock_no_affect_t.XCB_XKB_SA_ISO_LOCK_NO_AFFECT_PTR;
+alias XCB_XKB_SA_ISO_LOCK_NO_AFFECT_GROUP = xcb_xkb_sa_iso_lock_no_affect_t.XCB_XKB_SA_ISO_LOCK_NO_AFFECT_GROUP;
+alias XCB_XKB_SA_ISO_LOCK_NO_AFFECT_MODS = xcb_xkb_sa_iso_lock_no_affect_t.XCB_XKB_SA_ISO_LOCK_NO_AFFECT_MODS;
 
 /**
  * @brief xcb_xkb_sa_iso_lock_t
@@ -1337,10 +1598,12 @@ struct xcb_xkb_sa_terminate_iterator_t {
     int                     index; /**<  */
 }
 
-enum /* xcb_xkb_switch_screen_flag_t */ {
+enum xcb_xkb_switch_screen_flag_t {
     XCB_XKB_SWITCH_SCREEN_FLAG_APPLICATION = 1,
     XCB_XKB_SWITCH_SCREEN_FLAG_ABSOLUTE = 4
 }
+alias XCB_XKB_SWITCH_SCREEN_FLAG_APPLICATION = xcb_xkb_switch_screen_flag_t.XCB_XKB_SWITCH_SCREEN_FLAG_APPLICATION;
+alias XCB_XKB_SWITCH_SCREEN_FLAG_ABSOLUTE = xcb_xkb_switch_screen_flag_t.XCB_XKB_SWITCH_SCREEN_FLAG_ABSOLUTE;
 
 /**
  * @brief xcb_xkb_sa_switch_screen_t
@@ -1361,15 +1624,20 @@ struct xcb_xkb_sa_switch_screen_iterator_t {
     int                         index; /**<  */
 }
 
-enum /* xcb_xkb_bool_ctrls_high_t */ {
+enum xcb_xkb_bool_ctrls_high_t {
     XCB_XKB_BOOL_CTRLS_HIGH_ACCESS_X_FEEDBACK = 1,
     XCB_XKB_BOOL_CTRLS_HIGH_AUDIBLE_BELL = 2,
     XCB_XKB_BOOL_CTRLS_HIGH_OVERLAY_1 = 4,
     XCB_XKB_BOOL_CTRLS_HIGH_OVERLAY_2 = 8,
     XCB_XKB_BOOL_CTRLS_HIGH_IGNORE_GROUP_LOCK = 16
 }
+alias XCB_XKB_BOOL_CTRLS_HIGH_ACCESS_X_FEEDBACK = xcb_xkb_bool_ctrls_high_t.XCB_XKB_BOOL_CTRLS_HIGH_ACCESS_X_FEEDBACK;
+alias XCB_XKB_BOOL_CTRLS_HIGH_AUDIBLE_BELL = xcb_xkb_bool_ctrls_high_t.XCB_XKB_BOOL_CTRLS_HIGH_AUDIBLE_BELL;
+alias XCB_XKB_BOOL_CTRLS_HIGH_OVERLAY_1 = xcb_xkb_bool_ctrls_high_t.XCB_XKB_BOOL_CTRLS_HIGH_OVERLAY_1;
+alias XCB_XKB_BOOL_CTRLS_HIGH_OVERLAY_2 = xcb_xkb_bool_ctrls_high_t.XCB_XKB_BOOL_CTRLS_HIGH_OVERLAY_2;
+alias XCB_XKB_BOOL_CTRLS_HIGH_IGNORE_GROUP_LOCK = xcb_xkb_bool_ctrls_high_t.XCB_XKB_BOOL_CTRLS_HIGH_IGNORE_GROUP_LOCK;
 
-enum /* xcb_xkb_bool_ctrls_low_t */ {
+enum xcb_xkb_bool_ctrls_low_t {
     XCB_XKB_BOOL_CTRLS_LOW_REPEAT_KEYS = 1,
     XCB_XKB_BOOL_CTRLS_LOW_SLOW_KEYS = 2,
     XCB_XKB_BOOL_CTRLS_LOW_BOUNCE_KEYS = 4,
@@ -1379,6 +1647,14 @@ enum /* xcb_xkb_bool_ctrls_low_t */ {
     XCB_XKB_BOOL_CTRLS_LOW_ACCESS_X_KEYS = 64,
     XCB_XKB_BOOL_CTRLS_LOW_ACCESS_X_TIMEOUT = 128
 }
+alias XCB_XKB_BOOL_CTRLS_LOW_REPEAT_KEYS = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_REPEAT_KEYS;
+alias XCB_XKB_BOOL_CTRLS_LOW_SLOW_KEYS = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_SLOW_KEYS;
+alias XCB_XKB_BOOL_CTRLS_LOW_BOUNCE_KEYS = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_BOUNCE_KEYS;
+alias XCB_XKB_BOOL_CTRLS_LOW_STICKY_KEYS = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_STICKY_KEYS;
+alias XCB_XKB_BOOL_CTRLS_LOW_MOUSE_KEYS = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_MOUSE_KEYS;
+alias XCB_XKB_BOOL_CTRLS_LOW_MOUSE_KEYS_ACCEL = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_MOUSE_KEYS_ACCEL;
+alias XCB_XKB_BOOL_CTRLS_LOW_ACCESS_X_KEYS = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_ACCESS_X_KEYS;
+alias XCB_XKB_BOOL_CTRLS_LOW_ACCESS_X_TIMEOUT = xcb_xkb_bool_ctrls_low_t.XCB_XKB_BOOL_CTRLS_LOW_ACCESS_X_TIMEOUT;
 
 /**
  * @brief xcb_xkb_sa_set_controls_t
@@ -1420,11 +1696,14 @@ struct xcb_xkb_sa_lock_controls_iterator_t {
     int                         index; /**<  */
 }
 
-enum /* xcb_xkb_action_message_flag_t */ {
+enum xcb_xkb_action_message_flag_t {
     XCB_XKB_ACTION_MESSAGE_FLAG_ON_PRESS = 1,
     XCB_XKB_ACTION_MESSAGE_FLAG_ON_RELEASE = 2,
     XCB_XKB_ACTION_MESSAGE_FLAG_GEN_KEY_EVENT = 4
 }
+alias XCB_XKB_ACTION_MESSAGE_FLAG_ON_PRESS = xcb_xkb_action_message_flag_t.XCB_XKB_ACTION_MESSAGE_FLAG_ON_PRESS;
+alias XCB_XKB_ACTION_MESSAGE_FLAG_ON_RELEASE = xcb_xkb_action_message_flag_t.XCB_XKB_ACTION_MESSAGE_FLAG_ON_RELEASE;
+alias XCB_XKB_ACTION_MESSAGE_FLAG_GEN_KEY_EVENT = xcb_xkb_action_message_flag_t.XCB_XKB_ACTION_MESSAGE_FLAG_GEN_KEY_EVENT;
 
 /**
  * @brief xcb_xkb_sa_action_message_t
@@ -1488,10 +1767,12 @@ struct xcb_xkb_sa_device_btn_iterator_t {
     int                      index; /**<  */
 }
 
-enum /* xcb_xkb_lock_device_flags_t */ {
+enum xcb_xkb_lock_device_flags_t {
     XCB_XKB_LOCK_DEVICE_FLAGS_NO_LOCK = 1,
     XCB_XKB_LOCK_DEVICE_FLAGS_NO_UNLOCK = 2
 }
+alias XCB_XKB_LOCK_DEVICE_FLAGS_NO_LOCK = xcb_xkb_lock_device_flags_t.XCB_XKB_LOCK_DEVICE_FLAGS_NO_LOCK;
+alias XCB_XKB_LOCK_DEVICE_FLAGS_NO_UNLOCK = xcb_xkb_lock_device_flags_t.XCB_XKB_LOCK_DEVICE_FLAGS_NO_UNLOCK;
 
 /**
  * @brief xcb_xkb_sa_lock_device_btn_t
@@ -1514,7 +1795,7 @@ struct xcb_xkb_sa_lock_device_btn_iterator_t {
     int                           index; /**<  */
 }
 
-enum /* xcb_xkb_sa_val_what_t */ {
+enum xcb_xkb_sa_val_what_t {
     XCB_XKB_SA_VAL_WHAT_IGNORE_VAL = 0,
     XCB_XKB_SA_VAL_WHAT_SET_VAL_MIN = 1,
     XCB_XKB_SA_VAL_WHAT_SET_VAL_CENTER = 2,
@@ -1522,6 +1803,12 @@ enum /* xcb_xkb_sa_val_what_t */ {
     XCB_XKB_SA_VAL_WHAT_SET_VAL_RELATIVE = 4,
     XCB_XKB_SA_VAL_WHAT_SET_VAL_ABSOLUTE = 5
 }
+alias XCB_XKB_SA_VAL_WHAT_IGNORE_VAL = xcb_xkb_sa_val_what_t.XCB_XKB_SA_VAL_WHAT_IGNORE_VAL;
+alias XCB_XKB_SA_VAL_WHAT_SET_VAL_MIN = xcb_xkb_sa_val_what_t.XCB_XKB_SA_VAL_WHAT_SET_VAL_MIN;
+alias XCB_XKB_SA_VAL_WHAT_SET_VAL_CENTER = xcb_xkb_sa_val_what_t.XCB_XKB_SA_VAL_WHAT_SET_VAL_CENTER;
+alias XCB_XKB_SA_VAL_WHAT_SET_VAL_MAX = xcb_xkb_sa_val_what_t.XCB_XKB_SA_VAL_WHAT_SET_VAL_MAX;
+alias XCB_XKB_SA_VAL_WHAT_SET_VAL_RELATIVE = xcb_xkb_sa_val_what_t.XCB_XKB_SA_VAL_WHAT_SET_VAL_RELATIVE;
+alias XCB_XKB_SA_VAL_WHAT_SET_VAL_ABSOLUTE = xcb_xkb_sa_val_what_t.XCB_XKB_SA_VAL_WHAT_SET_VAL_ABSOLUTE;
 
 /**
  * @brief xcb_xkb_sa_device_valuator_t

@@ -33,11 +33,14 @@ struct xcb_sync_alarm_iterator_t {
     int               index; /**<  */
 }
 
-enum /* xcb_sync_alarmstate_t */ {
+enum xcb_sync_alarmstate_t {
     XCB_SYNC_ALARMSTATE_ACTIVE = 0,
     XCB_SYNC_ALARMSTATE_INACTIVE = 1,
     XCB_SYNC_ALARMSTATE_DESTROYED = 2
 }
+alias XCB_SYNC_ALARMSTATE_ACTIVE = xcb_sync_alarmstate_t.XCB_SYNC_ALARMSTATE_ACTIVE;
+alias XCB_SYNC_ALARMSTATE_INACTIVE = xcb_sync_alarmstate_t.XCB_SYNC_ALARMSTATE_INACTIVE;
+alias XCB_SYNC_ALARMSTATE_DESTROYED = xcb_sync_alarmstate_t.XCB_SYNC_ALARMSTATE_DESTROYED;
 
 alias xcb_sync_counter_t = uint;
 
@@ -61,19 +64,25 @@ struct xcb_sync_fence_iterator_t {
     int               index; /**<  */
 }
 
-enum /* xcb_sync_testtype_t */ {
+enum xcb_sync_testtype_t {
     XCB_SYNC_TESTTYPE_POSITIVE_TRANSITION = 0,
     XCB_SYNC_TESTTYPE_NEGATIVE_TRANSITION = 1,
     XCB_SYNC_TESTTYPE_POSITIVE_COMPARISON = 2,
     XCB_SYNC_TESTTYPE_NEGATIVE_COMPARISON = 3
 }
+alias XCB_SYNC_TESTTYPE_POSITIVE_TRANSITION = xcb_sync_testtype_t.XCB_SYNC_TESTTYPE_POSITIVE_TRANSITION;
+alias XCB_SYNC_TESTTYPE_NEGATIVE_TRANSITION = xcb_sync_testtype_t.XCB_SYNC_TESTTYPE_NEGATIVE_TRANSITION;
+alias XCB_SYNC_TESTTYPE_POSITIVE_COMPARISON = xcb_sync_testtype_t.XCB_SYNC_TESTTYPE_POSITIVE_COMPARISON;
+alias XCB_SYNC_TESTTYPE_NEGATIVE_COMPARISON = xcb_sync_testtype_t.XCB_SYNC_TESTTYPE_NEGATIVE_COMPARISON;
 
-enum /* xcb_sync_valuetype_t */ {
+enum xcb_sync_valuetype_t {
     XCB_SYNC_VALUETYPE_ABSOLUTE = 0,
     XCB_SYNC_VALUETYPE_RELATIVE = 1
 }
+alias XCB_SYNC_VALUETYPE_ABSOLUTE = xcb_sync_valuetype_t.XCB_SYNC_VALUETYPE_ABSOLUTE;
+alias XCB_SYNC_VALUETYPE_RELATIVE = xcb_sync_valuetype_t.XCB_SYNC_VALUETYPE_RELATIVE;
 
-enum /* xcb_sync_ca_t */ {
+enum xcb_sync_ca_t {
     XCB_SYNC_CA_COUNTER = 1,
     XCB_SYNC_CA_VALUE_TYPE = 2,
     XCB_SYNC_CA_VALUE = 4,
@@ -81,6 +90,12 @@ enum /* xcb_sync_ca_t */ {
     XCB_SYNC_CA_DELTA = 16,
     XCB_SYNC_CA_EVENTS = 32
 }
+alias XCB_SYNC_CA_COUNTER = xcb_sync_ca_t.XCB_SYNC_CA_COUNTER;
+alias XCB_SYNC_CA_VALUE_TYPE = xcb_sync_ca_t.XCB_SYNC_CA_VALUE_TYPE;
+alias XCB_SYNC_CA_VALUE = xcb_sync_ca_t.XCB_SYNC_CA_VALUE;
+alias XCB_SYNC_CA_TEST_TYPE = xcb_sync_ca_t.XCB_SYNC_CA_TEST_TYPE;
+alias XCB_SYNC_CA_DELTA = xcb_sync_ca_t.XCB_SYNC_CA_DELTA;
+alias XCB_SYNC_CA_EVENTS = xcb_sync_ca_t.XCB_SYNC_CA_EVENTS;
 
 /**
  * @brief xcb_sync_int64_t
