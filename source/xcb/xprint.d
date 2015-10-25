@@ -61,18 +61,23 @@ struct xcb_x_print_pcontext_iterator_t {
     int                     index; /**<  */
 }
 
-enum /* xcb_x_print_get_doc_t */ {
+enum xcb_x_print_get_doc_t {
     XCB_X_PRINT_GET_DOC_FINISHED = 0,
     XCB_X_PRINT_GET_DOC_SECOND_CONSUMER = 1
 }
+alias XCB_X_PRINT_GET_DOC_FINISHED = xcb_x_print_get_doc_t.XCB_X_PRINT_GET_DOC_FINISHED;
+alias XCB_X_PRINT_GET_DOC_SECOND_CONSUMER = xcb_x_print_get_doc_t.XCB_X_PRINT_GET_DOC_SECOND_CONSUMER;
 
-enum /* xcb_x_print_ev_mask_t */ {
+enum xcb_x_print_ev_mask_t {
     XCB_X_PRINT_EV_MASK_NO_EVENT_MASK = 0,
     XCB_X_PRINT_EV_MASK_PRINT_MASK = 1,
     XCB_X_PRINT_EV_MASK_ATTRIBUTE_MASK = 2
 }
+alias XCB_X_PRINT_EV_MASK_NO_EVENT_MASK = xcb_x_print_ev_mask_t.XCB_X_PRINT_EV_MASK_NO_EVENT_MASK;
+alias XCB_X_PRINT_EV_MASK_PRINT_MASK = xcb_x_print_ev_mask_t.XCB_X_PRINT_EV_MASK_PRINT_MASK;
+alias XCB_X_PRINT_EV_MASK_ATTRIBUTE_MASK = xcb_x_print_ev_mask_t.XCB_X_PRINT_EV_MASK_ATTRIBUTE_MASK;
 
-enum /* xcb_x_print_detail_t */ {
+enum xcb_x_print_detail_t {
     XCB_X_PRINT_DETAIL_START_JOB_NOTIFY = 1,
     XCB_X_PRINT_DETAIL_END_JOB_NOTIFY = 2,
     XCB_X_PRINT_DETAIL_START_DOC_NOTIFY = 3,
@@ -80,8 +85,14 @@ enum /* xcb_x_print_detail_t */ {
     XCB_X_PRINT_DETAIL_START_PAGE_NOTIFY = 5,
     XCB_X_PRINT_DETAIL_END_PAGE_NOTIFY = 6
 }
+alias XCB_X_PRINT_DETAIL_START_JOB_NOTIFY = xcb_x_print_detail_t.XCB_X_PRINT_DETAIL_START_JOB_NOTIFY;
+alias XCB_X_PRINT_DETAIL_END_JOB_NOTIFY = xcb_x_print_detail_t.XCB_X_PRINT_DETAIL_END_JOB_NOTIFY;
+alias XCB_X_PRINT_DETAIL_START_DOC_NOTIFY = xcb_x_print_detail_t.XCB_X_PRINT_DETAIL_START_DOC_NOTIFY;
+alias XCB_X_PRINT_DETAIL_END_DOC_NOTIFY = xcb_x_print_detail_t.XCB_X_PRINT_DETAIL_END_DOC_NOTIFY;
+alias XCB_X_PRINT_DETAIL_START_PAGE_NOTIFY = xcb_x_print_detail_t.XCB_X_PRINT_DETAIL_START_PAGE_NOTIFY;
+alias XCB_X_PRINT_DETAIL_END_PAGE_NOTIFY = xcb_x_print_detail_t.XCB_X_PRINT_DETAIL_END_PAGE_NOTIFY;
 
-enum /* xcb_x_print_attr_t */ {
+enum xcb_x_print_attr_t {
     XCB_X_PRINT_ATTR_JOB_ATTR = 1,
     XCB_X_PRINT_ATTR_DOC_ATTR = 2,
     XCB_X_PRINT_ATTR_PAGE_ATTR = 3,
@@ -90,6 +101,13 @@ enum /* xcb_x_print_attr_t */ {
     XCB_X_PRINT_ATTR_MEDIUM_ATTR = 6,
     XCB_X_PRINT_ATTR_SPOOLER_ATTR = 7
 }
+alias XCB_X_PRINT_ATTR_JOB_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_JOB_ATTR;
+alias XCB_X_PRINT_ATTR_DOC_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_DOC_ATTR;
+alias XCB_X_PRINT_ATTR_PAGE_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_PAGE_ATTR;
+alias XCB_X_PRINT_ATTR_PRINTER_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_PRINTER_ATTR;
+alias XCB_X_PRINT_ATTR_SERVER_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_SERVER_ATTR;
+alias XCB_X_PRINT_ATTR_MEDIUM_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_MEDIUM_ATTR;
+alias XCB_X_PRINT_ATTR_SPOOLER_ATTR = xcb_x_print_attr_t.XCB_X_PRINT_ATTR_SPOOLER_ATTR;
 
 /**
  * @brief xcb_x_print_print_query_version_cookie_t

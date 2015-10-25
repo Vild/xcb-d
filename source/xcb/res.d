@@ -56,10 +56,12 @@ struct xcb_res_type_iterator_t {
     int             index; /**<  */
 }
 
-enum /* xcb_res_client_id_mask_t */ {
+enum xcb_res_client_id_mask_t {
     XCB_RES_CLIENT_ID_MASK_CLIENT_XID = 1,
     XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID = 2
 }
+alias XCB_RES_CLIENT_ID_MASK_CLIENT_XID = xcb_res_client_id_mask_t.XCB_RES_CLIENT_ID_MASK_CLIENT_XID;
+alias XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID = xcb_res_client_id_mask_t.XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID;
 
 /**
  * @brief xcb_res_client_id_spec_t

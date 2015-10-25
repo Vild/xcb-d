@@ -244,9 +244,15 @@ def d_enum(self, name):
     if namecount[tname] > 1:
         tname = _t(name + ('enum',))
 
+    basetype = ''
+    for (enam, eval) in self.values:
+        if eval != '':
+            if int(eval) >= 2147483648:
+                basetype = ' : uint'
+
     _d_setlevel(0)
     _d('')
-    _d('enum /* %s */ {', tname)
+    _d('enum %s%s {', tname, basetype)
 
     count = len(self.values)
 
@@ -260,6 +266,10 @@ def d_enum(self, name):
         _d('    %s%s%s%s%s', _n(name + (enam,)).upper(), equals, eval, comma, doc)
 
     _d('}')
+
+    for (enam, eval) in self.values:
+        enum_item_name = _n(name+(enam,)).upper()
+        _d('alias %s = %s.%s;', enum_item_name, tname, enum_item_name)
 
 def _d_type_setup(self, name, postfix):
     '''

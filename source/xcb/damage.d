@@ -34,12 +34,16 @@ struct xcb_damage_damage_iterator_t {
     int                  index; /**<  */
 }
 
-enum /* xcb_damage_report_level_t */ {
+enum xcb_damage_report_level_t {
     XCB_DAMAGE_REPORT_LEVEL_RAW_RECTANGLES = 0,
     XCB_DAMAGE_REPORT_LEVEL_DELTA_RECTANGLES = 1,
     XCB_DAMAGE_REPORT_LEVEL_BOUNDING_BOX = 2,
     XCB_DAMAGE_REPORT_LEVEL_NON_EMPTY = 3
 }
+alias XCB_DAMAGE_REPORT_LEVEL_RAW_RECTANGLES = xcb_damage_report_level_t.XCB_DAMAGE_REPORT_LEVEL_RAW_RECTANGLES;
+alias XCB_DAMAGE_REPORT_LEVEL_DELTA_RECTANGLES = xcb_damage_report_level_t.XCB_DAMAGE_REPORT_LEVEL_DELTA_RECTANGLES;
+alias XCB_DAMAGE_REPORT_LEVEL_BOUNDING_BOX = xcb_damage_report_level_t.XCB_DAMAGE_REPORT_LEVEL_BOUNDING_BOX;
+alias XCB_DAMAGE_REPORT_LEVEL_NON_EMPTY = xcb_damage_report_level_t.XCB_DAMAGE_REPORT_LEVEL_NON_EMPTY;
 
 /** Opcode for xcb_damage_bad_damage. */
 enum XCB_DAMAGE_BAD_DAMAGE = 0;

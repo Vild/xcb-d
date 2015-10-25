@@ -263,7 +263,7 @@ struct xcb_format_iterator_t {
     int           index; /**<  */
 }
 
-enum /* xcb_visual_class_t */ {
+enum xcb_visual_class_t {
     XCB_VISUAL_CLASS_STATIC_GRAY = 0,
     XCB_VISUAL_CLASS_GRAY_SCALE = 1,
     XCB_VISUAL_CLASS_STATIC_COLOR = 2,
@@ -271,6 +271,12 @@ enum /* xcb_visual_class_t */ {
     XCB_VISUAL_CLASS_TRUE_COLOR = 4,
     XCB_VISUAL_CLASS_DIRECT_COLOR = 5
 }
+alias XCB_VISUAL_CLASS_STATIC_GRAY = xcb_visual_class_t.XCB_VISUAL_CLASS_STATIC_GRAY;
+alias XCB_VISUAL_CLASS_GRAY_SCALE = xcb_visual_class_t.XCB_VISUAL_CLASS_GRAY_SCALE;
+alias XCB_VISUAL_CLASS_STATIC_COLOR = xcb_visual_class_t.XCB_VISUAL_CLASS_STATIC_COLOR;
+alias XCB_VISUAL_CLASS_PSEUDO_COLOR = xcb_visual_class_t.XCB_VISUAL_CLASS_PSEUDO_COLOR;
+alias XCB_VISUAL_CLASS_TRUE_COLOR = xcb_visual_class_t.XCB_VISUAL_CLASS_TRUE_COLOR;
+alias XCB_VISUAL_CLASS_DIRECT_COLOR = xcb_visual_class_t.XCB_VISUAL_CLASS_DIRECT_COLOR;
 
 /**
  * @brief xcb_visualtype_t
@@ -314,7 +320,7 @@ struct xcb_depth_iterator_t {
     int          index; /**<  */
 }
 
-enum /* xcb_event_mask_t */ {
+enum xcb_event_mask_t {
     XCB_EVENT_MASK_NO_EVENT = 0,
     XCB_EVENT_MASK_KEY_PRESS = 1,
     XCB_EVENT_MASK_KEY_RELEASE = 2,
@@ -342,12 +348,41 @@ enum /* xcb_event_mask_t */ {
     XCB_EVENT_MASK_COLOR_MAP_CHANGE = 8388608,
     XCB_EVENT_MASK_OWNER_GRAB_BUTTON = 16777216
 }
+alias XCB_EVENT_MASK_NO_EVENT = xcb_event_mask_t.XCB_EVENT_MASK_NO_EVENT;
+alias XCB_EVENT_MASK_KEY_PRESS = xcb_event_mask_t.XCB_EVENT_MASK_KEY_PRESS;
+alias XCB_EVENT_MASK_KEY_RELEASE = xcb_event_mask_t.XCB_EVENT_MASK_KEY_RELEASE;
+alias XCB_EVENT_MASK_BUTTON_PRESS = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_PRESS;
+alias XCB_EVENT_MASK_BUTTON_RELEASE = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_RELEASE;
+alias XCB_EVENT_MASK_ENTER_WINDOW = xcb_event_mask_t.XCB_EVENT_MASK_ENTER_WINDOW;
+alias XCB_EVENT_MASK_LEAVE_WINDOW = xcb_event_mask_t.XCB_EVENT_MASK_LEAVE_WINDOW;
+alias XCB_EVENT_MASK_POINTER_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_POINTER_MOTION;
+alias XCB_EVENT_MASK_POINTER_MOTION_HINT = xcb_event_mask_t.XCB_EVENT_MASK_POINTER_MOTION_HINT;
+alias XCB_EVENT_MASK_BUTTON_1_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_1_MOTION;
+alias XCB_EVENT_MASK_BUTTON_2_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_2_MOTION;
+alias XCB_EVENT_MASK_BUTTON_3_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_3_MOTION;
+alias XCB_EVENT_MASK_BUTTON_4_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_4_MOTION;
+alias XCB_EVENT_MASK_BUTTON_5_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_5_MOTION;
+alias XCB_EVENT_MASK_BUTTON_MOTION = xcb_event_mask_t.XCB_EVENT_MASK_BUTTON_MOTION;
+alias XCB_EVENT_MASK_KEYMAP_STATE = xcb_event_mask_t.XCB_EVENT_MASK_KEYMAP_STATE;
+alias XCB_EVENT_MASK_EXPOSURE = xcb_event_mask_t.XCB_EVENT_MASK_EXPOSURE;
+alias XCB_EVENT_MASK_VISIBILITY_CHANGE = xcb_event_mask_t.XCB_EVENT_MASK_VISIBILITY_CHANGE;
+alias XCB_EVENT_MASK_STRUCTURE_NOTIFY = xcb_event_mask_t.XCB_EVENT_MASK_STRUCTURE_NOTIFY;
+alias XCB_EVENT_MASK_RESIZE_REDIRECT = xcb_event_mask_t.XCB_EVENT_MASK_RESIZE_REDIRECT;
+alias XCB_EVENT_MASK_SUBSTRUCTURE_NOTIFY = xcb_event_mask_t.XCB_EVENT_MASK_SUBSTRUCTURE_NOTIFY;
+alias XCB_EVENT_MASK_SUBSTRUCTURE_REDIRECT = xcb_event_mask_t.XCB_EVENT_MASK_SUBSTRUCTURE_REDIRECT;
+alias XCB_EVENT_MASK_FOCUS_CHANGE = xcb_event_mask_t.XCB_EVENT_MASK_FOCUS_CHANGE;
+alias XCB_EVENT_MASK_PROPERTY_CHANGE = xcb_event_mask_t.XCB_EVENT_MASK_PROPERTY_CHANGE;
+alias XCB_EVENT_MASK_COLOR_MAP_CHANGE = xcb_event_mask_t.XCB_EVENT_MASK_COLOR_MAP_CHANGE;
+alias XCB_EVENT_MASK_OWNER_GRAB_BUTTON = xcb_event_mask_t.XCB_EVENT_MASK_OWNER_GRAB_BUTTON;
 
-enum /* xcb_backing_store_t */ {
+enum xcb_backing_store_t {
     XCB_BACKING_STORE_NOT_USEFUL = 0,
     XCB_BACKING_STORE_WHEN_MAPPED = 1,
     XCB_BACKING_STORE_ALWAYS = 2
 }
+alias XCB_BACKING_STORE_NOT_USEFUL = xcb_backing_store_t.XCB_BACKING_STORE_NOT_USEFUL;
+alias XCB_BACKING_STORE_WHEN_MAPPED = xcb_backing_store_t.XCB_BACKING_STORE_WHEN_MAPPED;
+alias XCB_BACKING_STORE_ALWAYS = xcb_backing_store_t.XCB_BACKING_STORE_ALWAYS;
 
 /**
  * @brief xcb_screen_t
@@ -440,10 +475,12 @@ struct xcb_setup_authenticate_iterator_t {
     int                       index; /**<  */
 }
 
-enum /* xcb_image_order_t */ {
+enum xcb_image_order_t {
     XCB_IMAGE_ORDER_LSB_FIRST = 0,
     XCB_IMAGE_ORDER_MSB_FIRST = 1
 }
+alias XCB_IMAGE_ORDER_LSB_FIRST = xcb_image_order_t.XCB_IMAGE_ORDER_LSB_FIRST;
+alias XCB_IMAGE_ORDER_MSB_FIRST = xcb_image_order_t.XCB_IMAGE_ORDER_MSB_FIRST;
 
 /**
  * @brief xcb_setup_t
@@ -480,7 +517,7 @@ struct xcb_setup_iterator_t {
     int          index; /**<  */
 }
 
-enum /* xcb_mod_mask_t */ {
+enum xcb_mod_mask_t {
     XCB_MOD_MASK_SHIFT = 1,
     XCB_MOD_MASK_LOCK = 2,
     XCB_MOD_MASK_CONTROL = 4,
@@ -491,8 +528,17 @@ enum /* xcb_mod_mask_t */ {
     XCB_MOD_MASK_5 = 128,
     XCB_MOD_MASK_ANY = 32768
 }
+alias XCB_MOD_MASK_SHIFT = xcb_mod_mask_t.XCB_MOD_MASK_SHIFT;
+alias XCB_MOD_MASK_LOCK = xcb_mod_mask_t.XCB_MOD_MASK_LOCK;
+alias XCB_MOD_MASK_CONTROL = xcb_mod_mask_t.XCB_MOD_MASK_CONTROL;
+alias XCB_MOD_MASK_1 = xcb_mod_mask_t.XCB_MOD_MASK_1;
+alias XCB_MOD_MASK_2 = xcb_mod_mask_t.XCB_MOD_MASK_2;
+alias XCB_MOD_MASK_3 = xcb_mod_mask_t.XCB_MOD_MASK_3;
+alias XCB_MOD_MASK_4 = xcb_mod_mask_t.XCB_MOD_MASK_4;
+alias XCB_MOD_MASK_5 = xcb_mod_mask_t.XCB_MOD_MASK_5;
+alias XCB_MOD_MASK_ANY = xcb_mod_mask_t.XCB_MOD_MASK_ANY;
 
-enum /* xcb_key_but_mask_t */ {
+enum xcb_key_but_mask_t {
     XCB_KEY_BUT_MASK_SHIFT = 1,
     XCB_KEY_BUT_MASK_LOCK = 2,
     XCB_KEY_BUT_MASK_CONTROL = 4,
@@ -507,10 +553,24 @@ enum /* xcb_key_but_mask_t */ {
     XCB_KEY_BUT_MASK_BUTTON_4 = 2048,
     XCB_KEY_BUT_MASK_BUTTON_5 = 4096
 }
+alias XCB_KEY_BUT_MASK_SHIFT = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_SHIFT;
+alias XCB_KEY_BUT_MASK_LOCK = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_LOCK;
+alias XCB_KEY_BUT_MASK_CONTROL = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_CONTROL;
+alias XCB_KEY_BUT_MASK_MOD_1 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_MOD_1;
+alias XCB_KEY_BUT_MASK_MOD_2 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_MOD_2;
+alias XCB_KEY_BUT_MASK_MOD_3 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_MOD_3;
+alias XCB_KEY_BUT_MASK_MOD_4 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_MOD_4;
+alias XCB_KEY_BUT_MASK_MOD_5 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_MOD_5;
+alias XCB_KEY_BUT_MASK_BUTTON_1 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_BUTTON_1;
+alias XCB_KEY_BUT_MASK_BUTTON_2 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_BUTTON_2;
+alias XCB_KEY_BUT_MASK_BUTTON_3 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_BUTTON_3;
+alias XCB_KEY_BUT_MASK_BUTTON_4 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_BUTTON_4;
+alias XCB_KEY_BUT_MASK_BUTTON_5 = xcb_key_but_mask_t.XCB_KEY_BUT_MASK_BUTTON_5;
 
-enum /* xcb_window_enum_t */ {
+enum xcb_window_enum_t {
     XCB_WINDOW_NONE = 0
 }
+alias XCB_WINDOW_NONE = xcb_window_enum_t.XCB_WINDOW_NONE;
 
 /** Opcode for xcb_key_press. */
 enum XCB_KEY_PRESS = 2;
@@ -540,7 +600,7 @@ enum XCB_KEY_RELEASE = 3;
 
 alias xcb_key_release_event_t = xcb_key_press_event_t;
 
-enum /* xcb_button_mask_t */ {
+enum xcb_button_mask_t {
     XCB_BUTTON_MASK_1 = 256,
     XCB_BUTTON_MASK_2 = 512,
     XCB_BUTTON_MASK_3 = 1024,
@@ -548,6 +608,12 @@ enum /* xcb_button_mask_t */ {
     XCB_BUTTON_MASK_5 = 4096,
     XCB_BUTTON_MASK_ANY = 32768
 }
+alias XCB_BUTTON_MASK_1 = xcb_button_mask_t.XCB_BUTTON_MASK_1;
+alias XCB_BUTTON_MASK_2 = xcb_button_mask_t.XCB_BUTTON_MASK_2;
+alias XCB_BUTTON_MASK_3 = xcb_button_mask_t.XCB_BUTTON_MASK_3;
+alias XCB_BUTTON_MASK_4 = xcb_button_mask_t.XCB_BUTTON_MASK_4;
+alias XCB_BUTTON_MASK_5 = xcb_button_mask_t.XCB_BUTTON_MASK_5;
+alias XCB_BUTTON_MASK_ANY = xcb_button_mask_t.XCB_BUTTON_MASK_ANY;
 
 /** Opcode for xcb_button_press. */
 enum XCB_BUTTON_PRESS = 4;
@@ -577,10 +643,12 @@ enum XCB_BUTTON_RELEASE = 5;
 
 alias xcb_button_release_event_t = xcb_button_press_event_t;
 
-enum /* xcb_motion_t */ {
+enum xcb_motion_t {
     XCB_MOTION_NORMAL = 0,
     XCB_MOTION_HINT = 1
 }
+alias XCB_MOTION_NORMAL = xcb_motion_t.XCB_MOTION_NORMAL;
+alias XCB_MOTION_HINT = xcb_motion_t.XCB_MOTION_HINT;
 
 /** Opcode for xcb_motion_notify. */
 enum XCB_MOTION_NOTIFY = 6;
@@ -605,7 +673,7 @@ struct xcb_motion_notify_event_t {
     ubyte           pad0; /**<  */
 }
 
-enum /* xcb_notify_detail_t */ {
+enum xcb_notify_detail_t {
     XCB_NOTIFY_DETAIL_ANCESTOR = 0,
     XCB_NOTIFY_DETAIL_VIRTUAL = 1,
     XCB_NOTIFY_DETAIL_INFERIOR = 2,
@@ -615,13 +683,25 @@ enum /* xcb_notify_detail_t */ {
     XCB_NOTIFY_DETAIL_POINTER_ROOT = 6,
     XCB_NOTIFY_DETAIL_NONE = 7
 }
+alias XCB_NOTIFY_DETAIL_ANCESTOR = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_ANCESTOR;
+alias XCB_NOTIFY_DETAIL_VIRTUAL = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_VIRTUAL;
+alias XCB_NOTIFY_DETAIL_INFERIOR = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_INFERIOR;
+alias XCB_NOTIFY_DETAIL_NONLINEAR = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_NONLINEAR;
+alias XCB_NOTIFY_DETAIL_NONLINEAR_VIRTUAL = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_NONLINEAR_VIRTUAL;
+alias XCB_NOTIFY_DETAIL_POINTER = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_POINTER;
+alias XCB_NOTIFY_DETAIL_POINTER_ROOT = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_POINTER_ROOT;
+alias XCB_NOTIFY_DETAIL_NONE = xcb_notify_detail_t.XCB_NOTIFY_DETAIL_NONE;
 
-enum /* xcb_notify_mode_t */ {
+enum xcb_notify_mode_t {
     XCB_NOTIFY_MODE_NORMAL = 0,
     XCB_NOTIFY_MODE_GRAB = 1,
     XCB_NOTIFY_MODE_UNGRAB = 2,
     XCB_NOTIFY_MODE_WHILE_GRABBED = 3
 }
+alias XCB_NOTIFY_MODE_NORMAL = xcb_notify_mode_t.XCB_NOTIFY_MODE_NORMAL;
+alias XCB_NOTIFY_MODE_GRAB = xcb_notify_mode_t.XCB_NOTIFY_MODE_GRAB;
+alias XCB_NOTIFY_MODE_UNGRAB = xcb_notify_mode_t.XCB_NOTIFY_MODE_UNGRAB;
+alias XCB_NOTIFY_MODE_WHILE_GRABBED = xcb_notify_mode_t.XCB_NOTIFY_MODE_WHILE_GRABBED;
 
 /** Opcode for xcb_enter_notify. */
 enum XCB_ENTER_NOTIFY = 7;
@@ -738,11 +818,14 @@ struct xcb_no_exposure_event_t {
     ubyte          pad1; /**<  */
 }
 
-enum /* xcb_visibility_t */ {
+enum xcb_visibility_t {
     XCB_VISIBILITY_UNOBSCURED = 0,
     XCB_VISIBILITY_PARTIALLY_OBSCURED = 1,
     XCB_VISIBILITY_FULLY_OBSCURED = 2
 }
+alias XCB_VISIBILITY_UNOBSCURED = xcb_visibility_t.XCB_VISIBILITY_UNOBSCURED;
+alias XCB_VISIBILITY_PARTIALLY_OBSCURED = xcb_visibility_t.XCB_VISIBILITY_PARTIALLY_OBSCURED;
+alias XCB_VISIBILITY_FULLY_OBSCURED = xcb_visibility_t.XCB_VISIBILITY_FULLY_OBSCURED;
 
 /** Opcode for xcb_visibility_notify. */
 enum XCB_VISIBILITY_NOTIFY = 15;
@@ -933,7 +1016,7 @@ struct xcb_resize_request_event_t {
     ushort       height; /**<  */
 }
 
-enum /* xcb_place_t */ {
+enum xcb_place_t {
     XCB_PLACE_ON_TOP = 0,
 /**< The window is now on top of all siblings. */
 
@@ -941,6 +1024,8 @@ enum /* xcb_place_t */ {
 /**< The window is now below all siblings. */
 
 }
+alias XCB_PLACE_ON_TOP = xcb_place_t.XCB_PLACE_ON_TOP;
+alias XCB_PLACE_ON_BOTTOM = xcb_place_t.XCB_PLACE_ON_BOTTOM;
 
 /** Opcode for xcb_circulate_notify. */
 enum XCB_CIRCULATE_NOTIFY = 26;
@@ -964,10 +1049,12 @@ enum XCB_CIRCULATE_REQUEST = 27;
 
 alias xcb_circulate_request_event_t = xcb_circulate_notify_event_t;
 
-enum /* xcb_property_t */ {
+enum xcb_property_t {
     XCB_PROPERTY_NEW_VALUE = 0,
     XCB_PROPERTY_DELETE = 1
 }
+alias XCB_PROPERTY_NEW_VALUE = xcb_property_t.XCB_PROPERTY_NEW_VALUE;
+alias XCB_PROPERTY_DELETE = xcb_property_t.XCB_PROPERTY_DELETE;
 
 /** Opcode for xcb_property_notify. */
 enum XCB_PROPERTY_NOTIFY = 28;
@@ -1001,11 +1088,12 @@ struct xcb_selection_clear_event_t {
     xcb_atom_t      selection; /**<  */
 }
 
-enum /* xcb_time_t */ {
+enum xcb_time_t {
     XCB_TIME_CURRENT_TIME = 0
 }
+alias XCB_TIME_CURRENT_TIME = xcb_time_t.XCB_TIME_CURRENT_TIME;
 
-enum /* xcb_atom_enum_t */ {
+enum xcb_atom_enum_t {
     XCB_ATOM_NONE = 0,
     XCB_ATOM_ANY = 0,
     XCB_ATOM_PRIMARY = 1,
@@ -1077,6 +1165,76 @@ enum /* xcb_atom_enum_t */ {
     XCB_ATOM_WM_CLASS = 67,
     XCB_ATOM_WM_TRANSIENT_FOR = 68
 }
+alias XCB_ATOM_NONE = xcb_atom_enum_t.XCB_ATOM_NONE;
+alias XCB_ATOM_ANY = xcb_atom_enum_t.XCB_ATOM_ANY;
+alias XCB_ATOM_PRIMARY = xcb_atom_enum_t.XCB_ATOM_PRIMARY;
+alias XCB_ATOM_SECONDARY = xcb_atom_enum_t.XCB_ATOM_SECONDARY;
+alias XCB_ATOM_ARC = xcb_atom_enum_t.XCB_ATOM_ARC;
+alias XCB_ATOM_ATOM = xcb_atom_enum_t.XCB_ATOM_ATOM;
+alias XCB_ATOM_BITMAP = xcb_atom_enum_t.XCB_ATOM_BITMAP;
+alias XCB_ATOM_CARDINAL = xcb_atom_enum_t.XCB_ATOM_CARDINAL;
+alias XCB_ATOM_COLORMAP = xcb_atom_enum_t.XCB_ATOM_COLORMAP;
+alias XCB_ATOM_CURSOR = xcb_atom_enum_t.XCB_ATOM_CURSOR;
+alias XCB_ATOM_CUT_BUFFER0 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER0;
+alias XCB_ATOM_CUT_BUFFER1 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER1;
+alias XCB_ATOM_CUT_BUFFER2 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER2;
+alias XCB_ATOM_CUT_BUFFER3 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER3;
+alias XCB_ATOM_CUT_BUFFER4 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER4;
+alias XCB_ATOM_CUT_BUFFER5 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER5;
+alias XCB_ATOM_CUT_BUFFER6 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER6;
+alias XCB_ATOM_CUT_BUFFER7 = xcb_atom_enum_t.XCB_ATOM_CUT_BUFFER7;
+alias XCB_ATOM_DRAWABLE = xcb_atom_enum_t.XCB_ATOM_DRAWABLE;
+alias XCB_ATOM_FONT = xcb_atom_enum_t.XCB_ATOM_FONT;
+alias XCB_ATOM_INTEGER = xcb_atom_enum_t.XCB_ATOM_INTEGER;
+alias XCB_ATOM_PIXMAP = xcb_atom_enum_t.XCB_ATOM_PIXMAP;
+alias XCB_ATOM_POINT = xcb_atom_enum_t.XCB_ATOM_POINT;
+alias XCB_ATOM_RECTANGLE = xcb_atom_enum_t.XCB_ATOM_RECTANGLE;
+alias XCB_ATOM_RESOURCE_MANAGER = xcb_atom_enum_t.XCB_ATOM_RESOURCE_MANAGER;
+alias XCB_ATOM_RGB_COLOR_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_COLOR_MAP;
+alias XCB_ATOM_RGB_BEST_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_BEST_MAP;
+alias XCB_ATOM_RGB_BLUE_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_BLUE_MAP;
+alias XCB_ATOM_RGB_DEFAULT_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_DEFAULT_MAP;
+alias XCB_ATOM_RGB_GRAY_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_GRAY_MAP;
+alias XCB_ATOM_RGB_GREEN_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_GREEN_MAP;
+alias XCB_ATOM_RGB_RED_MAP = xcb_atom_enum_t.XCB_ATOM_RGB_RED_MAP;
+alias XCB_ATOM_STRING = xcb_atom_enum_t.XCB_ATOM_STRING;
+alias XCB_ATOM_VISUALID = xcb_atom_enum_t.XCB_ATOM_VISUALID;
+alias XCB_ATOM_WINDOW = xcb_atom_enum_t.XCB_ATOM_WINDOW;
+alias XCB_ATOM_WM_COMMAND = xcb_atom_enum_t.XCB_ATOM_WM_COMMAND;
+alias XCB_ATOM_WM_HINTS = xcb_atom_enum_t.XCB_ATOM_WM_HINTS;
+alias XCB_ATOM_WM_CLIENT_MACHINE = xcb_atom_enum_t.XCB_ATOM_WM_CLIENT_MACHINE;
+alias XCB_ATOM_WM_ICON_NAME = xcb_atom_enum_t.XCB_ATOM_WM_ICON_NAME;
+alias XCB_ATOM_WM_ICON_SIZE = xcb_atom_enum_t.XCB_ATOM_WM_ICON_SIZE;
+alias XCB_ATOM_WM_NAME = xcb_atom_enum_t.XCB_ATOM_WM_NAME;
+alias XCB_ATOM_WM_NORMAL_HINTS = xcb_atom_enum_t.XCB_ATOM_WM_NORMAL_HINTS;
+alias XCB_ATOM_WM_SIZE_HINTS = xcb_atom_enum_t.XCB_ATOM_WM_SIZE_HINTS;
+alias XCB_ATOM_WM_ZOOM_HINTS = xcb_atom_enum_t.XCB_ATOM_WM_ZOOM_HINTS;
+alias XCB_ATOM_MIN_SPACE = xcb_atom_enum_t.XCB_ATOM_MIN_SPACE;
+alias XCB_ATOM_NORM_SPACE = xcb_atom_enum_t.XCB_ATOM_NORM_SPACE;
+alias XCB_ATOM_MAX_SPACE = xcb_atom_enum_t.XCB_ATOM_MAX_SPACE;
+alias XCB_ATOM_END_SPACE = xcb_atom_enum_t.XCB_ATOM_END_SPACE;
+alias XCB_ATOM_SUPERSCRIPT_X = xcb_atom_enum_t.XCB_ATOM_SUPERSCRIPT_X;
+alias XCB_ATOM_SUPERSCRIPT_Y = xcb_atom_enum_t.XCB_ATOM_SUPERSCRIPT_Y;
+alias XCB_ATOM_SUBSCRIPT_X = xcb_atom_enum_t.XCB_ATOM_SUBSCRIPT_X;
+alias XCB_ATOM_SUBSCRIPT_Y = xcb_atom_enum_t.XCB_ATOM_SUBSCRIPT_Y;
+alias XCB_ATOM_UNDERLINE_POSITION = xcb_atom_enum_t.XCB_ATOM_UNDERLINE_POSITION;
+alias XCB_ATOM_UNDERLINE_THICKNESS = xcb_atom_enum_t.XCB_ATOM_UNDERLINE_THICKNESS;
+alias XCB_ATOM_STRIKEOUT_ASCENT = xcb_atom_enum_t.XCB_ATOM_STRIKEOUT_ASCENT;
+alias XCB_ATOM_STRIKEOUT_DESCENT = xcb_atom_enum_t.XCB_ATOM_STRIKEOUT_DESCENT;
+alias XCB_ATOM_ITALIC_ANGLE = xcb_atom_enum_t.XCB_ATOM_ITALIC_ANGLE;
+alias XCB_ATOM_X_HEIGHT = xcb_atom_enum_t.XCB_ATOM_X_HEIGHT;
+alias XCB_ATOM_QUAD_WIDTH = xcb_atom_enum_t.XCB_ATOM_QUAD_WIDTH;
+alias XCB_ATOM_WEIGHT = xcb_atom_enum_t.XCB_ATOM_WEIGHT;
+alias XCB_ATOM_POINT_SIZE = xcb_atom_enum_t.XCB_ATOM_POINT_SIZE;
+alias XCB_ATOM_RESOLUTION = xcb_atom_enum_t.XCB_ATOM_RESOLUTION;
+alias XCB_ATOM_COPYRIGHT = xcb_atom_enum_t.XCB_ATOM_COPYRIGHT;
+alias XCB_ATOM_NOTICE = xcb_atom_enum_t.XCB_ATOM_NOTICE;
+alias XCB_ATOM_FONT_NAME = xcb_atom_enum_t.XCB_ATOM_FONT_NAME;
+alias XCB_ATOM_FAMILY_NAME = xcb_atom_enum_t.XCB_ATOM_FAMILY_NAME;
+alias XCB_ATOM_FULL_NAME = xcb_atom_enum_t.XCB_ATOM_FULL_NAME;
+alias XCB_ATOM_CAP_HEIGHT = xcb_atom_enum_t.XCB_ATOM_CAP_HEIGHT;
+alias XCB_ATOM_WM_CLASS = xcb_atom_enum_t.XCB_ATOM_WM_CLASS;
+alias XCB_ATOM_WM_TRANSIENT_FOR = xcb_atom_enum_t.XCB_ATOM_WM_TRANSIENT_FOR;
 
 /** Opcode for xcb_selection_request. */
 enum XCB_SELECTION_REQUEST = 30;
@@ -1113,7 +1271,7 @@ struct xcb_selection_notify_event_t {
     xcb_atom_t      property; /**<  */
 }
 
-enum /* xcb_colormap_state_t */ {
+enum xcb_colormap_state_t {
     XCB_COLORMAP_STATE_UNINSTALLED = 0,
 /**< The colormap was uninstalled. */
 
@@ -1121,10 +1279,13 @@ enum /* xcb_colormap_state_t */ {
 /**< The colormap was installed. */
 
 }
+alias XCB_COLORMAP_STATE_UNINSTALLED = xcb_colormap_state_t.XCB_COLORMAP_STATE_UNINSTALLED;
+alias XCB_COLORMAP_STATE_INSTALLED = xcb_colormap_state_t.XCB_COLORMAP_STATE_INSTALLED;
 
-enum /* xcb_colormap_enum_t */ {
+enum xcb_colormap_enum_t {
     XCB_COLORMAP_NONE = 0
 }
+alias XCB_COLORMAP_NONE = xcb_colormap_enum_t.XCB_COLORMAP_NONE;
 
 /** Opcode for xcb_colormap_notify. */
 enum XCB_COLORMAP_NOTIFY = 32;
@@ -1176,11 +1337,14 @@ struct xcb_client_message_event_t {
     xcb_client_message_data_t data; /**<  */
 }
 
-enum /* xcb_mapping_t */ {
+enum xcb_mapping_t {
     XCB_MAPPING_MODIFIER = 0,
     XCB_MAPPING_KEYBOARD = 1,
     XCB_MAPPING_POINTER = 2
 }
+alias XCB_MAPPING_MODIFIER = xcb_mapping_t.XCB_MAPPING_MODIFIER;
+alias XCB_MAPPING_KEYBOARD = xcb_mapping_t.XCB_MAPPING_KEYBOARD;
+alias XCB_MAPPING_POINTER = xcb_mapping_t.XCB_MAPPING_POINTER;
 
 /** Opcode for xcb_mapping_notify. */
 enum XCB_MAPPING_NOTIFY = 34;
@@ -1321,13 +1485,16 @@ enum XCB_IMPLEMENTATION = 17;
 
 alias xcb_implementation_error_t = xcb_request_error_t;
 
-enum /* xcb_window_class_t */ {
+enum xcb_window_class_t {
     XCB_WINDOW_CLASS_COPY_FROM_PARENT = 0,
     XCB_WINDOW_CLASS_INPUT_OUTPUT = 1,
     XCB_WINDOW_CLASS_INPUT_ONLY = 2
 }
+alias XCB_WINDOW_CLASS_COPY_FROM_PARENT = xcb_window_class_t.XCB_WINDOW_CLASS_COPY_FROM_PARENT;
+alias XCB_WINDOW_CLASS_INPUT_OUTPUT = xcb_window_class_t.XCB_WINDOW_CLASS_INPUT_OUTPUT;
+alias XCB_WINDOW_CLASS_INPUT_ONLY = xcb_window_class_t.XCB_WINDOW_CLASS_INPUT_ONLY;
 
-enum /* xcb_cw_t */ {
+enum xcb_cw_t {
     XCB_CW_BACK_PIXMAP = 1,
 /**< Overrides the default background-pixmap. The background pixmap and window must
 have the same root and same depth. Any size pixmap can be used, although some
@@ -1427,13 +1594,30 @@ fied, the parent's cursor will be used when the pointer is in the window, and an
 parent's cursor will cause an immediate change in the displayed cursor. */
 
 }
+alias XCB_CW_BACK_PIXMAP = xcb_cw_t.XCB_CW_BACK_PIXMAP;
+alias XCB_CW_BACK_PIXEL = xcb_cw_t.XCB_CW_BACK_PIXEL;
+alias XCB_CW_BORDER_PIXMAP = xcb_cw_t.XCB_CW_BORDER_PIXMAP;
+alias XCB_CW_BORDER_PIXEL = xcb_cw_t.XCB_CW_BORDER_PIXEL;
+alias XCB_CW_BIT_GRAVITY = xcb_cw_t.XCB_CW_BIT_GRAVITY;
+alias XCB_CW_WIN_GRAVITY = xcb_cw_t.XCB_CW_WIN_GRAVITY;
+alias XCB_CW_BACKING_STORE = xcb_cw_t.XCB_CW_BACKING_STORE;
+alias XCB_CW_BACKING_PLANES = xcb_cw_t.XCB_CW_BACKING_PLANES;
+alias XCB_CW_BACKING_PIXEL = xcb_cw_t.XCB_CW_BACKING_PIXEL;
+alias XCB_CW_OVERRIDE_REDIRECT = xcb_cw_t.XCB_CW_OVERRIDE_REDIRECT;
+alias XCB_CW_SAVE_UNDER = xcb_cw_t.XCB_CW_SAVE_UNDER;
+alias XCB_CW_EVENT_MASK = xcb_cw_t.XCB_CW_EVENT_MASK;
+alias XCB_CW_DONT_PROPAGATE = xcb_cw_t.XCB_CW_DONT_PROPAGATE;
+alias XCB_CW_COLORMAP = xcb_cw_t.XCB_CW_COLORMAP;
+alias XCB_CW_CURSOR = xcb_cw_t.XCB_CW_CURSOR;
 
-enum /* xcb_back_pixmap_t */ {
+enum xcb_back_pixmap_t {
     XCB_BACK_PIXMAP_NONE = 0,
     XCB_BACK_PIXMAP_PARENT_RELATIVE = 1
 }
+alias XCB_BACK_PIXMAP_NONE = xcb_back_pixmap_t.XCB_BACK_PIXMAP_NONE;
+alias XCB_BACK_PIXMAP_PARENT_RELATIVE = xcb_back_pixmap_t.XCB_BACK_PIXMAP_PARENT_RELATIVE;
 
-enum /* xcb_gravity_t */ {
+enum xcb_gravity_t {
     XCB_GRAVITY_BIT_FORGET = 0,
     XCB_GRAVITY_WIN_UNMAP = 0,
     XCB_GRAVITY_NORTH_WEST = 1,
@@ -1447,6 +1631,18 @@ enum /* xcb_gravity_t */ {
     XCB_GRAVITY_SOUTH_EAST = 9,
     XCB_GRAVITY_STATIC = 10
 }
+alias XCB_GRAVITY_BIT_FORGET = xcb_gravity_t.XCB_GRAVITY_BIT_FORGET;
+alias XCB_GRAVITY_WIN_UNMAP = xcb_gravity_t.XCB_GRAVITY_WIN_UNMAP;
+alias XCB_GRAVITY_NORTH_WEST = xcb_gravity_t.XCB_GRAVITY_NORTH_WEST;
+alias XCB_GRAVITY_NORTH = xcb_gravity_t.XCB_GRAVITY_NORTH;
+alias XCB_GRAVITY_NORTH_EAST = xcb_gravity_t.XCB_GRAVITY_NORTH_EAST;
+alias XCB_GRAVITY_WEST = xcb_gravity_t.XCB_GRAVITY_WEST;
+alias XCB_GRAVITY_CENTER = xcb_gravity_t.XCB_GRAVITY_CENTER;
+alias XCB_GRAVITY_EAST = xcb_gravity_t.XCB_GRAVITY_EAST;
+alias XCB_GRAVITY_SOUTH_WEST = xcb_gravity_t.XCB_GRAVITY_SOUTH_WEST;
+alias XCB_GRAVITY_SOUTH = xcb_gravity_t.XCB_GRAVITY_SOUTH;
+alias XCB_GRAVITY_SOUTH_EAST = xcb_gravity_t.XCB_GRAVITY_SOUTH_EAST;
+alias XCB_GRAVITY_STATIC = xcb_gravity_t.XCB_GRAVITY_STATIC;
 
 /** Opcode for xcb_create_window. */
 enum XCB_CREATE_WINDOW = 1;
@@ -1484,11 +1680,14 @@ struct xcb_change_window_attributes_request_t {
     uint         value_mask; /**<  */
 }
 
-enum /* xcb_map_state_t */ {
+enum xcb_map_state_t {
     XCB_MAP_STATE_UNMAPPED = 0,
     XCB_MAP_STATE_UNVIEWABLE = 1,
     XCB_MAP_STATE_VIEWABLE = 2
 }
+alias XCB_MAP_STATE_UNMAPPED = xcb_map_state_t.XCB_MAP_STATE_UNMAPPED;
+alias XCB_MAP_STATE_UNVIEWABLE = xcb_map_state_t.XCB_MAP_STATE_UNVIEWABLE;
+alias XCB_MAP_STATE_VIEWABLE = xcb_map_state_t.XCB_MAP_STATE_VIEWABLE;
 
 /**
  * @brief xcb_get_window_attributes_cookie_t
@@ -1561,10 +1760,12 @@ struct xcb_destroy_subwindows_request_t {
     xcb_window_t window; /**<  */
 }
 
-enum /* xcb_set_mode_t */ {
+enum xcb_set_mode_t {
     XCB_SET_MODE_INSERT = 0,
     XCB_SET_MODE_DELETE = 1
 }
+alias XCB_SET_MODE_INSERT = xcb_set_mode_t.XCB_SET_MODE_INSERT;
+alias XCB_SET_MODE_DELETE = xcb_set_mode_t.XCB_SET_MODE_DELETE;
 
 /** Opcode for xcb_change_save_set. */
 enum XCB_CHANGE_SAVE_SET = 6;
@@ -1647,7 +1848,7 @@ struct xcb_unmap_subwindows_request_t {
     xcb_window_t window; /**<  */
 }
 
-enum /* xcb_config_window_t */ {
+enum xcb_config_window_t {
     XCB_CONFIG_WINDOW_X = 1,
     XCB_CONFIG_WINDOW_Y = 2,
     XCB_CONFIG_WINDOW_WIDTH = 4,
@@ -1656,14 +1857,26 @@ enum /* xcb_config_window_t */ {
     XCB_CONFIG_WINDOW_SIBLING = 32,
     XCB_CONFIG_WINDOW_STACK_MODE = 64
 }
+alias XCB_CONFIG_WINDOW_X = xcb_config_window_t.XCB_CONFIG_WINDOW_X;
+alias XCB_CONFIG_WINDOW_Y = xcb_config_window_t.XCB_CONFIG_WINDOW_Y;
+alias XCB_CONFIG_WINDOW_WIDTH = xcb_config_window_t.XCB_CONFIG_WINDOW_WIDTH;
+alias XCB_CONFIG_WINDOW_HEIGHT = xcb_config_window_t.XCB_CONFIG_WINDOW_HEIGHT;
+alias XCB_CONFIG_WINDOW_BORDER_WIDTH = xcb_config_window_t.XCB_CONFIG_WINDOW_BORDER_WIDTH;
+alias XCB_CONFIG_WINDOW_SIBLING = xcb_config_window_t.XCB_CONFIG_WINDOW_SIBLING;
+alias XCB_CONFIG_WINDOW_STACK_MODE = xcb_config_window_t.XCB_CONFIG_WINDOW_STACK_MODE;
 
-enum /* xcb_stack_mode_t */ {
+enum xcb_stack_mode_t {
     XCB_STACK_MODE_ABOVE = 0,
     XCB_STACK_MODE_BELOW = 1,
     XCB_STACK_MODE_TOP_IF = 2,
     XCB_STACK_MODE_BOTTOM_IF = 3,
     XCB_STACK_MODE_OPPOSITE = 4
 }
+alias XCB_STACK_MODE_ABOVE = xcb_stack_mode_t.XCB_STACK_MODE_ABOVE;
+alias XCB_STACK_MODE_BELOW = xcb_stack_mode_t.XCB_STACK_MODE_BELOW;
+alias XCB_STACK_MODE_TOP_IF = xcb_stack_mode_t.XCB_STACK_MODE_TOP_IF;
+alias XCB_STACK_MODE_BOTTOM_IF = xcb_stack_mode_t.XCB_STACK_MODE_BOTTOM_IF;
+alias XCB_STACK_MODE_OPPOSITE = xcb_stack_mode_t.XCB_STACK_MODE_OPPOSITE;
 
 /** Opcode for xcb_configure_window. */
 enum XCB_CONFIGURE_WINDOW = 12;
@@ -1680,10 +1893,12 @@ struct xcb_configure_window_request_t {
     ubyte[2]        pad1; /**<  */
 }
 
-enum /* xcb_circulate_t */ {
+enum xcb_circulate_t {
     XCB_CIRCULATE_RAISE_LOWEST = 0,
     XCB_CIRCULATE_LOWER_HIGHEST = 1
 }
+alias XCB_CIRCULATE_RAISE_LOWEST = xcb_circulate_t.XCB_CIRCULATE_RAISE_LOWEST;
+alias XCB_CIRCULATE_LOWER_HIGHEST = xcb_circulate_t.XCB_CIRCULATE_LOWER_HIGHEST;
 
 /** Opcode for xcb_circulate_window. */
 enum XCB_CIRCULATE_WINDOW = 13;
@@ -1833,7 +2048,7 @@ struct xcb_get_atom_name_reply_t {
     ubyte[22]  pad1; /**<  */
 }
 
-enum /* xcb_prop_mode_t */ {
+enum xcb_prop_mode_t {
     XCB_PROP_MODE_REPLACE = 0,
 /**< Discard the previous property value and store the new data. */
 
@@ -1848,6 +2063,9 @@ match existing property value. If the property is undefined, it is treated as
 defined with the correct type and format with zero-length data. */
 
 }
+alias XCB_PROP_MODE_REPLACE = xcb_prop_mode_t.XCB_PROP_MODE_REPLACE;
+alias XCB_PROP_MODE_PREPEND = xcb_prop_mode_t.XCB_PROP_MODE_PREPEND;
+alias XCB_PROP_MODE_APPEND = xcb_prop_mode_t.XCB_PROP_MODE_APPEND;
 
 /** Opcode for xcb_change_property. */
 enum XCB_CHANGE_PROPERTY = 18;
@@ -1881,9 +2099,10 @@ struct xcb_delete_property_request_t {
     xcb_atom_t   property; /**<  */
 }
 
-enum /* xcb_get_property_type_t */ {
+enum xcb_get_property_type_t {
     XCB_GET_PROPERTY_TYPE_ANY = 0
 }
+alias XCB_GET_PROPERTY_TYPE_ANY = xcb_get_property_type_t.XCB_GET_PROPERTY_TYPE_ANY;
 
 /**
  * @brief xcb_get_property_cookie_t
@@ -2018,10 +2237,12 @@ struct xcb_convert_selection_request_t {
     xcb_timestamp_t time; /**<  */
 }
 
-enum /* xcb_send_event_dest_t */ {
+enum xcb_send_event_dest_t {
     XCB_SEND_EVENT_DEST_POINTER_WINDOW = 0,
     XCB_SEND_EVENT_DEST_ITEM_FOCUS = 1
 }
+alias XCB_SEND_EVENT_DEST_POINTER_WINDOW = xcb_send_event_dest_t.XCB_SEND_EVENT_DEST_POINTER_WINDOW;
+alias XCB_SEND_EVENT_DEST_ITEM_FOCUS = xcb_send_event_dest_t.XCB_SEND_EVENT_DEST_ITEM_FOCUS;
 
 /** Opcode for xcb_send_event. */
 enum XCB_SEND_EVENT = 25;
@@ -2038,7 +2259,7 @@ struct xcb_send_event_request_t {
     char[32]         event; /**<  */
 }
 
-enum /* xcb_grab_mode_t */ {
+enum xcb_grab_mode_t {
     XCB_GRAB_MODE_SYNC = 0,
 /**< The state of the keyboard appears to freeze: No further keyboard events are
 generated by the server until the grabbing client issues a releasing
@@ -2048,18 +2269,26 @@ generated by the server until the grabbing client issues a releasing
 /**< Keyboard event processing continues normally. */
 
 }
+alias XCB_GRAB_MODE_SYNC = xcb_grab_mode_t.XCB_GRAB_MODE_SYNC;
+alias XCB_GRAB_MODE_ASYNC = xcb_grab_mode_t.XCB_GRAB_MODE_ASYNC;
 
-enum /* xcb_grab_status_t */ {
+enum xcb_grab_status_t {
     XCB_GRAB_STATUS_SUCCESS = 0,
     XCB_GRAB_STATUS_ALREADY_GRABBED = 1,
     XCB_GRAB_STATUS_INVALID_TIME = 2,
     XCB_GRAB_STATUS_NOT_VIEWABLE = 3,
     XCB_GRAB_STATUS_FROZEN = 4
 }
+alias XCB_GRAB_STATUS_SUCCESS = xcb_grab_status_t.XCB_GRAB_STATUS_SUCCESS;
+alias XCB_GRAB_STATUS_ALREADY_GRABBED = xcb_grab_status_t.XCB_GRAB_STATUS_ALREADY_GRABBED;
+alias XCB_GRAB_STATUS_INVALID_TIME = xcb_grab_status_t.XCB_GRAB_STATUS_INVALID_TIME;
+alias XCB_GRAB_STATUS_NOT_VIEWABLE = xcb_grab_status_t.XCB_GRAB_STATUS_NOT_VIEWABLE;
+alias XCB_GRAB_STATUS_FROZEN = xcb_grab_status_t.XCB_GRAB_STATUS_FROZEN;
 
-enum /* xcb_cursor_enum_t */ {
+enum xcb_cursor_enum_t {
     XCB_CURSOR_NONE = 0
 }
+alias XCB_CURSOR_NONE = xcb_cursor_enum_t.XCB_CURSOR_NONE;
 
 /**
  * @brief xcb_grab_pointer_cookie_t
@@ -2110,7 +2339,7 @@ struct xcb_ungrab_pointer_request_t {
     xcb_timestamp_t time; /**<  */
 }
 
-enum /* xcb_button_index_t */ {
+enum xcb_button_index_t {
     XCB_BUTTON_INDEX_ANY = 0,
 /**< Any of the following (or none): */
 
@@ -2130,6 +2359,12 @@ enum /* xcb_button_index_t */ {
 /**< Scroll wheel. TODO: direction? */
 
 }
+alias XCB_BUTTON_INDEX_ANY = xcb_button_index_t.XCB_BUTTON_INDEX_ANY;
+alias XCB_BUTTON_INDEX_1 = xcb_button_index_t.XCB_BUTTON_INDEX_1;
+alias XCB_BUTTON_INDEX_2 = xcb_button_index_t.XCB_BUTTON_INDEX_2;
+alias XCB_BUTTON_INDEX_3 = xcb_button_index_t.XCB_BUTTON_INDEX_3;
+alias XCB_BUTTON_INDEX_4 = xcb_button_index_t.XCB_BUTTON_INDEX_4;
+alias XCB_BUTTON_INDEX_5 = xcb_button_index_t.XCB_BUTTON_INDEX_5;
 
 /** Opcode for xcb_grab_button. */
 enum XCB_GRAB_BUTTON = 28;
@@ -2230,9 +2465,10 @@ struct xcb_ungrab_keyboard_request_t {
     xcb_timestamp_t time; /**<  */
 }
 
-enum /* xcb_grab_t */ {
+enum xcb_grab_t {
     XCB_GRAB_ANY = 0
 }
+alias XCB_GRAB_ANY = xcb_grab_t.XCB_GRAB_ANY;
 
 /** Opcode for xcb_grab_key. */
 enum XCB_GRAB_KEY = 33;
@@ -2267,7 +2503,7 @@ struct xcb_ungrab_key_request_t {
     ubyte[2]         pad0; /**<  */
 }
 
-enum /* xcb_allow_t */ {
+enum xcb_allow_t {
     XCB_ALLOW_ASYNC_POINTER = 0,
 /**< For AsyncPointer, if the pointer is frozen by the client, pointer event
 processing continues normally. If the pointer is frozen twice by the client on
@@ -2342,6 +2578,14 @@ by the client on behalf of two separate grabs, SyncBoth thaws for both (but a
 subsequent freeze for SyncBoth will only freeze each device once). */
 
 }
+alias XCB_ALLOW_ASYNC_POINTER = xcb_allow_t.XCB_ALLOW_ASYNC_POINTER;
+alias XCB_ALLOW_SYNC_POINTER = xcb_allow_t.XCB_ALLOW_SYNC_POINTER;
+alias XCB_ALLOW_REPLAY_POINTER = xcb_allow_t.XCB_ALLOW_REPLAY_POINTER;
+alias XCB_ALLOW_ASYNC_KEYBOARD = xcb_allow_t.XCB_ALLOW_ASYNC_KEYBOARD;
+alias XCB_ALLOW_SYNC_KEYBOARD = xcb_allow_t.XCB_ALLOW_SYNC_KEYBOARD;
+alias XCB_ALLOW_REPLAY_KEYBOARD = xcb_allow_t.XCB_ALLOW_REPLAY_KEYBOARD;
+alias XCB_ALLOW_ASYNC_BOTH = xcb_allow_t.XCB_ALLOW_ASYNC_BOTH;
+alias XCB_ALLOW_SYNC_BOTH = xcb_allow_t.XCB_ALLOW_SYNC_BOTH;
 
 /** Opcode for xcb_allow_events. */
 enum XCB_ALLOW_EVENTS = 35;
@@ -2526,7 +2770,7 @@ struct xcb_warp_pointer_request_t {
     short        dst_y; /**<  */
 }
 
-enum /* xcb_input_focus_t */ {
+enum xcb_input_focus_t {
     XCB_INPUT_FOCUS_NONE = 0,
 /**< The focus reverts to `XCB_NONE`, so no window will have the input focus. */
 
@@ -2543,6 +2787,10 @@ revert_to value is `XCB_INPUT_FOCUS_NONE`. */
 /**< NOT YET DOCUMENTED. Only relevant for the xinput extension. */
 
 }
+alias XCB_INPUT_FOCUS_NONE = xcb_input_focus_t.XCB_INPUT_FOCUS_NONE;
+alias XCB_INPUT_FOCUS_POINTER_ROOT = xcb_input_focus_t.XCB_INPUT_FOCUS_POINTER_ROOT;
+alias XCB_INPUT_FOCUS_PARENT = xcb_input_focus_t.XCB_INPUT_FOCUS_PARENT;
+alias XCB_INPUT_FOCUS_FOLLOW_KEYBOARD = xcb_input_focus_t.XCB_INPUT_FOCUS_FOLLOW_KEYBOARD;
 
 /** Opcode for xcb_set_input_focus. */
 enum XCB_SET_INPUT_FOCUS = 42;
@@ -2646,10 +2894,12 @@ struct xcb_close_font_request_t {
     xcb_font_t font; /**<  */
 }
 
-enum /* xcb_font_draw_t */ {
+enum xcb_font_draw_t {
     XCB_FONT_DRAW_LEFT_TO_RIGHT = 0,
     XCB_FONT_DRAW_RIGHT_TO_LEFT = 1
 }
+alias XCB_FONT_DRAW_LEFT_TO_RIGHT = xcb_font_draw_t.XCB_FONT_DRAW_LEFT_TO_RIGHT;
+alias XCB_FONT_DRAW_RIGHT_TO_LEFT = xcb_font_draw_t.XCB_FONT_DRAW_RIGHT_TO_LEFT;
 
 /**
  * @brief xcb_fontprop_t
@@ -2940,7 +3190,7 @@ struct xcb_free_pixmap_request_t {
     xcb_pixmap_t pixmap; /**<  */
 }
 
-enum /* xcb_gc_t */ {
+enum xcb_gc_t {
     XCB_GC_FUNCTION = 1,
 /**< TODO: Refer to GX */
 
@@ -3088,8 +3338,31 @@ SetClipRectangles request. */
 /**< TODO */
 
 }
+alias XCB_GC_FUNCTION = xcb_gc_t.XCB_GC_FUNCTION;
+alias XCB_GC_PLANE_MASK = xcb_gc_t.XCB_GC_PLANE_MASK;
+alias XCB_GC_FOREGROUND = xcb_gc_t.XCB_GC_FOREGROUND;
+alias XCB_GC_BACKGROUND = xcb_gc_t.XCB_GC_BACKGROUND;
+alias XCB_GC_LINE_WIDTH = xcb_gc_t.XCB_GC_LINE_WIDTH;
+alias XCB_GC_LINE_STYLE = xcb_gc_t.XCB_GC_LINE_STYLE;
+alias XCB_GC_CAP_STYLE = xcb_gc_t.XCB_GC_CAP_STYLE;
+alias XCB_GC_JOIN_STYLE = xcb_gc_t.XCB_GC_JOIN_STYLE;
+alias XCB_GC_FILL_STYLE = xcb_gc_t.XCB_GC_FILL_STYLE;
+alias XCB_GC_FILL_RULE = xcb_gc_t.XCB_GC_FILL_RULE;
+alias XCB_GC_TILE = xcb_gc_t.XCB_GC_TILE;
+alias XCB_GC_STIPPLE = xcb_gc_t.XCB_GC_STIPPLE;
+alias XCB_GC_TILE_STIPPLE_ORIGIN_X = xcb_gc_t.XCB_GC_TILE_STIPPLE_ORIGIN_X;
+alias XCB_GC_TILE_STIPPLE_ORIGIN_Y = xcb_gc_t.XCB_GC_TILE_STIPPLE_ORIGIN_Y;
+alias XCB_GC_FONT = xcb_gc_t.XCB_GC_FONT;
+alias XCB_GC_SUBWINDOW_MODE = xcb_gc_t.XCB_GC_SUBWINDOW_MODE;
+alias XCB_GC_GRAPHICS_EXPOSURES = xcb_gc_t.XCB_GC_GRAPHICS_EXPOSURES;
+alias XCB_GC_CLIP_ORIGIN_X = xcb_gc_t.XCB_GC_CLIP_ORIGIN_X;
+alias XCB_GC_CLIP_ORIGIN_Y = xcb_gc_t.XCB_GC_CLIP_ORIGIN_Y;
+alias XCB_GC_CLIP_MASK = xcb_gc_t.XCB_GC_CLIP_MASK;
+alias XCB_GC_DASH_OFFSET = xcb_gc_t.XCB_GC_DASH_OFFSET;
+alias XCB_GC_DASH_LIST = xcb_gc_t.XCB_GC_DASH_LIST;
+alias XCB_GC_ARC_MODE = xcb_gc_t.XCB_GC_ARC_MODE;
 
-enum /* xcb_gx_t */ {
+enum xcb_gx_t {
     XCB_GX_CLEAR = 0,
     XCB_GX_AND = 1,
     XCB_GX_AND_REVERSE = 2,
@@ -3107,47 +3380,83 @@ enum /* xcb_gx_t */ {
     XCB_GX_NAND = 14,
     XCB_GX_SET = 15
 }
+alias XCB_GX_CLEAR = xcb_gx_t.XCB_GX_CLEAR;
+alias XCB_GX_AND = xcb_gx_t.XCB_GX_AND;
+alias XCB_GX_AND_REVERSE = xcb_gx_t.XCB_GX_AND_REVERSE;
+alias XCB_GX_COPY = xcb_gx_t.XCB_GX_COPY;
+alias XCB_GX_AND_INVERTED = xcb_gx_t.XCB_GX_AND_INVERTED;
+alias XCB_GX_NOOP = xcb_gx_t.XCB_GX_NOOP;
+alias XCB_GX_XOR = xcb_gx_t.XCB_GX_XOR;
+alias XCB_GX_OR = xcb_gx_t.XCB_GX_OR;
+alias XCB_GX_NOR = xcb_gx_t.XCB_GX_NOR;
+alias XCB_GX_EQUIV = xcb_gx_t.XCB_GX_EQUIV;
+alias XCB_GX_INVERT = xcb_gx_t.XCB_GX_INVERT;
+alias XCB_GX_OR_REVERSE = xcb_gx_t.XCB_GX_OR_REVERSE;
+alias XCB_GX_COPY_INVERTED = xcb_gx_t.XCB_GX_COPY_INVERTED;
+alias XCB_GX_OR_INVERTED = xcb_gx_t.XCB_GX_OR_INVERTED;
+alias XCB_GX_NAND = xcb_gx_t.XCB_GX_NAND;
+alias XCB_GX_SET = xcb_gx_t.XCB_GX_SET;
 
-enum /* xcb_line_style_t */ {
+enum xcb_line_style_t {
     XCB_LINE_STYLE_SOLID = 0,
     XCB_LINE_STYLE_ON_OFF_DASH = 1,
     XCB_LINE_STYLE_DOUBLE_DASH = 2
 }
+alias XCB_LINE_STYLE_SOLID = xcb_line_style_t.XCB_LINE_STYLE_SOLID;
+alias XCB_LINE_STYLE_ON_OFF_DASH = xcb_line_style_t.XCB_LINE_STYLE_ON_OFF_DASH;
+alias XCB_LINE_STYLE_DOUBLE_DASH = xcb_line_style_t.XCB_LINE_STYLE_DOUBLE_DASH;
 
-enum /* xcb_cap_style_t */ {
+enum xcb_cap_style_t {
     XCB_CAP_STYLE_NOT_LAST = 0,
     XCB_CAP_STYLE_BUTT = 1,
     XCB_CAP_STYLE_ROUND = 2,
     XCB_CAP_STYLE_PROJECTING = 3
 }
+alias XCB_CAP_STYLE_NOT_LAST = xcb_cap_style_t.XCB_CAP_STYLE_NOT_LAST;
+alias XCB_CAP_STYLE_BUTT = xcb_cap_style_t.XCB_CAP_STYLE_BUTT;
+alias XCB_CAP_STYLE_ROUND = xcb_cap_style_t.XCB_CAP_STYLE_ROUND;
+alias XCB_CAP_STYLE_PROJECTING = xcb_cap_style_t.XCB_CAP_STYLE_PROJECTING;
 
-enum /* xcb_join_style_t */ {
+enum xcb_join_style_t {
     XCB_JOIN_STYLE_MITER = 0,
     XCB_JOIN_STYLE_ROUND = 1,
     XCB_JOIN_STYLE_BEVEL = 2
 }
+alias XCB_JOIN_STYLE_MITER = xcb_join_style_t.XCB_JOIN_STYLE_MITER;
+alias XCB_JOIN_STYLE_ROUND = xcb_join_style_t.XCB_JOIN_STYLE_ROUND;
+alias XCB_JOIN_STYLE_BEVEL = xcb_join_style_t.XCB_JOIN_STYLE_BEVEL;
 
-enum /* xcb_fill_style_t */ {
+enum xcb_fill_style_t {
     XCB_FILL_STYLE_SOLID = 0,
     XCB_FILL_STYLE_TILED = 1,
     XCB_FILL_STYLE_STIPPLED = 2,
     XCB_FILL_STYLE_OPAQUE_STIPPLED = 3
 }
+alias XCB_FILL_STYLE_SOLID = xcb_fill_style_t.XCB_FILL_STYLE_SOLID;
+alias XCB_FILL_STYLE_TILED = xcb_fill_style_t.XCB_FILL_STYLE_TILED;
+alias XCB_FILL_STYLE_STIPPLED = xcb_fill_style_t.XCB_FILL_STYLE_STIPPLED;
+alias XCB_FILL_STYLE_OPAQUE_STIPPLED = xcb_fill_style_t.XCB_FILL_STYLE_OPAQUE_STIPPLED;
 
-enum /* xcb_fill_rule_t */ {
+enum xcb_fill_rule_t {
     XCB_FILL_RULE_EVEN_ODD = 0,
     XCB_FILL_RULE_WINDING = 1
 }
+alias XCB_FILL_RULE_EVEN_ODD = xcb_fill_rule_t.XCB_FILL_RULE_EVEN_ODD;
+alias XCB_FILL_RULE_WINDING = xcb_fill_rule_t.XCB_FILL_RULE_WINDING;
 
-enum /* xcb_subwindow_mode_t */ {
+enum xcb_subwindow_mode_t {
     XCB_SUBWINDOW_MODE_CLIP_BY_CHILDREN = 0,
     XCB_SUBWINDOW_MODE_INCLUDE_INFERIORS = 1
 }
+alias XCB_SUBWINDOW_MODE_CLIP_BY_CHILDREN = xcb_subwindow_mode_t.XCB_SUBWINDOW_MODE_CLIP_BY_CHILDREN;
+alias XCB_SUBWINDOW_MODE_INCLUDE_INFERIORS = xcb_subwindow_mode_t.XCB_SUBWINDOW_MODE_INCLUDE_INFERIORS;
 
-enum /* xcb_arc_mode_t */ {
+enum xcb_arc_mode_t {
     XCB_ARC_MODE_CHORD = 0,
     XCB_ARC_MODE_PIE_SLICE = 1
 }
+alias XCB_ARC_MODE_CHORD = xcb_arc_mode_t.XCB_ARC_MODE_CHORD;
+alias XCB_ARC_MODE_PIE_SLICE = xcb_arc_mode_t.XCB_ARC_MODE_PIE_SLICE;
 
 /** Opcode for xcb_create_gc. */
 enum XCB_CREATE_GC = 55;
@@ -3208,12 +3517,16 @@ struct xcb_set_dashes_request_t {
     ushort         dashes_len; /**<  */
 }
 
-enum /* xcb_clip_ordering_t */ {
+enum xcb_clip_ordering_t {
     XCB_CLIP_ORDERING_UNSORTED = 0,
     XCB_CLIP_ORDERING_Y_SORTED = 1,
     XCB_CLIP_ORDERING_YX_SORTED = 2,
     XCB_CLIP_ORDERING_YX_BANDED = 3
 }
+alias XCB_CLIP_ORDERING_UNSORTED = xcb_clip_ordering_t.XCB_CLIP_ORDERING_UNSORTED;
+alias XCB_CLIP_ORDERING_Y_SORTED = xcb_clip_ordering_t.XCB_CLIP_ORDERING_Y_SORTED;
+alias XCB_CLIP_ORDERING_YX_SORTED = xcb_clip_ordering_t.XCB_CLIP_ORDERING_YX_SORTED;
+alias XCB_CLIP_ORDERING_YX_BANDED = xcb_clip_ordering_t.XCB_CLIP_ORDERING_YX_BANDED;
 
 /** Opcode for xcb_set_clip_rectangles. */
 enum XCB_SET_CLIP_RECTANGLES = 59;
@@ -3303,7 +3616,7 @@ struct xcb_copy_plane_request_t {
     uint           bit_plane; /**<  */
 }
 
-enum /* xcb_coord_mode_t */ {
+enum xcb_coord_mode_t {
     XCB_COORD_MODE_ORIGIN = 0,
 /**< Treats all coordinates as relative to the origin. */
 
@@ -3311,6 +3624,8 @@ enum /* xcb_coord_mode_t */ {
 /**< Treats all coordinates after the first as relative to the previous coordinate. */
 
 }
+alias XCB_COORD_MODE_ORIGIN = xcb_coord_mode_t.XCB_COORD_MODE_ORIGIN;
+alias XCB_COORD_MODE_PREVIOUS = xcb_coord_mode_t.XCB_COORD_MODE_PREVIOUS;
 
 /** Opcode for xcb_poly_point. */
 enum XCB_POLY_POINT = 64;
@@ -3401,11 +3716,14 @@ struct xcb_poly_arc_request_t {
     xcb_gcontext_t gc; /**<  */
 }
 
-enum /* xcb_poly_shape_t */ {
+enum xcb_poly_shape_t {
     XCB_POLY_SHAPE_COMPLEX = 0,
     XCB_POLY_SHAPE_NONCONVEX = 1,
     XCB_POLY_SHAPE_CONVEX = 2
 }
+alias XCB_POLY_SHAPE_COMPLEX = xcb_poly_shape_t.XCB_POLY_SHAPE_COMPLEX;
+alias XCB_POLY_SHAPE_NONCONVEX = xcb_poly_shape_t.XCB_POLY_SHAPE_NONCONVEX;
+alias XCB_POLY_SHAPE_CONVEX = xcb_poly_shape_t.XCB_POLY_SHAPE_CONVEX;
 
 /** Opcode for xcb_fill_poly. */
 enum XCB_FILL_POLY = 69;
@@ -3452,11 +3770,14 @@ struct xcb_poly_fill_arc_request_t {
     xcb_gcontext_t gc; /**<  */
 }
 
-enum /* xcb_image_format_t */ {
+enum xcb_image_format_t {
     XCB_IMAGE_FORMAT_XY_BITMAP = 0,
     XCB_IMAGE_FORMAT_XY_PIXMAP = 1,
     XCB_IMAGE_FORMAT_Z_PIXMAP = 2
 }
+alias XCB_IMAGE_FORMAT_XY_BITMAP = xcb_image_format_t.XCB_IMAGE_FORMAT_XY_BITMAP;
+alias XCB_IMAGE_FORMAT_XY_PIXMAP = xcb_image_format_t.XCB_IMAGE_FORMAT_XY_PIXMAP;
+alias XCB_IMAGE_FORMAT_Z_PIXMAP = xcb_image_format_t.XCB_IMAGE_FORMAT_Z_PIXMAP;
 
 /** Opcode for xcb_put_image. */
 enum XCB_PUT_IMAGE = 72;
@@ -3580,10 +3901,12 @@ struct xcb_image_text_16_request_t {
     short          y; /**<  */
 }
 
-enum /* xcb_colormap_alloc_t */ {
+enum xcb_colormap_alloc_t {
     XCB_COLORMAP_ALLOC_NONE = 0,
     XCB_COLORMAP_ALLOC_ALL = 1
 }
+alias XCB_COLORMAP_ALLOC_NONE = xcb_colormap_alloc_t.XCB_COLORMAP_ALLOC_NONE;
+alias XCB_COLORMAP_ALLOC_ALL = xcb_colormap_alloc_t.XCB_COLORMAP_ALLOC_ALL;
 
 /** Opcode for xcb_create_colormap. */
 enum XCB_CREATE_COLORMAP = 78;
@@ -3852,11 +4175,14 @@ struct xcb_free_colors_request_t {
     uint           plane_mask; /**<  */
 }
 
-enum /* xcb_color_flag_t */ {
+enum xcb_color_flag_t {
     XCB_COLOR_FLAG_RED = 1,
     XCB_COLOR_FLAG_GREEN = 2,
     XCB_COLOR_FLAG_BLUE = 4
 }
+alias XCB_COLOR_FLAG_RED = xcb_color_flag_t.XCB_COLOR_FLAG_RED;
+alias XCB_COLOR_FLAG_GREEN = xcb_color_flag_t.XCB_COLOR_FLAG_GREEN;
+alias XCB_COLOR_FLAG_BLUE = xcb_color_flag_t.XCB_COLOR_FLAG_BLUE;
 
 /**
  * @brief xcb_coloritem_t
@@ -3997,9 +4323,10 @@ struct xcb_lookup_color_reply_t {
     ushort visual_blue; /**<  */
 }
 
-enum /* xcb_pixmap_enum_t */ {
+enum xcb_pixmap_enum_t {
     XCB_PIXMAP_NONE = 0
 }
+alias XCB_PIXMAP_NONE = xcb_pixmap_enum_t.XCB_PIXMAP_NONE;
 
 /** Opcode for xcb_create_cursor. */
 enum XCB_CREATE_CURSOR = 93;
@@ -4024,9 +4351,10 @@ struct xcb_create_cursor_request_t {
     ushort       y; /**<  */
 }
 
-enum /* xcb_font_enum_t */ {
+enum xcb_font_enum_t {
     XCB_FONT_NONE = 0
 }
+alias XCB_FONT_NONE = xcb_font_enum_t.XCB_FONT_NONE;
 
 /** Opcode for xcb_create_glyph_cursor. */
 enum XCB_CREATE_GLYPH_CURSOR = 94;
@@ -4083,11 +4411,14 @@ struct xcb_recolor_cursor_request_t {
     ushort       back_blue; /**<  */
 }
 
-enum /* xcb_query_shape_of_t */ {
+enum xcb_query_shape_of_t {
     XCB_QUERY_SHAPE_OF_LARGEST_CURSOR = 0,
     XCB_QUERY_SHAPE_OF_FASTEST_TILE = 1,
     XCB_QUERY_SHAPE_OF_FASTEST_STIPPLE = 2
 }
+alias XCB_QUERY_SHAPE_OF_LARGEST_CURSOR = xcb_query_shape_of_t.XCB_QUERY_SHAPE_OF_LARGEST_CURSOR;
+alias XCB_QUERY_SHAPE_OF_FASTEST_TILE = xcb_query_shape_of_t.XCB_QUERY_SHAPE_OF_FASTEST_TILE;
+alias XCB_QUERY_SHAPE_OF_FASTEST_STIPPLE = xcb_query_shape_of_t.XCB_QUERY_SHAPE_OF_FASTEST_STIPPLE;
 
 /**
  * @brief xcb_query_best_size_cookie_t
@@ -4235,7 +4566,7 @@ struct xcb_get_keyboard_mapping_reply_t {
     ubyte[24]  pad0; /**<  */
 }
 
-enum /* xcb_kb_t */ {
+enum xcb_kb_t {
     XCB_KB_KEY_CLICK_PERCENT = 1,
     XCB_KB_BELL_PERCENT = 2,
     XCB_KB_BELL_PITCH = 4,
@@ -4245,17 +4576,30 @@ enum /* xcb_kb_t */ {
     XCB_KB_KEY = 64,
     XCB_KB_AUTO_REPEAT_MODE = 128
 }
+alias XCB_KB_KEY_CLICK_PERCENT = xcb_kb_t.XCB_KB_KEY_CLICK_PERCENT;
+alias XCB_KB_BELL_PERCENT = xcb_kb_t.XCB_KB_BELL_PERCENT;
+alias XCB_KB_BELL_PITCH = xcb_kb_t.XCB_KB_BELL_PITCH;
+alias XCB_KB_BELL_DURATION = xcb_kb_t.XCB_KB_BELL_DURATION;
+alias XCB_KB_LED = xcb_kb_t.XCB_KB_LED;
+alias XCB_KB_LED_MODE = xcb_kb_t.XCB_KB_LED_MODE;
+alias XCB_KB_KEY = xcb_kb_t.XCB_KB_KEY;
+alias XCB_KB_AUTO_REPEAT_MODE = xcb_kb_t.XCB_KB_AUTO_REPEAT_MODE;
 
-enum /* xcb_led_mode_t */ {
+enum xcb_led_mode_t {
     XCB_LED_MODE_OFF = 0,
     XCB_LED_MODE_ON = 1
 }
+alias XCB_LED_MODE_OFF = xcb_led_mode_t.XCB_LED_MODE_OFF;
+alias XCB_LED_MODE_ON = xcb_led_mode_t.XCB_LED_MODE_ON;
 
-enum /* xcb_auto_repeat_mode_t */ {
+enum xcb_auto_repeat_mode_t {
     XCB_AUTO_REPEAT_MODE_OFF = 0,
     XCB_AUTO_REPEAT_MODE_ON = 1,
     XCB_AUTO_REPEAT_MODE_DEFAULT = 2
 }
+alias XCB_AUTO_REPEAT_MODE_OFF = xcb_auto_repeat_mode_t.XCB_AUTO_REPEAT_MODE_OFF;
+alias XCB_AUTO_REPEAT_MODE_ON = xcb_auto_repeat_mode_t.XCB_AUTO_REPEAT_MODE_ON;
+alias XCB_AUTO_REPEAT_MODE_DEFAULT = xcb_auto_repeat_mode_t.XCB_AUTO_REPEAT_MODE_DEFAULT;
 
 /** Opcode for xcb_change_keyboard_control. */
 enum XCB_CHANGE_KEYBOARD_CONTROL = 102;
@@ -4368,17 +4712,23 @@ struct xcb_get_pointer_control_reply_t {
     ubyte[18]  pad1; /**<  */
 }
 
-enum /* xcb_blanking_t */ {
+enum xcb_blanking_t {
     XCB_BLANKING_NOT_PREFERRED = 0,
     XCB_BLANKING_PREFERRED = 1,
     XCB_BLANKING_DEFAULT = 2
 }
+alias XCB_BLANKING_NOT_PREFERRED = xcb_blanking_t.XCB_BLANKING_NOT_PREFERRED;
+alias XCB_BLANKING_PREFERRED = xcb_blanking_t.XCB_BLANKING_PREFERRED;
+alias XCB_BLANKING_DEFAULT = xcb_blanking_t.XCB_BLANKING_DEFAULT;
 
-enum /* xcb_exposures_t */ {
+enum xcb_exposures_t {
     XCB_EXPOSURES_NOT_ALLOWED = 0,
     XCB_EXPOSURES_ALLOWED = 1,
     XCB_EXPOSURES_DEFAULT = 2
 }
+alias XCB_EXPOSURES_NOT_ALLOWED = xcb_exposures_t.XCB_EXPOSURES_NOT_ALLOWED;
+alias XCB_EXPOSURES_ALLOWED = xcb_exposures_t.XCB_EXPOSURES_ALLOWED;
+alias XCB_EXPOSURES_DEFAULT = xcb_exposures_t.XCB_EXPOSURES_DEFAULT;
 
 /** Opcode for xcb_set_screen_saver. */
 enum XCB_SET_SCREEN_SAVER = 107;
@@ -4430,18 +4780,25 @@ struct xcb_get_screen_saver_reply_t {
     ubyte[18]  pad1; /**<  */
 }
 
-enum /* xcb_host_mode_t */ {
+enum xcb_host_mode_t {
     XCB_HOST_MODE_INSERT = 0,
     XCB_HOST_MODE_DELETE = 1
 }
+alias XCB_HOST_MODE_INSERT = xcb_host_mode_t.XCB_HOST_MODE_INSERT;
+alias XCB_HOST_MODE_DELETE = xcb_host_mode_t.XCB_HOST_MODE_DELETE;
 
-enum /* xcb_family_t */ {
+enum xcb_family_t {
     XCB_FAMILY_INTERNET = 0,
     XCB_FAMILY_DECNET = 1,
     XCB_FAMILY_CHAOS = 2,
     XCB_FAMILY_SERVER_INTERPRETED = 5,
     XCB_FAMILY_INTERNET_6 = 6
 }
+alias XCB_FAMILY_INTERNET = xcb_family_t.XCB_FAMILY_INTERNET;
+alias XCB_FAMILY_DECNET = xcb_family_t.XCB_FAMILY_DECNET;
+alias XCB_FAMILY_CHAOS = xcb_family_t.XCB_FAMILY_CHAOS;
+alias XCB_FAMILY_SERVER_INTERPRETED = xcb_family_t.XCB_FAMILY_SERVER_INTERPRETED;
+alias XCB_FAMILY_INTERNET_6 = xcb_family_t.XCB_FAMILY_INTERNET_6;
 
 /** Opcode for xcb_change_hosts. */
 enum XCB_CHANGE_HOSTS = 109;
@@ -4507,10 +4864,12 @@ struct xcb_list_hosts_reply_t {
     ubyte[22]  pad0; /**<  */
 }
 
-enum /* xcb_access_control_t */ {
+enum xcb_access_control_t {
     XCB_ACCESS_CONTROL_DISABLE = 0,
     XCB_ACCESS_CONTROL_ENABLE = 1
 }
+alias XCB_ACCESS_CONTROL_DISABLE = xcb_access_control_t.XCB_ACCESS_CONTROL_DISABLE;
+alias XCB_ACCESS_CONTROL_ENABLE = xcb_access_control_t.XCB_ACCESS_CONTROL_ENABLE;
 
 /** Opcode for xcb_set_access_control. */
 enum XCB_SET_ACCESS_CONTROL = 111;
@@ -4524,11 +4883,14 @@ struct xcb_set_access_control_request_t {
     ushort length; /**<  */
 }
 
-enum /* xcb_close_down_t */ {
+enum xcb_close_down_t {
     XCB_CLOSE_DOWN_DESTROY_ALL = 0,
     XCB_CLOSE_DOWN_RETAIN_PERMANENT = 1,
     XCB_CLOSE_DOWN_RETAIN_TEMPORARY = 2
 }
+alias XCB_CLOSE_DOWN_DESTROY_ALL = xcb_close_down_t.XCB_CLOSE_DOWN_DESTROY_ALL;
+alias XCB_CLOSE_DOWN_RETAIN_PERMANENT = xcb_close_down_t.XCB_CLOSE_DOWN_RETAIN_PERMANENT;
+alias XCB_CLOSE_DOWN_RETAIN_TEMPORARY = xcb_close_down_t.XCB_CLOSE_DOWN_RETAIN_TEMPORARY;
 
 /** Opcode for xcb_set_close_down_mode. */
 enum XCB_SET_CLOSE_DOWN_MODE = 112;
@@ -4542,9 +4904,10 @@ struct xcb_set_close_down_mode_request_t {
     ushort length; /**<  */
 }
 
-enum /* xcb_kill_t */ {
+enum xcb_kill_t {
     XCB_KILL_ALL_TEMPORARY = 0
 }
+alias XCB_KILL_ALL_TEMPORARY = xcb_kill_t.XCB_KILL_ALL_TEMPORARY;
 
 /** Opcode for xcb_kill_client. */
 enum XCB_KILL_CLIENT = 113;
@@ -4574,10 +4937,12 @@ struct xcb_rotate_properties_request_t {
     short        delta; /**<  */
 }
 
-enum /* xcb_screen_saver_t */ {
+enum xcb_screen_saver_t {
     XCB_SCREEN_SAVER_RESET = 0,
     XCB_SCREEN_SAVER_ACTIVE = 1
 }
+alias XCB_SCREEN_SAVER_RESET = xcb_screen_saver_t.XCB_SCREEN_SAVER_RESET;
+alias XCB_SCREEN_SAVER_ACTIVE = xcb_screen_saver_t.XCB_SCREEN_SAVER_ACTIVE;
 
 /** Opcode for xcb_force_screen_saver. */
 enum XCB_FORCE_SCREEN_SAVER = 115;
@@ -4591,11 +4956,14 @@ struct xcb_force_screen_saver_request_t {
     ushort length; /**<  */
 }
 
-enum /* xcb_mapping_status_t */ {
+enum xcb_mapping_status_t {
     XCB_MAPPING_STATUS_SUCCESS = 0,
     XCB_MAPPING_STATUS_BUSY = 1,
     XCB_MAPPING_STATUS_FAILURE = 2
 }
+alias XCB_MAPPING_STATUS_SUCCESS = xcb_mapping_status_t.XCB_MAPPING_STATUS_SUCCESS;
+alias XCB_MAPPING_STATUS_BUSY = xcb_mapping_status_t.XCB_MAPPING_STATUS_BUSY;
+alias XCB_MAPPING_STATUS_FAILURE = xcb_mapping_status_t.XCB_MAPPING_STATUS_FAILURE;
 
 /**
  * @brief xcb_set_pointer_mapping_cookie_t
@@ -4656,7 +5024,7 @@ struct xcb_get_pointer_mapping_reply_t {
     ubyte[24]  pad0; /**<  */
 }
 
-enum /* xcb_map_index_t */ {
+enum xcb_map_index_t {
     XCB_MAP_INDEX_SHIFT = 0,
     XCB_MAP_INDEX_LOCK = 1,
     XCB_MAP_INDEX_CONTROL = 2,
@@ -4666,6 +5034,14 @@ enum /* xcb_map_index_t */ {
     XCB_MAP_INDEX_4 = 6,
     XCB_MAP_INDEX_5 = 7
 }
+alias XCB_MAP_INDEX_SHIFT = xcb_map_index_t.XCB_MAP_INDEX_SHIFT;
+alias XCB_MAP_INDEX_LOCK = xcb_map_index_t.XCB_MAP_INDEX_LOCK;
+alias XCB_MAP_INDEX_CONTROL = xcb_map_index_t.XCB_MAP_INDEX_CONTROL;
+alias XCB_MAP_INDEX_1 = xcb_map_index_t.XCB_MAP_INDEX_1;
+alias XCB_MAP_INDEX_2 = xcb_map_index_t.XCB_MAP_INDEX_2;
+alias XCB_MAP_INDEX_3 = xcb_map_index_t.XCB_MAP_INDEX_3;
+alias XCB_MAP_INDEX_4 = xcb_map_index_t.XCB_MAP_INDEX_4;
+alias XCB_MAP_INDEX_5 = xcb_map_index_t.XCB_MAP_INDEX_5;
 
 /**
  * @brief xcb_set_modifier_mapping_cookie_t
