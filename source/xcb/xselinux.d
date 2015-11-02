@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_SELINUX_MAJOR_VERSION = 1;
 enum int XCB_SELINUX_MINOR_VERSION = 0;
 
-extern(C) extern xcb_extension_t xcb_selinux_id;
+extern(C) __gshared extern xcb_extension_t xcb_selinux_id;
 
 /**
  * @brief xcb_selinux_query_version_cookie_t

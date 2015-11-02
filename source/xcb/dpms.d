@@ -19,7 +19,7 @@ extern(C):
 enum int XCB_DPMS_MAJOR_VERSION = 0;
 enum int XCB_DPMS_MINOR_VERSION = 0;
 
-extern(C) extern xcb_extension_t xcb_dpms_id;
+extern(C) __gshared extern xcb_extension_t xcb_dpms_id;
 
 /**
  * @brief xcb_dpms_get_version_cookie_t

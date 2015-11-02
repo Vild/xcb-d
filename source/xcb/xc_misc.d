@@ -19,7 +19,7 @@ extern(C):
 enum int XCB_XCMISC_MAJOR_VERSION = 1;
 enum int XCB_XCMISC_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_xc_misc_id;
+extern(C) __gshared extern xcb_extension_t xcb_xc_misc_id;
 
 /**
  * @brief xcb_xc_misc_get_version_cookie_t

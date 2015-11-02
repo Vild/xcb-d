@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_GLX_MAJOR_VERSION = 1;
 enum int XCB_GLX_MINOR_VERSION = 4;
 
-extern(C) extern xcb_extension_t xcb_glx_id;
+extern(C) __gshared extern xcb_extension_t xcb_glx_id;
 
 alias xcb_glx_pixmap_t = uint;
 

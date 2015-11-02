@@ -21,7 +21,7 @@ extern(C):
 enum int XCB_XV_MAJOR_VERSION = 2;
 enum int XCB_XV_MINOR_VERSION = 2;
 
-extern(C) extern xcb_extension_t xcb_xv_id;
+extern(C) __gshared extern xcb_extension_t xcb_xv_id;
 
 alias xcb_xv_port_t = uint;
 

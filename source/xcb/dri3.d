@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_DRI3_MAJOR_VERSION = 1;
 enum int XCB_DRI3_MINOR_VERSION = 0;
 
-extern(C) extern xcb_extension_t xcb_dri3_id;
+extern(C) __gshared extern xcb_extension_t xcb_dri3_id;
 
 /**
  * @brief xcb_dri3_query_version_cookie_t

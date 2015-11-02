@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_XPRINT_MAJOR_VERSION = 1;
 enum int XCB_XPRINT_MINOR_VERSION = 0;
 
-extern(C) extern xcb_extension_t xcb_x_print_id;
+extern(C) __gshared extern xcb_extension_t xcb_x_print_id;
 
 alias xcb_x_print_string8_t = char;
 

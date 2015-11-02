@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_SYNC_MAJOR_VERSION = 3;
 enum int XCB_SYNC_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_sync_id;
+extern(C) __gshared extern xcb_extension_t xcb_sync_id;
 
 alias xcb_sync_alarm_t = uint;
 
