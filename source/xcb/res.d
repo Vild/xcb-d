@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_RES_MAJOR_VERSION = 1;
 enum int XCB_RES_MINOR_VERSION = 2;
 
-extern(C) extern xcb_extension_t xcb_res_id;
+extern(C) __gshared extern xcb_extension_t xcb_res_id;
 
 /**
  * @brief xcb_res_client_t

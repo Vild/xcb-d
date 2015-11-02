@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_SHM_MAJOR_VERSION = 1;
 enum int XCB_SHM_MINOR_VERSION = 2;
 
-extern(C) extern xcb_extension_t xcb_shm_id;
+extern(C) __gshared extern xcb_extension_t xcb_shm_id;
 
 alias xcb_shm_seg_t = uint;
 

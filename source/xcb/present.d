@@ -23,7 +23,7 @@ extern(C):
 enum int XCB_PRESENT_MAJOR_VERSION = 1;
 enum int XCB_PRESENT_MINOR_VERSION = 0;
 
-extern(C) extern xcb_extension_t xcb_present_id;
+extern(C) __gshared extern xcb_extension_t xcb_present_id;
 
 enum xcb_present_event_enum_t {
     XCB_PRESENT_EVENT_CONFIGURE_NOTIFY = 0,

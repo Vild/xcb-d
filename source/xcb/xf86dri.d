@@ -19,7 +19,7 @@ extern(C):
 enum int XCB_XF86DRI_MAJOR_VERSION = 4;
 enum int XCB_XF86DRI_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_xf86dri_id;
+extern(C) __gshared extern xcb_extension_t xcb_xf86dri_id;
 
 /**
  * @brief xcb_xf86dri_drm_clip_rect_t

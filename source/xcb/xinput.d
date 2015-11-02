@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_INPUT_MAJOR_VERSION = 2;
 enum int XCB_INPUT_MINOR_VERSION = 3;
 
-extern(C) extern xcb_extension_t xcb_input_id;
+extern(C) __gshared extern xcb_extension_t xcb_input_id;
 
 alias xcb_input_event_class_t = uint;
 

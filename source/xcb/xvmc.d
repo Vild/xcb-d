@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_XVMC_MAJOR_VERSION = 1;
 enum int XCB_XVMC_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_xvmc_id;
+extern(C) __gshared extern xcb_extension_t xcb_xvmc_id;
 
 alias xcb_xvmc_context_t = uint;
 

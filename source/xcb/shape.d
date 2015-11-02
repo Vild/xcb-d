@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_SHAPE_MAJOR_VERSION = 1;
 enum int XCB_SHAPE_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_shape_id;
+extern(C) __gshared extern xcb_extension_t xcb_shape_id;
 
 alias xcb_shape_op_t = ubyte;
 

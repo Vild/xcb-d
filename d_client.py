@@ -204,7 +204,7 @@ def d_open(self):
         _d('enum int XCB_%s_MAJOR_VERSION = %s;', _ns.ext_name.upper(), _ns.major_version)
         _d('enum int XCB_%s_MINOR_VERSION = %s;', _ns.ext_name.upper(), _ns.minor_version)
         _d('') #XXX
-        _d('extern(C) extern xcb_extension_t %s;', _ns.d_ext_global_name)
+        _d('extern(C) __gshared extern xcb_extension_t %s;', _ns.d_ext_global_name)
 
 def d_close(self):
     '''

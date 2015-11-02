@@ -19,7 +19,7 @@ extern(C):
 enum int XCB_RECORD_MAJOR_VERSION = 1;
 enum int XCB_RECORD_MINOR_VERSION = 13;
 
-extern(C) extern xcb_extension_t xcb_record_id;
+extern(C) __gshared extern xcb_extension_t xcb_record_id;
 
 alias xcb_record_context_t = uint;
 

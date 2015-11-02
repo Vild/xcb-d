@@ -21,7 +21,7 @@ extern(C):
 enum int XCB_DAMAGE_MAJOR_VERSION = 1;
 enum int XCB_DAMAGE_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_damage_id;
+extern(C) __gshared extern xcb_extension_t xcb_damage_id;
 
 alias xcb_damage_damage_t = uint;
 

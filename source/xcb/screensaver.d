@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_SCREENSAVER_MAJOR_VERSION = 1;
 enum int XCB_SCREENSAVER_MINOR_VERSION = 1;
 
-extern(C) extern xcb_extension_t xcb_screensaver_id;
+extern(C) __gshared extern xcb_extension_t xcb_screensaver_id;
 
 enum xcb_screensaver_kind_t {
     XCB_SCREENSAVER_KIND_BLANKED = 0,

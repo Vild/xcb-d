@@ -19,7 +19,7 @@ extern(C):
 enum int XCB_XF86VIDMODE_MAJOR_VERSION = 2;
 enum int XCB_XF86VIDMODE_MINOR_VERSION = 2;
 
-extern(C) extern xcb_extension_t xcb_xf86vidmode_id;
+extern(C) __gshared extern xcb_extension_t xcb_xf86vidmode_id;
 
 alias xcb_xf86vidmode_syncrange_t = uint;
 

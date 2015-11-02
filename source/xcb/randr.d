@@ -21,7 +21,7 @@ extern(C):
 enum int XCB_RANDR_MAJOR_VERSION = 1;
 enum int XCB_RANDR_MINOR_VERSION = 4;
 
-extern(C) extern xcb_extension_t xcb_randr_id;
+extern(C) __gshared extern xcb_extension_t xcb_randr_id;
 
 alias xcb_randr_mode_t = uint;
 

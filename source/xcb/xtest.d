@@ -20,7 +20,7 @@ extern(C):
 enum int XCB_TEST_MAJOR_VERSION = 2;
 enum int XCB_TEST_MINOR_VERSION = 2;
 
-extern(C) extern xcb_extension_t xcb_test_id;
+extern(C) __gshared extern xcb_extension_t xcb_test_id;
 
 /**
  * @brief xcb_test_get_version_cookie_t

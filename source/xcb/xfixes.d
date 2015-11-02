@@ -22,7 +22,7 @@ extern(C):
 enum int XCB_XFIXES_MAJOR_VERSION = 5;
 enum int XCB_XFIXES_MINOR_VERSION = 0;
 
-extern(C) extern xcb_extension_t xcb_xfixes_id;
+extern(C) __gshared extern xcb_extension_t xcb_xfixes_id;
 
 /**
  * @brief xcb_xfixes_query_version_cookie_t
