@@ -14,5 +14,8 @@ Copy in the new .xml files from the libxcb-proto repository.
 Change the xcb.d file to match the xcb.h file from the libxcb repository.
 Run `./rebuild.sh`
 
+## Version scheme
+v2.0.0+1.11.1 means package version 2.0.0 and xcb version 1.11.1
+
 ## Licenses
 See COPYING for license information.
