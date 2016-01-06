@@ -2,8 +2,13 @@
 	"name": "xcb-d",
 	"outputTarget": "library",
 	"description": "XCB D binding",
-	"copyright": "Copyright © 2015, wildn00b",
-	"authors": ["wildn00b"],
+	"copyright": "Copyright © 2015, Dan Printzell",
+	"authors": [
+		"Dan Printzell"
+	],
 	"license": "MIT",
-	"libs": ["xcb"]
+	"libs": [
+		"xcb",
+		"xcb-keysyms"
+	]
 }
