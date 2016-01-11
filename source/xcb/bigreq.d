@@ -13,19 +13,18 @@ module xcb.bigreq;
 
 import xcb.xcb;
 
-extern(C):
-
+extern (C):
 
 enum int XCB_BIGREQUESTS_MAJOR_VERSION = 0;
 enum int XCB_BIGREQUESTS_MINOR_VERSION = 0;
 
-extern(C) __gshared extern xcb_extension_t xcb_big_requests_id;
+extern (C) __gshared extern xcb_extension_t xcb_big_requests_id;
 
 /**
  * @brief xcb_big_requests_enable_cookie_t
  **/
 struct xcb_big_requests_enable_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_big_requests_enable. */
@@ -35,20 +34,20 @@ enum XCB_BIG_REQUESTS_ENABLE = 0;
  * @brief xcb_big_requests_enable_request_t
  **/
 struct xcb_big_requests_enable_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
 }
 
 /**
  * @brief xcb_big_requests_enable_reply_t
  **/
 struct xcb_big_requests_enable_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    uint   maximum_request_length; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	uint maximum_request_length; /**<  */
 }
 
 /**
@@ -59,7 +58,7 @@ struct xcb_big_requests_enable_reply_t {
  * Delivers a request to the X server.
  *
  */
-xcb_big_requests_enable_cookie_t xcb_big_requests_enable (xcb_connection_t *c  /**< */);
+xcb_big_requests_enable_cookie_t xcb_big_requests_enable(xcb_connection_t* c /**< */ );
 
 /**
  *
@@ -72,7 +71,7 @@ xcb_big_requests_enable_cookie_t xcb_big_requests_enable (xcb_connection_t *c  /
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_big_requests_enable_cookie_t xcb_big_requests_enable_unchecked (xcb_connection_t *c  /**< */);
+xcb_big_requests_enable_cookie_t xcb_big_requests_enable_unchecked(xcb_connection_t* c /**< */ );
 
 /**
  * Return the reply
@@ -88,9 +87,8 @@ xcb_big_requests_enable_cookie_t xcb_big_requests_enable_unchecked (xcb_connecti
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_big_requests_enable_reply_t * xcb_big_requests_enable_reply (xcb_connection_t                  *c  /**< */,
-                               xcb_big_requests_enable_cookie_t   cookie  /**< */,
-                               xcb_generic_error_t              **e  /**< */);
+xcb_big_requests_enable_reply_t* xcb_big_requests_enable_reply(xcb_connection_t* c /**< */ ,
+	xcb_big_requests_enable_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
 /**
  * @}

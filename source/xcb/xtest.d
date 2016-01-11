@@ -14,19 +14,18 @@ module xcb.xtest;
 import xcb.xcb;
 import xcb.xproto;
 
-extern(C):
-
+extern (C):
 
 enum int XCB_TEST_MAJOR_VERSION = 2;
 enum int XCB_TEST_MINOR_VERSION = 2;
 
-extern(C) __gshared extern xcb_extension_t xcb_test_id;
+extern (C) __gshared extern xcb_extension_t xcb_test_id;
 
 /**
  * @brief xcb_test_get_version_cookie_t
  **/
 struct xcb_test_get_version_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_test_get_version. */
@@ -36,29 +35,30 @@ enum XCB_TEST_GET_VERSION = 0;
  * @brief xcb_test_get_version_request_t
  **/
 struct xcb_test_get_version_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    ubyte  major_version; /**<  */
-    ubyte  pad0; /**<  */
-    ushort minor_version; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	ubyte major_version; /**<  */
+	ubyte pad0; /**<  */
+	ushort minor_version; /**<  */
 }
 
 /**
  * @brief xcb_test_get_version_reply_t
  **/
 struct xcb_test_get_version_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  major_version; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    ushort minor_version; /**<  */
+	ubyte response_type; /**<  */
+	ubyte major_version; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	ushort minor_version; /**<  */
 }
 
 enum xcb_test_cursor_t {
-    XCB_TEST_CURSOR_NONE = 0,
-    XCB_TEST_CURSOR_CURRENT = 1
+	XCB_TEST_CURSOR_NONE = 0,
+	XCB_TEST_CURSOR_CURRENT = 1
 }
+
 alias XCB_TEST_CURSOR_NONE = xcb_test_cursor_t.XCB_TEST_CURSOR_NONE;
 alias XCB_TEST_CURSOR_CURRENT = xcb_test_cursor_t.XCB_TEST_CURSOR_CURRENT;
 
@@ -66,7 +66,7 @@ alias XCB_TEST_CURSOR_CURRENT = xcb_test_cursor_t.XCB_TEST_CURSOR_CURRENT;
  * @brief xcb_test_compare_cursor_cookie_t
  **/
 struct xcb_test_compare_cursor_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_test_compare_cursor. */
@@ -76,21 +76,21 @@ enum XCB_TEST_COMPARE_CURSOR = 1;
  * @brief xcb_test_compare_cursor_request_t
  **/
 struct xcb_test_compare_cursor_request_t {
-    ubyte        major_opcode; /**<  */
-    ubyte        minor_opcode; /**<  */
-    ushort       length; /**<  */
-    xcb_window_t window; /**<  */
-    xcb_cursor_t cursor; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	xcb_window_t window; /**<  */
+	xcb_cursor_t cursor; /**<  */
 }
 
 /**
  * @brief xcb_test_compare_cursor_reply_t
  **/
 struct xcb_test_compare_cursor_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  same; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
+	ubyte response_type; /**<  */
+	ubyte same; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
 }
 
 /** Opcode for xcb_test_fake_input. */
@@ -100,19 +100,19 @@ enum XCB_TEST_FAKE_INPUT = 2;
  * @brief xcb_test_fake_input_request_t
  **/
 struct xcb_test_fake_input_request_t {
-    ubyte        major_opcode; /**<  */
-    ubyte        minor_opcode; /**<  */
-    ushort       length; /**<  */
-    ubyte        type; /**<  */
-    ubyte        detail; /**<  */
-    ubyte[2]        pad0; /**<  */
-    uint         time; /**<  */
-    xcb_window_t root; /**<  */
-    ubyte[8]        pad1; /**<  */
-    short        rootX; /**<  */
-    short        rootY; /**<  */
-    ubyte[7]        pad2; /**<  */
-    ubyte        deviceid; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	ubyte type; /**<  */
+	ubyte detail; /**<  */
+	ubyte[2] pad0; /**<  */
+	uint time; /**<  */
+	xcb_window_t root; /**<  */
+	ubyte[8] pad1; /**<  */
+	short rootX; /**<  */
+	short rootY; /**<  */
+	ubyte[7] pad2; /**<  */
+	ubyte deviceid; /**<  */
 }
 
 /** Opcode for xcb_test_grab_control. */
@@ -122,11 +122,11 @@ enum XCB_TEST_GRAB_CONTROL = 3;
  * @brief xcb_test_grab_control_request_t
  **/
 struct xcb_test_grab_control_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    ubyte  impervious; /**<  */
-    ubyte[3]  pad0; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	ubyte impervious; /**<  */
+	ubyte[3] pad0; /**<  */
 }
 
 /**
@@ -137,9 +137,7 @@ struct xcb_test_grab_control_request_t {
  * Delivers a request to the X server.
  *
  */
-xcb_test_get_version_cookie_t xcb_test_get_version (xcb_connection_t *c  /**< */,
-                      ubyte             major_version  /**< */,
-                      ushort            minor_version  /**< */);
+xcb_test_get_version_cookie_t xcb_test_get_version(xcb_connection_t* c /**< */ , ubyte major_version /**< */ , ushort minor_version /**< */ );
 
 /**
  *
@@ -152,9 +150,7 @@ xcb_test_get_version_cookie_t xcb_test_get_version (xcb_connection_t *c  /**< */
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_test_get_version_cookie_t xcb_test_get_version_unchecked (xcb_connection_t *c  /**< */,
-                                ubyte             major_version  /**< */,
-                                ushort            minor_version  /**< */);
+xcb_test_get_version_cookie_t xcb_test_get_version_unchecked(xcb_connection_t* c /**< */ , ubyte major_version /**< */ , ushort minor_version /**< */ );
 
 /**
  * Return the reply
@@ -170,9 +166,8 @@ xcb_test_get_version_cookie_t xcb_test_get_version_unchecked (xcb_connection_t *
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_test_get_version_reply_t * xcb_test_get_version_reply (xcb_connection_t               *c  /**< */,
-                            xcb_test_get_version_cookie_t   cookie  /**< */,
-                            xcb_generic_error_t           **e  /**< */);
+xcb_test_get_version_reply_t* xcb_test_get_version_reply(xcb_connection_t* c /**< */ ,
+	xcb_test_get_version_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
 /**
  *
@@ -182,9 +177,7 @@ xcb_test_get_version_reply_t * xcb_test_get_version_reply (xcb_connection_t     
  * Delivers a request to the X server.
  *
  */
-xcb_test_compare_cursor_cookie_t xcb_test_compare_cursor (xcb_connection_t *c  /**< */,
-                         xcb_window_t      window  /**< */,
-                         xcb_cursor_t      cursor  /**< */);
+xcb_test_compare_cursor_cookie_t xcb_test_compare_cursor(xcb_connection_t* c /**< */ , xcb_window_t window /**< */ , xcb_cursor_t cursor /**< */ );
 
 /**
  *
@@ -197,9 +190,8 @@ xcb_test_compare_cursor_cookie_t xcb_test_compare_cursor (xcb_connection_t *c  /
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_test_compare_cursor_cookie_t xcb_test_compare_cursor_unchecked (xcb_connection_t *c  /**< */,
-                                   xcb_window_t      window  /**< */,
-                                   xcb_cursor_t      cursor  /**< */);
+xcb_test_compare_cursor_cookie_t xcb_test_compare_cursor_unchecked(xcb_connection_t* c /**< */ , xcb_window_t window /**< */ ,
+	xcb_cursor_t cursor /**< */ );
 
 /**
  * Return the reply
@@ -215,9 +207,8 @@ xcb_test_compare_cursor_cookie_t xcb_test_compare_cursor_unchecked (xcb_connecti
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_test_compare_cursor_reply_t * xcb_test_compare_cursor_reply (xcb_connection_t                  *c  /**< */,
-                               xcb_test_compare_cursor_cookie_t   cookie  /**< */,
-                               xcb_generic_error_t              **e  /**< */);
+xcb_test_compare_cursor_reply_t* xcb_test_compare_cursor_reply(xcb_connection_t* c /**< */ ,
+	xcb_test_compare_cursor_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
 /**
  *
@@ -230,14 +221,8 @@ xcb_test_compare_cursor_reply_t * xcb_test_compare_cursor_reply (xcb_connection_
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-xcb_void_cookie_t xcb_test_fake_input_checked (xcb_connection_t *c  /**< */,
-                             ubyte             type  /**< */,
-                             ubyte             detail  /**< */,
-                             uint              time  /**< */,
-                             xcb_window_t      root  /**< */,
-                             short             rootX  /**< */,
-                             short             rootY  /**< */,
-                             ubyte             deviceid  /**< */);
+xcb_void_cookie_t xcb_test_fake_input_checked(xcb_connection_t* c /**< */ , ubyte type /**< */ , ubyte detail /**< */ , uint time /**< */ , xcb_window_t root /**< */ ,
+	short rootX /**< */ , short rootY /**< */ , ubyte deviceid /**< */ );
 
 /**
  *
@@ -247,14 +232,8 @@ xcb_void_cookie_t xcb_test_fake_input_checked (xcb_connection_t *c  /**< */,
  * Delivers a request to the X server.
  *
  */
-xcb_void_cookie_t xcb_test_fake_input (xcb_connection_t *c  /**< */,
-                     ubyte             type  /**< */,
-                     ubyte             detail  /**< */,
-                     uint              time  /**< */,
-                     xcb_window_t      root  /**< */,
-                     short             rootX  /**< */,
-                     short             rootY  /**< */,
-                     ubyte             deviceid  /**< */);
+xcb_void_cookie_t xcb_test_fake_input(xcb_connection_t* c /**< */ , ubyte type /**< */ , ubyte detail /**< */ , uint time /**< */ , xcb_window_t root /**< */ , short rootX /**< */ ,
+	short rootY /**< */ , ubyte deviceid /**< */ );
 
 /**
  *
@@ -267,8 +246,7 @@ xcb_void_cookie_t xcb_test_fake_input (xcb_connection_t *c  /**< */,
  * a reply to be generated. Any returned error will be
  * saved for handling by xcb_request_check().
  */
-xcb_void_cookie_t xcb_test_grab_control_checked (xcb_connection_t *c  /**< */,
-                               ubyte             impervious  /**< */);
+xcb_void_cookie_t xcb_test_grab_control_checked(xcb_connection_t* c /**< */ , ubyte impervious /**< */ );
 
 /**
  *
@@ -278,8 +256,7 @@ xcb_void_cookie_t xcb_test_grab_control_checked (xcb_connection_t *c  /**< */,
  * Delivers a request to the X server.
  *
  */
-xcb_void_cookie_t xcb_test_grab_control (xcb_connection_t *c  /**< */,
-                       ubyte             impervious  /**< */);
+xcb_void_cookie_t xcb_test_grab_control(xcb_connection_t* c /**< */ , ubyte impervious /**< */ );
 
 /**
  * @}

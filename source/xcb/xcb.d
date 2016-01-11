@@ -30,7 +30,7 @@ module xcb.xcb;
 /* Include the generated xproto header. */
 public import xcb.xproto;
 
-extern(C):
+extern (C):
 
 /**
  * @file xcb.d
@@ -86,7 +86,8 @@ auto XCB_TYPE_PAD(T)(T, size_t i) {
  *
  * A structure that contain all data that  XCB needs to communicate with an X server.
  */
-struct xcb_connection_t {}  /**< Opaque structure containing all data that  XCB needs to communicate with an X server. */
+struct xcb_connection_t {
+} /**< Opaque structure containing all data that  XCB needs to communicate with an X server. */
 
 /* Other types */
 
@@ -96,9 +97,9 @@ struct xcb_connection_t {}  /**< Opaque structure containing all data that  XCB 
  * A generic iterator structure.
  */
 struct xcb_generic_iterator_t {
-    void *data;   /**< Data of the current iterator */
-    int rem;    /**< remaining elements */
-    int index;  /**< index of the current iterator */
+	void* data; /**< Data of the current iterator */
+	int rem; /**< remaining elements */
+	int index; /**< index of the current iterator */
 }
 
 /**
@@ -107,10 +108,10 @@ struct xcb_generic_iterator_t {
  * A generic reply structure.
  */
 struct xcb_generic_reply_t {
-    ubyte   response_type;  /**< Type of the response */
-    ubyte  pad0;           /**< Padding */
-    ushort sequence;       /**< Sequence number */
-    uint length;         /**< Length of the response */
+	ubyte response_type; /**< Type of the response */
+	ubyte pad0; /**< Padding */
+	ushort sequence; /**< Sequence number */
+	uint length; /**< Length of the response */
 }
 
 /**
@@ -119,11 +120,11 @@ struct xcb_generic_reply_t {
  * A generic event structure.
  */
 struct xcb_generic_event_t {
-    ubyte   response_type;  /**< Type of the response */
-    ubyte  pad0;           /**< Padding */
-    ushort sequence;       /**< Sequence number */
-    uint[7] pad;         /**< Padding */
-    uint full_sequence;  /**< full sequence */
+	ubyte response_type; /**< Type of the response */
+	ubyte pad0; /**< Padding */
+	ushort sequence; /**< Sequence number */
+	uint[7] pad; /**< Padding */
+	uint full_sequence; /**< full sequence */
 }
 
 /**
@@ -136,14 +137,14 @@ struct xcb_generic_event_t {
  * recommended to use xcb_ge_generic_event_t instead.
  */
 struct xcb_ge_event_t {
-    ubyte  response_type;  /**< Type of the response */
-    ubyte  pad0;           /**< Padding */
-    ushort sequence;       /**< Sequence number */
-    uint length;
-    ushort event_type;
-    ushort pad1;
-    uint[5] pad;         /**< Padding */
-    uint full_sequence;  /**< full sequence */
+	ubyte response_type; /**< Type of the response */
+	ubyte pad0; /**< Padding */
+	ushort sequence; /**< Sequence number */
+	uint length;
+	ushort event_type;
+	ushort pad1;
+	uint[5] pad; /**< Padding */
+	uint full_sequence; /**< full sequence */
 }
 
 /**
@@ -152,15 +153,15 @@ struct xcb_ge_event_t {
  * A generic error structure.
  */
 struct xcb_generic_error_t {
-    ubyte   response_type;  /**< Type of the response */
-    ubyte   error_code;     /**< Error code */
-    ushort sequence;       /**< Sequence number */
-    uint resource_id;     /** < Resource ID for requests with side effects only */
-    ushort minor_code;      /** < Minor opcode of the failed request */
-    ubyte major_code;       /** < Major opcode of the failed request */
-    ubyte pad0;
-    uint[5] pad;         /**< Padding */
-    uint full_sequence;  /**< full sequence */
+	ubyte response_type; /**< Type of the response */
+	ubyte error_code; /**< Error code */
+	ushort sequence; /**< Sequence number */
+	uint resource_id; /** < Resource ID for requests with side effects only */
+	ushort minor_code; /** < Minor opcode of the failed request */
+	ubyte major_code; /** < Major opcode of the failed request */
+	ubyte pad0;
+	uint[5] pad; /**< Padding */
+	uint full_sequence; /**< full sequence */
 }
 
 /**
@@ -169,7 +170,7 @@ struct xcb_generic_error_t {
  * A generic cookie structure.
  */
 struct xcb_void_cookie_t {
-    uint sequence;  /**< Sequence number */
+	uint sequence; /**< Sequence number */
 }
 
 /** XCB_NONE is the universal null resource or null atom parameter value for many core X requests */
@@ -184,7 +185,6 @@ enum XCB_CURRENT_TIME = 0L;
 /** XCB_NO_SYMBOL fills in unused entries in xcb_keysym_t tables */
 enum XCB_NO_SYMBOL = 0L;
 
-
 /* xcb_auth.c */
 
 /**
@@ -193,12 +193,11 @@ enum XCB_NO_SYMBOL = 0L;
  * A container for authorization information to be sent to the X server.
  */
 struct xcb_auth_info_t {
-    int   namelen;  /**< Length of the string name (as returned by strlen). */
-    char *name;     /**< String containing the authentication protocol name, such as "MIT-MAGIC-COOKIE-1" or "XDM-AUTHORIZATION-1". */
-    int   datalen;  /**< Length of the data member. */
-    char *data;   /**< Data interpreted in a protocol-specific manner. */
+	int namelen; /**< Length of the string name (as returned by strlen). */
+	char* name; /**< String containing the authentication protocol name, such as "MIT-MAGIC-COOKIE-1" or "XDM-AUTHORIZATION-1". */
+	int datalen; /**< Length of the data member. */
+	char* data; /**< Data interpreted in a protocol-specific manner. */
 }
-
 
 /* xcb_out.c */
 
@@ -210,7 +209,7 @@ struct xcb_auth_info_t {
  * Forces any buffered output to be written to the server. Blocks
  * until the write is complete.
  */
-int xcb_flush(xcb_connection_t *c);
+int xcb_flush(xcb_connection_t* c);
 
 /**
  * @brief Returns the maximum request length that this server accepts.
@@ -227,7 +226,7 @@ int xcb_flush(xcb_connection_t *c);
  * theoretical maximum lengths roughly 256kB without BIG-REQUESTS and
  * 16GB with.
  */
-uint xcb_get_maximum_request_length(xcb_connection_t *c);
+uint xcb_get_maximum_request_length(xcb_connection_t* c);
 
 /**
  * @brief Prefetch the maximum request length without blocking.
@@ -246,8 +245,7 @@ uint xcb_get_maximum_request_length(xcb_connection_t *c);
  * xcb_prefetch_extension_data(c, &xcb_big_requests_id) and the reply
  * must have already arrived.
  */
-void xcb_prefetch_maximum_request_length(xcb_connection_t *c);
-
+void xcb_prefetch_maximum_request_length(xcb_connection_t* c);
 
 /* xcb_in.c */
 
@@ -260,7 +258,7 @@ void xcb_prefetch_maximum_request_length(xcb_connection_t *c);
  * the event of an I/O error. Blocks until either an event or error
  * arrive, or an I/O error occurs.
  */
-xcb_generic_event_t *xcb_wait_for_event(xcb_connection_t *c);
+xcb_generic_event_t* xcb_wait_for_event(xcb_connection_t* c);
 
 /**
  * @brief Returns the next event or error from the server.
@@ -273,7 +271,7 @@ xcb_generic_event_t *xcb_wait_for_event(xcb_connection_t *c);
  * attempting to read the next event, in which case the connection is
  * shut down when this function returns.
  */
-xcb_generic_event_t *xcb_poll_for_event(xcb_connection_t *c);
+xcb_generic_event_t* xcb_poll_for_event(xcb_connection_t* c);
 
 /**
  * @brief Returns the next event without reading from the connection.
@@ -289,39 +287,35 @@ xcb_generic_event_t *xcb_poll_for_event(xcb_connection_t *c);
  * example, callers might use xcb_wait_for_reply and be interested
  * only of events that preceded a specific reply.
  */
-xcb_generic_event_t *xcb_poll_for_queued_event(xcb_connection_t *c);
+xcb_generic_event_t* xcb_poll_for_queued_event(xcb_connection_t* c);
 
-struct xcb_special_event_t {}
+struct xcb_special_event_t {
+}
 
 /**
  * @brief Returns the next event from a special queue
  */
-xcb_generic_event_t *xcb_poll_for_special_event(xcb_connection_t *c,
-                                                xcb_special_event_t *se);
+xcb_generic_event_t* xcb_poll_for_special_event(xcb_connection_t* c, xcb_special_event_t* se);
 
 /**
  * @brief Returns the next event from a special queue, blocking until one arrives
  */
-xcb_generic_event_t *xcb_wait_for_special_event(xcb_connection_t *c,
-                                                xcb_special_event_t *se);
+xcb_generic_event_t* xcb_wait_for_special_event(xcb_connection_t* c, xcb_special_event_t* se);
 /**
  * @typedef typedef struct xcb_extension_t xcb_extension_t
  */
-struct xcb_extension_t {}  /**< Opaque structure used as key for xcb_get_extension_data_t. */
+struct xcb_extension_t {
+} /**< Opaque structure used as key for xcb_get_extension_data_t. */
 
 /**
  * @brief Listen for a special event
  */
-xcb_special_event_t *xcb_register_for_special_xge(xcb_connection_t *c,
-                                                  xcb_extension_t *ext,
-                                                  uint eid,
-                                                  uint *stamp);
+xcb_special_event_t* xcb_register_for_special_xge(xcb_connection_t* c, xcb_extension_t* ext, uint eid, uint* stamp);
 
 /**
  * @brief Stop listening for a special event
  */
-void xcb_unregister_for_special_event(xcb_connection_t *c,
-                                      xcb_special_event_t *se);
+void xcb_unregister_for_special_event(xcb_connection_t* c, xcb_special_event_t* se);
 
 /**
  * @brief Return the error for a request, or NULL if none can ever arrive.
@@ -339,7 +333,7 @@ void xcb_unregister_for_special_event(xcb_connection_t *c,
  * sequence number will advance beyond that provided in cookie; this is a
  * convenience to avoid races in determining whether the sync is needed.
  */
-xcb_generic_error_t *xcb_request_check(xcb_connection_t *c, xcb_void_cookie_t cookie);
+xcb_generic_error_t* xcb_request_check(xcb_connection_t* c, xcb_void_cookie_t cookie);
 
 /**
  * @brief Discards the reply for a request.
@@ -355,7 +349,7 @@ xcb_generic_error_t *xcb_request_check(xcb_connection_t *c, xcb_void_cookie_t co
  * Note that the sequence really does have to come from an xcb cookie;
  * this function is not designed to operate on socket-handoff replies.
  */
-void xcb_discard_reply(xcb_connection_t *c, uint sequence);
+void xcb_discard_reply(xcb_connection_t* c, uint sequence);
 
 /**
  * @brief Discards the reply for a request, given by a 64bit sequence number
@@ -376,7 +370,7 @@ void xcb_discard_reply(xcb_connection_t *c, uint sequence);
  * Unlike its xcb_discard_reply() counterpart, the given sequence number is not
  * automatically "widened" to 64-bit.
  */
-void xcb_discard_reply64(xcb_connection_t *c, uint sequence);
+void xcb_discard_reply64(xcb_connection_t* c, uint sequence);
 
 /* xcb_ext.c */
 
@@ -396,7 +390,7 @@ void xcb_discard_reply64(xcb_connection_t *c, uint sequence);
  * The result must not be freed. This storage is managed by the cache
  * itself.
  */
-xcb_query_extension_reply_t * xcb_get_extension_data(xcb_connection_t *c, xcb_extension_t *ext);
+xcb_query_extension_reply_t* xcb_get_extension_data(xcb_connection_t* c, xcb_extension_t* ext);
 
 /**
  * @brief Prefetch of extension data into the extension cache
@@ -409,8 +403,7 @@ xcb_query_extension_reply_t * xcb_get_extension_data(xcb_connection_t *c, xcb_ex
  * reply. xcb_get_extension_data will return the prefetched data after
  * possibly blocking while it is retrieved.
  */
-void xcb_prefetch_extension_data(xcb_connection_t *c, xcb_extension_t *ext);
-
+void xcb_prefetch_extension_data(xcb_connection_t* c, xcb_extension_t* ext);
 
 /* xcb_conn.c */
 
@@ -432,7 +425,7 @@ void xcb_prefetch_extension_data(xcb_connection_t *c, xcb_extension_t *ext);
  *
  * The result must not be freed.
  */
-xcb_setup_t *xcb_get_setup(xcb_connection_t *c);
+xcb_setup_t* xcb_get_setup(xcb_connection_t* c);
 
 /**
  * @brief Access the file descriptor of the connection.
@@ -442,7 +435,7 @@ xcb_setup_t *xcb_get_setup(xcb_connection_t *c);
  * Accessor for the file descriptor that was passed to the
  * xcb_connect_to_fd call that returned @p c.
  */
-int xcb_get_file_descriptor(xcb_connection_t *c);
+int xcb_get_file_descriptor(xcb_connection_t* c);
 
 /**
  * @brief Test whether the connection has shut down due to a fatal error.
@@ -462,7 +455,7 @@ int xcb_get_file_descriptor(xcb_connection_t *c);
  * @return XCB_CONN_CLOSED_PARSE_ERR, error during parsing display string.
  * @return XCB_CONN_CLOSED_INVALID_SCREEN, because the server does not have a screen matching the display.
  */
-int xcb_connection_has_error(xcb_connection_t *c);
+int xcb_connection_has_error(xcb_connection_t* c);
 
 /**
  * @brief Connects to the X server.
@@ -481,7 +474,7 @@ int xcb_connection_has_error(xcb_connection_t *c);
  * When finished, use xcb_disconnect() to close the connection and free
  * the structure.
  */
-xcb_connection_t *xcb_connect_to_fd(int fd, xcb_auth_info_t *auth_info);
+xcb_connection_t* xcb_connect_to_fd(int fd, xcb_auth_info_t* auth_info);
 
 /**
  * @brief Closes the connection.
@@ -490,8 +483,7 @@ xcb_connection_t *xcb_connect_to_fd(int fd, xcb_auth_info_t *auth_info);
  * Closes the file descriptor and frees all memory associated with the
  * connection @c c. If @p c is @c NULL, nothing is done.
  */
-void xcb_disconnect(xcb_connection_t *c);
-
+void xcb_disconnect(xcb_connection_t* c);
 
 /* xcb_util.c */
 
@@ -512,7 +504,7 @@ void xcb_disconnect(xcb_connection_t *c);
  * can be @c NULL. If @p displayname does not contain a screen number,
  * it is set to @c 0.
  */
-int xcb_parse_display(const char *name, char **host, int *display, int *screen);
+int xcb_parse_display(const char* name, char** host, int* display, int* screen);
 
 /**
  * @brief Connects to the X server.
@@ -531,7 +523,7 @@ int xcb_parse_display(const char *name, char **host, int *display, int *screen);
  * When finished, use xcb_disconnect() to close the connection and free
  * the structure.
  */
-xcb_connection_t *xcb_connect(const char *displayname, int *screenp);
+xcb_connection_t* xcb_connect(const char* displayname, int* screenp);
 
 /**
  * @brief Connects to the X server, using an authorization information.
@@ -550,8 +542,7 @@ xcb_connection_t *xcb_connect(const char *displayname, int *screenp);
  * When finished, use xcb_disconnect() to close the connection and free
  * the structure.
  */
-xcb_connection_t *xcb_connect_to_display_with_auth_info(const char *display, xcb_auth_info_t *auth, int *screen);
-
+xcb_connection_t* xcb_connect_to_display_with_auth_info(const char* display, xcb_auth_info_t* auth, int* screen);
 
 /* xcb_xid.c */
 
@@ -563,8 +554,7 @@ xcb_connection_t *xcb_connect_to_display_with_auth_info(const char *display, xcb
  * Allocates an XID for a new object. Typically used just prior to
  * various object creation functions, such as xcb_create_window.
  */
-uint xcb_generate_id(xcb_connection_t *c);
-
+uint xcb_generate_id(xcb_connection_t* c);
 
 /**
  * @}

@@ -4,33 +4,31 @@ import xcb.xcb;
 
 import core.sys.posix.sys.uio : iovec;
 
-
-extern(C):
-
+extern (C):
 
 /* xcb_ext.c */
 
 struct xcb_extension_t {
-    const (char) *name;
-    int global_id;
+	const(char)* name;
+	int global_id;
 }
-
 
 /* xcb_out.c */
 
 struct xcb_protocol_request_t {
-    size_t count;
-    xcb_extension_t *ext;
-    ubyte opcode;
-    ubyte isvoid;
+	size_t count;
+	xcb_extension_t* ext;
+	ubyte opcode;
+	ubyte isvoid;
 }
 
 enum xcb_send_request_flags_t {
-    XCB_REQUEST_CHECKED = 1 << 0,
-    XCB_REQUEST_RAW = 1 << 1,
-    XCB_REQUEST_DISCARD_REPLY = 1 << 2,
-    XCB_REQUEST_REPLY_FDS = 1 << 3
+	XCB_REQUEST_CHECKED = 1 << 0,
+	XCB_REQUEST_RAW = 1 << 1,
+	XCB_REQUEST_DISCARD_REPLY = 1 << 2,
+	XCB_REQUEST_REPLY_FDS = 1 << 3
 }
+
 alias XCB_REQUEST_CHECKED = xcb_send_request_flags_t.XCB_REQUEST_CHECKED;
 alias XCB_REQUEST_RAW = xcb_send_request_flags_t.XCB_REQUEST_RAW;
 alias XCB_REQUEST_DISCARD_REPLY = xcb_send_request_flags_t.XCB_REQUEST_DISCARD_REPLY;
@@ -58,7 +56,7 @@ alias XCB_REQUEST_REPLY_FDS = xcb_send_request_flags_t.XCB_REQUEST_REPLY_FDS;
  * Please note that xcb might use index -1 and -2 of the @p vector array internally,
  * so they must be valid!
  */
-uint xcb_send_request(xcb_connection_t *c, int flags, iovec *vector, const(xcb_protocol_request_t) *request);
+uint xcb_send_request(xcb_connection_t* c, int flags, iovec* vector, const(xcb_protocol_request_t)* request);
 
 /**
  * @brief Send a request to the server, with 64-bit sequence number returned.
@@ -82,7 +80,7 @@ uint xcb_send_request(xcb_connection_t *c, int flags, iovec *vector, const(xcb_p
  * Please note that xcb might use index -1 and -2 of the @p vector array internally,
  * so they must be valid!
  */
-ulong xcb_send_request64(xcb_connection_t *c, int flags, iovec *vector, const(xcb_protocol_request_t) *request);
+ulong xcb_send_request64(xcb_connection_t* c, int flags, iovec* vector, const(xcb_protocol_request_t)* request);
 
 /**
  * @brief Send a file descriptor to the server in the next call to xcb_send_request.
@@ -96,7 +94,7 @@ ulong xcb_send_request64(xcb_connection_t *c, int flags, iovec *vector, const(xc
  * race between two threads doing xcb_send_fd(); xcb_send_request(); at the same
  * time.
  */
-void xcb_send_fd(xcb_connection_t *c, int fd);
+void xcb_send_fd(xcb_connection_t* c, int fd);
 
 /**
  * @brief Take over the write side of the socket
@@ -126,9 +124,9 @@ void xcb_send_fd(xcb_connection_t *c, int fd);
  * xcb_request_check().
  */
 
-private alias return_socket_t = void function (void *closure);
+private alias return_socket_t = void function(void* closure);
 
-int xcb_take_socket(xcb_connection_t *c, return_socket_t return_socket, void *closure, int flags, ulong *sent);
+int xcb_take_socket(xcb_connection_t* c, return_socket_t return_socket, void* closure, int flags, ulong* sent);
 
 /**
  * @brief Send raw data to the X server.
@@ -149,8 +147,7 @@ int xcb_take_socket(xcb_connection_t *c, return_socket_t return_socket, void *cl
  * any of the GetInputFocus replies, but can instead handle them via
  * xcb_discard_reply().
  */
-int xcb_writev(xcb_connection_t *c, iovec *vector, int count, ulong requests);
-
+int xcb_writev(xcb_connection_t* c, iovec* vector, int count, ulong requests);
 
 /* xcb_in.c */
 
@@ -164,7 +161,7 @@ int xcb_writev(xcb_connection_t *c, iovec *vector, int count, ulong requests);
  * errors. Blocks until the reply or error for the request arrives, or an I/O
  * error occurs.
  */
-void *xcb_wait_for_reply(xcb_connection_t *c, uint request, xcb_generic_error_t **e);
+void* xcb_wait_for_reply(xcb_connection_t* c, uint request, xcb_generic_error_t** e);
 
 /**
  * @brief Wait for the reply of a given request, with 64-bit sequence number
@@ -179,7 +176,7 @@ void *xcb_wait_for_reply(xcb_connection_t *c, uint request, xcb_generic_error_t 
  * Unlike its xcb_wait_for_reply() counterpart, the given sequence number is not
  * automatically "widened" to 64-bit.
  */
-void *xcb_wait_for_reply64(xcb_connection_t *c, ulong request, xcb_generic_error_t **e);
+void* xcb_wait_for_reply64(xcb_connection_t* c, ulong request, xcb_generic_error_t** e);
 
 /**
  * @brief Poll for the reply of a given request.
@@ -191,7 +188,7 @@ void *xcb_wait_for_reply64(xcb_connection_t *c, ulong request, xcb_generic_error
  *
  * Checks if the reply to the given request already received. Does not block.
  */
-int xcb_poll_for_reply(xcb_connection_t *c, uint request, void **reply, xcb_generic_error_t **error);
+int xcb_poll_for_reply(xcb_connection_t* c, uint request, void** reply, xcb_generic_error_t** error);
 
 /**
  * @brief Poll for the reply of a given request, with 64-bit sequence number.
@@ -206,7 +203,7 @@ int xcb_poll_for_reply(xcb_connection_t *c, uint request, void **reply, xcb_gene
  * Unlike its xcb_poll_for_reply() counterpart, the given sequence number is not
  * automatically "widened" to 64-bit.
  */
-int xcb_poll_for_reply64(xcb_connection_t *c, ulong request, void **reply, xcb_generic_error_t **error);
+int xcb_poll_for_reply64(xcb_connection_t* c, ulong request, void** reply, xcb_generic_error_t** error);
 
 /**
  * @brief Don't use this, only needed by the generated code.
@@ -215,8 +212,7 @@ int xcb_poll_for_reply64(xcb_connection_t *c, ulong request, void **reply, xcb_g
  * @param replylen: The size of the reply.
  * @return Pointer to the location where received file descriptors are stored.
  */
-int *xcb_get_reply_fds(xcb_connection_t *c, void *reply, size_t replylen);
-
+int* xcb_get_reply_fds(xcb_connection_t* c, void* reply, size_t replylen);
 
 /* xcb_util.c */
 
@@ -231,5 +227,4 @@ int xcb_popcount(uint mask);
  * @param len: The length of the array
  * @return The sum of all entries in the array.
  */
-int xcb_sumof(ubyte *list, int len);
-
+int xcb_sumof(ubyte* list, int len);

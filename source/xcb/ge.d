@@ -13,19 +13,18 @@ module xcb.ge;
 
 import xcb.xcb;
 
-extern(C):
-
+extern (C):
 
 enum int XCB_GENERICEVENT_MAJOR_VERSION = 1;
 enum int XCB_GENERICEVENT_MINOR_VERSION = 0;
 
-extern(C) __gshared extern xcb_extension_t xcb_genericevent_id;
+extern (C) __gshared extern xcb_extension_t xcb_genericevent_id;
 
 /**
  * @brief xcb_genericevent_query_version_cookie_t
  **/
 struct xcb_genericevent_query_version_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_genericevent_query_version. */
@@ -35,24 +34,24 @@ enum XCB_GENERICEVENT_QUERY_VERSION = 0;
  * @brief xcb_genericevent_query_version_request_t
  **/
 struct xcb_genericevent_query_version_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    ushort client_major_version; /**<  */
-    ushort client_minor_version; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	ushort client_major_version; /**<  */
+	ushort client_minor_version; /**<  */
 }
 
 /**
  * @brief xcb_genericevent_query_version_reply_t
  **/
 struct xcb_genericevent_query_version_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    ushort major_version; /**<  */
-    ushort minor_version; /**<  */
-    ubyte[20]  pad1; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	ushort major_version; /**<  */
+	ushort minor_version; /**<  */
+	ubyte[20] pad1; /**<  */
 }
 
 /**
@@ -63,9 +62,8 @@ struct xcb_genericevent_query_version_reply_t {
  * Delivers a request to the X server.
  *
  */
-xcb_genericevent_query_version_cookie_t xcb_genericevent_query_version (xcb_connection_t *c  /**< */,
-                                ushort            client_major_version  /**< */,
-                                ushort            client_minor_version  /**< */);
+xcb_genericevent_query_version_cookie_t xcb_genericevent_query_version(xcb_connection_t* c /**< */ , ushort client_major_version /**< */ ,
+	ushort client_minor_version /**< */ );
 
 /**
  *
@@ -78,9 +76,8 @@ xcb_genericevent_query_version_cookie_t xcb_genericevent_query_version (xcb_conn
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_genericevent_query_version_cookie_t xcb_genericevent_query_version_unchecked (xcb_connection_t *c  /**< */,
-                                          ushort            client_major_version  /**< */,
-                                          ushort            client_minor_version  /**< */);
+xcb_genericevent_query_version_cookie_t xcb_genericevent_query_version_unchecked(xcb_connection_t* c /**< */ ,
+	ushort client_major_version /**< */ , ushort client_minor_version /**< */ );
 
 /**
  * Return the reply
@@ -96,9 +93,8 @@ xcb_genericevent_query_version_cookie_t xcb_genericevent_query_version_unchecked
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_genericevent_query_version_reply_t * xcb_genericevent_query_version_reply (xcb_connection_t                         *c  /**< */,
-                                      xcb_genericevent_query_version_cookie_t   cookie  /**< */,
-                                      xcb_generic_error_t                     **e  /**< */);
+xcb_genericevent_query_version_reply_t* xcb_genericevent_query_version_reply(xcb_connection_t* c /**< */ ,
+	xcb_genericevent_query_version_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
 /**
  * @}

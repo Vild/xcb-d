@@ -14,52 +14,52 @@ module xcb.res;
 import xcb.xcb;
 import xcb.xproto;
 
-extern(C):
-
+extern (C):
 
 enum int XCB_RES_MAJOR_VERSION = 1;
 enum int XCB_RES_MINOR_VERSION = 2;
 
-extern(C) __gshared extern xcb_extension_t xcb_res_id;
+extern (C) __gshared extern xcb_extension_t xcb_res_id;
 
 /**
  * @brief xcb_res_client_t
  **/
 struct xcb_res_client_t {
-    uint resource_base; /**<  */
-    uint resource_mask; /**<  */
+	uint resource_base; /**<  */
+	uint resource_mask; /**<  */
 }
 
 /**
  * @brief xcb_res_client_iterator_t
  **/
 struct xcb_res_client_iterator_t {
-    xcb_res_client_t *data; /**<  */
-    int               rem; /**<  */
-    int               index; /**<  */
+	xcb_res_client_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 /**
  * @brief xcb_res_type_t
  **/
 struct xcb_res_type_t {
-    xcb_atom_t resource_type; /**<  */
-    uint       count; /**<  */
+	xcb_atom_t resource_type; /**<  */
+	uint count; /**<  */
 }
 
 /**
  * @brief xcb_res_type_iterator_t
  **/
 struct xcb_res_type_iterator_t {
-    xcb_res_type_t *data; /**<  */
-    int             rem; /**<  */
-    int             index; /**<  */
+	xcb_res_type_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 enum xcb_res_client_id_mask_t {
-    XCB_RES_CLIENT_ID_MASK_CLIENT_XID = 1,
-    XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID = 2
+	XCB_RES_CLIENT_ID_MASK_CLIENT_XID = 1,
+	XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID = 2
 }
+
 alias XCB_RES_CLIENT_ID_MASK_CLIENT_XID = xcb_res_client_id_mask_t.XCB_RES_CLIENT_ID_MASK_CLIENT_XID;
 alias XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID = xcb_res_client_id_mask_t.XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID;
 
@@ -67,94 +67,94 @@ alias XCB_RES_CLIENT_ID_MASK_LOCAL_CLIENT_PID = xcb_res_client_id_mask_t.XCB_RES
  * @brief xcb_res_client_id_spec_t
  **/
 struct xcb_res_client_id_spec_t {
-    uint client; /**<  */
-    uint mask; /**<  */
+	uint client; /**<  */
+	uint mask; /**<  */
 }
 
 /**
  * @brief xcb_res_client_id_spec_iterator_t
  **/
 struct xcb_res_client_id_spec_iterator_t {
-    xcb_res_client_id_spec_t *data; /**<  */
-    int                       rem; /**<  */
-    int                       index; /**<  */
+	xcb_res_client_id_spec_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 /**
  * @brief xcb_res_client_id_value_t
  **/
 struct xcb_res_client_id_value_t {
-    xcb_res_client_id_spec_t spec; /**<  */
-    uint                     length; /**<  */
+	xcb_res_client_id_spec_t spec; /**<  */
+	uint length; /**<  */
 }
 
 /**
  * @brief xcb_res_client_id_value_iterator_t
  **/
 struct xcb_res_client_id_value_iterator_t {
-    xcb_res_client_id_value_t *data; /**<  */
-    int                        rem; /**<  */
-    int                        index; /**<  */
+	xcb_res_client_id_value_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 /**
  * @brief xcb_res_resource_id_spec_t
  **/
 struct xcb_res_resource_id_spec_t {
-    uint resource; /**<  */
-    uint type; /**<  */
+	uint resource; /**<  */
+	uint type; /**<  */
 }
 
 /**
  * @brief xcb_res_resource_id_spec_iterator_t
  **/
 struct xcb_res_resource_id_spec_iterator_t {
-    xcb_res_resource_id_spec_t *data; /**<  */
-    int                         rem; /**<  */
-    int                         index; /**<  */
+	xcb_res_resource_id_spec_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 /**
  * @brief xcb_res_resource_size_spec_t
  **/
 struct xcb_res_resource_size_spec_t {
-    xcb_res_resource_id_spec_t spec; /**<  */
-    uint                       bytes; /**<  */
-    uint                       ref_count; /**<  */
-    uint                       use_count; /**<  */
+	xcb_res_resource_id_spec_t spec; /**<  */
+	uint bytes; /**<  */
+	uint ref_count; /**<  */
+	uint use_count; /**<  */
 }
 
 /**
  * @brief xcb_res_resource_size_spec_iterator_t
  **/
 struct xcb_res_resource_size_spec_iterator_t {
-    xcb_res_resource_size_spec_t *data; /**<  */
-    int                           rem; /**<  */
-    int                           index; /**<  */
+	xcb_res_resource_size_spec_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 /**
  * @brief xcb_res_resource_size_value_t
  **/
 struct xcb_res_resource_size_value_t {
-    xcb_res_resource_size_spec_t size; /**<  */
-    uint                         num_cross_references; /**<  */
+	xcb_res_resource_size_spec_t size; /**<  */
+	uint num_cross_references; /**<  */
 }
 
 /**
  * @brief xcb_res_resource_size_value_iterator_t
  **/
 struct xcb_res_resource_size_value_iterator_t {
-    xcb_res_resource_size_value_t *data; /**<  */
-    int                            rem; /**<  */
-    int                            index; /**<  */
+	xcb_res_resource_size_value_t* data; /**<  */
+	int rem; /**<  */
+	int index; /**<  */
 }
 
 /**
  * @brief xcb_res_query_version_cookie_t
  **/
 struct xcb_res_query_version_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_res_query_version. */
@@ -164,30 +164,30 @@ enum XCB_RES_QUERY_VERSION = 0;
  * @brief xcb_res_query_version_request_t
  **/
 struct xcb_res_query_version_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    ubyte  client_major; /**<  */
-    ubyte  client_minor; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	ubyte client_major; /**<  */
+	ubyte client_minor; /**<  */
 }
 
 /**
  * @brief xcb_res_query_version_reply_t
  **/
 struct xcb_res_query_version_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    ushort server_major; /**<  */
-    ushort server_minor; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	ushort server_major; /**<  */
+	ushort server_minor; /**<  */
 }
 
 /**
  * @brief xcb_res_query_clients_cookie_t
  **/
 struct xcb_res_query_clients_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_res_query_clients. */
@@ -197,28 +197,28 @@ enum XCB_RES_QUERY_CLIENTS = 1;
  * @brief xcb_res_query_clients_request_t
  **/
 struct xcb_res_query_clients_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
 }
 
 /**
  * @brief xcb_res_query_clients_reply_t
  **/
 struct xcb_res_query_clients_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    uint   num_clients; /**<  */
-    ubyte[20]  pad1; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	uint num_clients; /**<  */
+	ubyte[20] pad1; /**<  */
 }
 
 /**
  * @brief xcb_res_query_client_resources_cookie_t
  **/
 struct xcb_res_query_client_resources_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_res_query_client_resources. */
@@ -228,29 +228,29 @@ enum XCB_RES_QUERY_CLIENT_RESOURCES = 2;
  * @brief xcb_res_query_client_resources_request_t
  **/
 struct xcb_res_query_client_resources_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    uint   xid; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	uint xid; /**<  */
 }
 
 /**
  * @brief xcb_res_query_client_resources_reply_t
  **/
 struct xcb_res_query_client_resources_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    uint   num_types; /**<  */
-    ubyte[20]  pad1; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	uint num_types; /**<  */
+	ubyte[20] pad1; /**<  */
 }
 
 /**
  * @brief xcb_res_query_client_pixmap_bytes_cookie_t
  **/
 struct xcb_res_query_client_pixmap_bytes_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_res_query_client_pixmap_bytes. */
@@ -260,29 +260,29 @@ enum XCB_RES_QUERY_CLIENT_PIXMAP_BYTES = 3;
  * @brief xcb_res_query_client_pixmap_bytes_request_t
  **/
 struct xcb_res_query_client_pixmap_bytes_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    uint   xid; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	uint xid; /**<  */
 }
 
 /**
  * @brief xcb_res_query_client_pixmap_bytes_reply_t
  **/
 struct xcb_res_query_client_pixmap_bytes_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    uint   bytes; /**<  */
-    uint   bytes_overflow; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	uint bytes; /**<  */
+	uint bytes_overflow; /**<  */
 }
 
 /**
  * @brief xcb_res_query_client_ids_cookie_t
  **/
 struct xcb_res_query_client_ids_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_res_query_client_ids. */
@@ -292,29 +292,29 @@ enum XCB_RES_QUERY_CLIENT_IDS = 4;
  * @brief xcb_res_query_client_ids_request_t
  **/
 struct xcb_res_query_client_ids_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    uint   num_specs; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	uint num_specs; /**<  */
 }
 
 /**
  * @brief xcb_res_query_client_ids_reply_t
  **/
 struct xcb_res_query_client_ids_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    uint   num_ids; /**<  */
-    ubyte[20]  pad1; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	uint num_ids; /**<  */
+	ubyte[20] pad1; /**<  */
 }
 
 /**
  * @brief xcb_res_query_resource_bytes_cookie_t
  **/
 struct xcb_res_query_resource_bytes_cookie_t {
-    uint sequence; /**<  */
+	uint sequence; /**<  */
 }
 
 /** Opcode for xcb_res_query_resource_bytes. */
@@ -324,23 +324,23 @@ enum XCB_RES_QUERY_RESOURCE_BYTES = 5;
  * @brief xcb_res_query_resource_bytes_request_t
  **/
 struct xcb_res_query_resource_bytes_request_t {
-    ubyte  major_opcode; /**<  */
-    ubyte  minor_opcode; /**<  */
-    ushort length; /**<  */
-    uint   client; /**<  */
-    uint   num_specs; /**<  */
+	ubyte major_opcode; /**<  */
+	ubyte minor_opcode; /**<  */
+	ushort length; /**<  */
+	uint client; /**<  */
+	uint num_specs; /**<  */
 }
 
 /**
  * @brief xcb_res_query_resource_bytes_reply_t
  **/
 struct xcb_res_query_resource_bytes_reply_t {
-    ubyte  response_type; /**<  */
-    ubyte  pad0; /**<  */
-    ushort sequence; /**<  */
-    uint   length; /**<  */
-    uint   num_sizes; /**<  */
-    ubyte[20]  pad1; /**<  */
+	ubyte response_type; /**<  */
+	ubyte pad0; /**<  */
+	ushort sequence; /**<  */
+	uint length; /**<  */
+	uint num_sizes; /**<  */
+	ubyte[20] pad1; /**<  */
 }
 
 /**
@@ -351,7 +351,7 @@ struct xcb_res_query_resource_bytes_reply_t {
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_client_t)
  */
-void xcb_res_client_next (xcb_res_client_iterator_t *i  /**< */);
+void xcb_res_client_next(xcb_res_client_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -362,7 +362,7 @@ void xcb_res_client_next (xcb_res_client_iterator_t *i  /**< */);
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_client_end (xcb_res_client_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_client_end(xcb_res_client_iterator_t i /**< */ );
 
 /**
  * Get the next element of the iterator
@@ -372,7 +372,7 @@ xcb_generic_iterator_t xcb_res_client_end (xcb_res_client_iterator_t i  /**< */)
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_type_t)
  */
-void xcb_res_type_next (xcb_res_type_iterator_t *i  /**< */);
+void xcb_res_type_next(xcb_res_type_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -383,7 +383,7 @@ void xcb_res_type_next (xcb_res_type_iterator_t *i  /**< */);
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_type_end (xcb_res_type_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_type_end(xcb_res_type_iterator_t i /**< */ );
 
 /**
  * Get the next element of the iterator
@@ -393,7 +393,7 @@ xcb_generic_iterator_t xcb_res_type_end (xcb_res_type_iterator_t i  /**< */);
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_client_id_spec_t)
  */
-void xcb_res_client_id_spec_next (xcb_res_client_id_spec_iterator_t *i  /**< */);
+void xcb_res_client_id_spec_next(xcb_res_client_id_spec_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -404,16 +404,15 @@ void xcb_res_client_id_spec_next (xcb_res_client_id_spec_iterator_t *i  /**< */)
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_client_id_spec_end (xcb_res_client_id_spec_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_client_id_spec_end(xcb_res_client_id_spec_iterator_t i /**< */ );
 
-int
-xcb_res_client_id_value_sizeof (const void  *_buffer  /**< */);
+int xcb_res_client_id_value_sizeof(const void* _buffer /**< */ );
 
-uint * xcb_res_client_id_value_value (const xcb_res_client_id_value_t *R  /**< */);
+uint* xcb_res_client_id_value_value(const xcb_res_client_id_value_t* R /**< */ );
 
-int xcb_res_client_id_value_value_length (const xcb_res_client_id_value_t *R  /**< */);
+int xcb_res_client_id_value_value_length(const xcb_res_client_id_value_t* R /**< */ );
 
-xcb_generic_iterator_t xcb_res_client_id_value_value_end (const xcb_res_client_id_value_t *R  /**< */);
+xcb_generic_iterator_t xcb_res_client_id_value_value_end(const xcb_res_client_id_value_t* R /**< */ );
 
 /**
  * Get the next element of the iterator
@@ -423,7 +422,7 @@ xcb_generic_iterator_t xcb_res_client_id_value_value_end (const xcb_res_client_i
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_client_id_value_t)
  */
-void xcb_res_client_id_value_next (xcb_res_client_id_value_iterator_t *i  /**< */);
+void xcb_res_client_id_value_next(xcb_res_client_id_value_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -434,7 +433,7 @@ void xcb_res_client_id_value_next (xcb_res_client_id_value_iterator_t *i  /**< *
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_client_id_value_end (xcb_res_client_id_value_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_client_id_value_end(xcb_res_client_id_value_iterator_t i /**< */ );
 
 /**
  * Get the next element of the iterator
@@ -444,7 +443,7 @@ xcb_generic_iterator_t xcb_res_client_id_value_end (xcb_res_client_id_value_iter
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_resource_id_spec_t)
  */
-void xcb_res_resource_id_spec_next (xcb_res_resource_id_spec_iterator_t *i  /**< */);
+void xcb_res_resource_id_spec_next(xcb_res_resource_id_spec_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -455,7 +454,7 @@ void xcb_res_resource_id_spec_next (xcb_res_resource_id_spec_iterator_t *i  /**<
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_resource_id_spec_end (xcb_res_resource_id_spec_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_resource_id_spec_end(xcb_res_resource_id_spec_iterator_t i /**< */ );
 
 /**
  * Get the next element of the iterator
@@ -465,7 +464,7 @@ xcb_generic_iterator_t xcb_res_resource_id_spec_end (xcb_res_resource_id_spec_it
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_resource_size_spec_t)
  */
-void xcb_res_resource_size_spec_next (xcb_res_resource_size_spec_iterator_t *i  /**< */);
+void xcb_res_resource_size_spec_next(xcb_res_resource_size_spec_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -476,16 +475,15 @@ void xcb_res_resource_size_spec_next (xcb_res_resource_size_spec_iterator_t *i  
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_resource_size_spec_end (xcb_res_resource_size_spec_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_resource_size_spec_end(xcb_res_resource_size_spec_iterator_t i /**< */ );
 
-int
-xcb_res_resource_size_value_sizeof (const void  *_buffer  /**< */);
+int xcb_res_resource_size_value_sizeof(const void* _buffer /**< */ );
 
-xcb_res_resource_size_spec_t * xcb_res_resource_size_value_cross_references (const xcb_res_resource_size_value_t *R  /**< */);
+xcb_res_resource_size_spec_t* xcb_res_resource_size_value_cross_references(const xcb_res_resource_size_value_t* R /**< */ );
 
-int xcb_res_resource_size_value_cross_references_length (const xcb_res_resource_size_value_t *R  /**< */);
+int xcb_res_resource_size_value_cross_references_length(const xcb_res_resource_size_value_t* R /**< */ );
 
-xcb_res_resource_size_spec_iterator_t xcb_res_resource_size_value_cross_references_iterator (const xcb_res_resource_size_value_t *R  /**< */);
+xcb_res_resource_size_spec_iterator_t xcb_res_resource_size_value_cross_references_iterator(const xcb_res_resource_size_value_t* R /**< */ );
 
 /**
  * Get the next element of the iterator
@@ -495,7 +493,7 @@ xcb_res_resource_size_spec_iterator_t xcb_res_resource_size_value_cross_referenc
  * decreased by one. The member data points to the next
  * element. The member index is increased by sizeof(xcb_res_resource_size_value_t)
  */
-void xcb_res_resource_size_value_next (xcb_res_resource_size_value_iterator_t *i  /**< */);
+void xcb_res_resource_size_value_next(xcb_res_resource_size_value_iterator_t* i /**< */ );
 
 /**
  * Return the iterator pointing to the last element
@@ -506,7 +504,7 @@ void xcb_res_resource_size_value_next (xcb_res_resource_size_value_iterator_t *i
  * The member rem is set to 0. The member data points to the
  * last element.
  */
-xcb_generic_iterator_t xcb_res_resource_size_value_end (xcb_res_resource_size_value_iterator_t i  /**< */);
+xcb_generic_iterator_t xcb_res_resource_size_value_end(xcb_res_resource_size_value_iterator_t i /**< */ );
 
 /**
  *
@@ -516,9 +514,7 @@ xcb_generic_iterator_t xcb_res_resource_size_value_end (xcb_res_resource_size_va
  * Delivers a request to the X server.
  *
  */
-xcb_res_query_version_cookie_t xcb_res_query_version (xcb_connection_t *c  /**< */,
-                       ubyte             client_major  /**< */,
-                       ubyte             client_minor  /**< */);
+xcb_res_query_version_cookie_t xcb_res_query_version(xcb_connection_t* c /**< */ , ubyte client_major /**< */ , ubyte client_minor /**< */ );
 
 /**
  *
@@ -531,9 +527,7 @@ xcb_res_query_version_cookie_t xcb_res_query_version (xcb_connection_t *c  /**< 
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_res_query_version_cookie_t xcb_res_query_version_unchecked (xcb_connection_t *c  /**< */,
-                                 ubyte             client_major  /**< */,
-                                 ubyte             client_minor  /**< */);
+xcb_res_query_version_cookie_t xcb_res_query_version_unchecked(xcb_connection_t* c /**< */ , ubyte client_major /**< */ , ubyte client_minor /**< */ );
 
 /**
  * Return the reply
@@ -549,12 +543,10 @@ xcb_res_query_version_cookie_t xcb_res_query_version_unchecked (xcb_connection_t
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_res_query_version_reply_t * xcb_res_query_version_reply (xcb_connection_t                *c  /**< */,
-                             xcb_res_query_version_cookie_t   cookie  /**< */,
-                             xcb_generic_error_t            **e  /**< */);
+xcb_res_query_version_reply_t* xcb_res_query_version_reply(xcb_connection_t* c /**< */ ,
+	xcb_res_query_version_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
-int
-xcb_res_query_clients_sizeof (const void  *_buffer  /**< */);
+int xcb_res_query_clients_sizeof(const void* _buffer /**< */ );
 
 /**
  *
@@ -564,7 +556,7 @@ xcb_res_query_clients_sizeof (const void  *_buffer  /**< */);
  * Delivers a request to the X server.
  *
  */
-xcb_res_query_clients_cookie_t xcb_res_query_clients (xcb_connection_t *c  /**< */);
+xcb_res_query_clients_cookie_t xcb_res_query_clients(xcb_connection_t* c /**< */ );
 
 /**
  *
@@ -577,13 +569,13 @@ xcb_res_query_clients_cookie_t xcb_res_query_clients (xcb_connection_t *c  /**< 
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_res_query_clients_cookie_t xcb_res_query_clients_unchecked (xcb_connection_t *c  /**< */);
+xcb_res_query_clients_cookie_t xcb_res_query_clients_unchecked(xcb_connection_t* c /**< */ );
 
-xcb_res_client_t * xcb_res_query_clients_clients (const xcb_res_query_clients_reply_t *R  /**< */);
+xcb_res_client_t* xcb_res_query_clients_clients(const xcb_res_query_clients_reply_t* R /**< */ );
 
-int xcb_res_query_clients_clients_length (const xcb_res_query_clients_reply_t *R  /**< */);
+int xcb_res_query_clients_clients_length(const xcb_res_query_clients_reply_t* R /**< */ );
 
-xcb_res_client_iterator_t xcb_res_query_clients_clients_iterator (const xcb_res_query_clients_reply_t *R  /**< */);
+xcb_res_client_iterator_t xcb_res_query_clients_clients_iterator(const xcb_res_query_clients_reply_t* R /**< */ );
 
 /**
  * Return the reply
@@ -599,12 +591,10 @@ xcb_res_client_iterator_t xcb_res_query_clients_clients_iterator (const xcb_res_
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_res_query_clients_reply_t * xcb_res_query_clients_reply (xcb_connection_t                *c  /**< */,
-                             xcb_res_query_clients_cookie_t   cookie  /**< */,
-                             xcb_generic_error_t            **e  /**< */);
+xcb_res_query_clients_reply_t* xcb_res_query_clients_reply(xcb_connection_t* c /**< */ ,
+	xcb_res_query_clients_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
-int
-xcb_res_query_client_resources_sizeof (const void  *_buffer  /**< */);
+int xcb_res_query_client_resources_sizeof(const void* _buffer /**< */ );
 
 /**
  *
@@ -614,8 +604,7 @@ xcb_res_query_client_resources_sizeof (const void  *_buffer  /**< */);
  * Delivers a request to the X server.
  *
  */
-xcb_res_query_client_resources_cookie_t xcb_res_query_client_resources (xcb_connection_t *c  /**< */,
-                                uint              xid  /**< */);
+xcb_res_query_client_resources_cookie_t xcb_res_query_client_resources(xcb_connection_t* c /**< */ , uint xid /**< */ );
 
 /**
  *
@@ -628,14 +617,13 @@ xcb_res_query_client_resources_cookie_t xcb_res_query_client_resources (xcb_conn
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_res_query_client_resources_cookie_t xcb_res_query_client_resources_unchecked (xcb_connection_t *c  /**< */,
-                                          uint              xid  /**< */);
+xcb_res_query_client_resources_cookie_t xcb_res_query_client_resources_unchecked(xcb_connection_t* c /**< */ , uint xid /**< */ );
 
-xcb_res_type_t * xcb_res_query_client_resources_types (const xcb_res_query_client_resources_reply_t *R  /**< */);
+xcb_res_type_t* xcb_res_query_client_resources_types(const xcb_res_query_client_resources_reply_t* R /**< */ );
 
-int xcb_res_query_client_resources_types_length (const xcb_res_query_client_resources_reply_t *R  /**< */);
+int xcb_res_query_client_resources_types_length(const xcb_res_query_client_resources_reply_t* R /**< */ );
 
-xcb_res_type_iterator_t xcb_res_query_client_resources_types_iterator (const xcb_res_query_client_resources_reply_t *R  /**< */);
+xcb_res_type_iterator_t xcb_res_query_client_resources_types_iterator(const xcb_res_query_client_resources_reply_t* R /**< */ );
 
 /**
  * Return the reply
@@ -651,9 +639,8 @@ xcb_res_type_iterator_t xcb_res_query_client_resources_types_iterator (const xcb
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_res_query_client_resources_reply_t * xcb_res_query_client_resources_reply (xcb_connection_t                         *c  /**< */,
-                                      xcb_res_query_client_resources_cookie_t   cookie  /**< */,
-                                      xcb_generic_error_t                     **e  /**< */);
+xcb_res_query_client_resources_reply_t* xcb_res_query_client_resources_reply(xcb_connection_t* c /**< */ ,
+	xcb_res_query_client_resources_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
 /**
  *
@@ -663,8 +650,7 @@ xcb_res_query_client_resources_reply_t * xcb_res_query_client_resources_reply (x
  * Delivers a request to the X server.
  *
  */
-xcb_res_query_client_pixmap_bytes_cookie_t xcb_res_query_client_pixmap_bytes (xcb_connection_t *c  /**< */,
-                                   uint              xid  /**< */);
+xcb_res_query_client_pixmap_bytes_cookie_t xcb_res_query_client_pixmap_bytes(xcb_connection_t* c /**< */ , uint xid /**< */ );
 
 /**
  *
@@ -677,8 +663,7 @@ xcb_res_query_client_pixmap_bytes_cookie_t xcb_res_query_client_pixmap_bytes (xc
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_res_query_client_pixmap_bytes_cookie_t xcb_res_query_client_pixmap_bytes_unchecked (xcb_connection_t *c  /**< */,
-                                             uint              xid  /**< */);
+xcb_res_query_client_pixmap_bytes_cookie_t xcb_res_query_client_pixmap_bytes_unchecked(xcb_connection_t* c /**< */ , uint xid /**< */ );
 
 /**
  * Return the reply
@@ -694,12 +679,10 @@ xcb_res_query_client_pixmap_bytes_cookie_t xcb_res_query_client_pixmap_bytes_unc
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_res_query_client_pixmap_bytes_reply_t * xcb_res_query_client_pixmap_bytes_reply (xcb_connection_t                            *c  /**< */,
-                                         xcb_res_query_client_pixmap_bytes_cookie_t   cookie  /**< */,
-                                         xcb_generic_error_t                        **e  /**< */);
+xcb_res_query_client_pixmap_bytes_reply_t* xcb_res_query_client_pixmap_bytes_reply(xcb_connection_t* c /**< */ ,
+	xcb_res_query_client_pixmap_bytes_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
-int
-xcb_res_query_client_ids_sizeof (const void  *_buffer  /**< */);
+int xcb_res_query_client_ids_sizeof(const void* _buffer /**< */ );
 
 /**
  *
@@ -709,9 +692,8 @@ xcb_res_query_client_ids_sizeof (const void  *_buffer  /**< */);
  * Delivers a request to the X server.
  *
  */
-xcb_res_query_client_ids_cookie_t xcb_res_query_client_ids (xcb_connection_t               *c  /**< */,
-                          uint                            num_specs  /**< */,
-                          const xcb_res_client_id_spec_t *specs  /**< */);
+xcb_res_query_client_ids_cookie_t xcb_res_query_client_ids(xcb_connection_t* c /**< */ , uint num_specs /**< */ ,
+	const xcb_res_client_id_spec_t* specs /**< */ );
 
 /**
  *
@@ -724,13 +706,12 @@ xcb_res_query_client_ids_cookie_t xcb_res_query_client_ids (xcb_connection_t    
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_res_query_client_ids_cookie_t xcb_res_query_client_ids_unchecked (xcb_connection_t               *c  /**< */,
-                                    uint                            num_specs  /**< */,
-                                    const xcb_res_client_id_spec_t *specs  /**< */);
+xcb_res_query_client_ids_cookie_t xcb_res_query_client_ids_unchecked(xcb_connection_t* c /**< */ , uint num_specs /**< */ ,
+	const xcb_res_client_id_spec_t* specs /**< */ );
 
-int xcb_res_query_client_ids_ids_length (const xcb_res_query_client_ids_reply_t *R  /**< */);
+int xcb_res_query_client_ids_ids_length(const xcb_res_query_client_ids_reply_t* R /**< */ );
 
-xcb_res_client_id_value_iterator_t xcb_res_query_client_ids_ids_iterator (const xcb_res_query_client_ids_reply_t *R  /**< */);
+xcb_res_client_id_value_iterator_t xcb_res_query_client_ids_ids_iterator(const xcb_res_query_client_ids_reply_t* R /**< */ );
 
 /**
  * Return the reply
@@ -746,12 +727,10 @@ xcb_res_client_id_value_iterator_t xcb_res_query_client_ids_ids_iterator (const 
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_res_query_client_ids_reply_t * xcb_res_query_client_ids_reply (xcb_connection_t                   *c  /**< */,
-                                xcb_res_query_client_ids_cookie_t   cookie  /**< */,
-                                xcb_generic_error_t               **e  /**< */);
+xcb_res_query_client_ids_reply_t* xcb_res_query_client_ids_reply(xcb_connection_t* c /**< */ ,
+	xcb_res_query_client_ids_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
-int
-xcb_res_query_resource_bytes_sizeof (const void  *_buffer  /**< */);
+int xcb_res_query_resource_bytes_sizeof(const void* _buffer /**< */ );
 
 /**
  *
@@ -761,10 +740,8 @@ xcb_res_query_resource_bytes_sizeof (const void  *_buffer  /**< */);
  * Delivers a request to the X server.
  *
  */
-xcb_res_query_resource_bytes_cookie_t xcb_res_query_resource_bytes (xcb_connection_t                 *c  /**< */,
-                              uint                              client  /**< */,
-                              uint                              num_specs  /**< */,
-                              const xcb_res_resource_id_spec_t *specs  /**< */);
+xcb_res_query_resource_bytes_cookie_t xcb_res_query_resource_bytes(xcb_connection_t* c /**< */ , uint client /**< */ , uint num_specs /**< */ ,
+	const xcb_res_resource_id_spec_t* specs /**< */ );
 
 /**
  *
@@ -777,14 +754,12 @@ xcb_res_query_resource_bytes_cookie_t xcb_res_query_resource_bytes (xcb_connecti
  * a reply to be generated. Any returned error will be
  * placed in the event queue.
  */
-xcb_res_query_resource_bytes_cookie_t xcb_res_query_resource_bytes_unchecked (xcb_connection_t                 *c  /**< */,
-                                        uint                              client  /**< */,
-                                        uint                              num_specs  /**< */,
-                                        const xcb_res_resource_id_spec_t *specs  /**< */);
+xcb_res_query_resource_bytes_cookie_t xcb_res_query_resource_bytes_unchecked(xcb_connection_t* c /**< */ , uint client /**< */ ,
+	uint num_specs /**< */ , const xcb_res_resource_id_spec_t* specs /**< */ );
 
-int xcb_res_query_resource_bytes_sizes_length (const xcb_res_query_resource_bytes_reply_t *R  /**< */);
+int xcb_res_query_resource_bytes_sizes_length(const xcb_res_query_resource_bytes_reply_t* R /**< */ );
 
-xcb_res_resource_size_value_iterator_t xcb_res_query_resource_bytes_sizes_iterator (const xcb_res_query_resource_bytes_reply_t *R  /**< */);
+xcb_res_resource_size_value_iterator_t xcb_res_query_resource_bytes_sizes_iterator(const xcb_res_query_resource_bytes_reply_t* R /**< */ );
 
 /**
  * Return the reply
@@ -800,9 +775,8 @@ xcb_res_resource_size_value_iterator_t xcb_res_query_resource_bytes_sizes_iterat
  *
  * The returned value must be freed by the caller using free().
  */
-xcb_res_query_resource_bytes_reply_t * xcb_res_query_resource_bytes_reply (xcb_connection_t                       *c  /**< */,
-                                    xcb_res_query_resource_bytes_cookie_t   cookie  /**< */,
-                                    xcb_generic_error_t                   **e  /**< */);
+xcb_res_query_resource_bytes_reply_t* xcb_res_query_resource_bytes_reply(xcb_connection_t* c /**< */ ,
+	xcb_res_query_resource_bytes_cookie_t cookie /**< */ , xcb_generic_error_t** e /**< */ );
 
 /**
  * @}
