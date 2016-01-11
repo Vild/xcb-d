@@ -11,7 +11,7 @@ The `d_client.py` convert the .xml file from the libxcb-proto repository to .d f
 
 ## How to update
 Copy in the new .xml files from the libxcb-proto repository.
-Change the xcb.d file to match the xcb.h file from the libxcb repository.
+Change the source/xcb/xcb.d & source/xcb/xcbext.d file to match the xcb.h & xcbext.h file from the libxcb repository.
 Run `./rebuild.sh`
 
 ## Version scheme
