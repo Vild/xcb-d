@@ -456,7 +456,7 @@ xcb_intern_atom_cookie_t* xcb_ewmh_init_atoms(xcb_connection_t* c, xcb_ewmh_conn
 ubyte xcb_ewmh_init_atoms_replies(xcb_ewmh_connection_t* ewmh, xcb_intern_atom_cookie_t* ewmh_cookies, xcb_generic_error_t** e);
 
 pragma(inline, true) static void xcb_ewmh_connection_wipe(xcb_ewmh_connection_t* ewmh) {
-	import std.c.stdlib : free;
+	import core.stdc.stdlib : free;
 
 	free(ewmh.screens);
 	free(ewmh._NET_WM_CM_Sn);
